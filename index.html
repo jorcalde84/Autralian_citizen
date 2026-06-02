@@ -1,0 +1,1695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Common Bond — Australian Citizenship Study Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Palette sampled from Our Common Bond PDF */
+  --teal:#5a948b;          /* cover / heading teal */
+  --teal-deep:#3f7269;     /* darker teal */
+  --slate:#535e58;         /* part-divider grey-green */
+  --cream:#f3efe6;         /* page background */
+  --cream-card:#faf8f2;    /* card background */
+  --ink:#2f3530;           /* body text */
+  --ink-soft:#5b635c;      /* muted text */
+  --gold:#e9c93f;          /* wattle gold */
+  --gold-deep:#c9a838;
+  --sage:#cdddd6;          /* pale section band */
+  --abor-black:#1c1c1c;
+  --abor-red:#c8102e;
+  --abor-yellow:#f3c300;
+  --tsi-green:#1f7a3d;
+  --tsi-blue:#1f4fa0;
+  --line:#dfd9cb;
+  --shadow:0 1px 2px rgba(47,53,48,.05),0 6px 24px -8px rgba(47,53,48,.18);
+  --shadow-lg:0 30px 70px -30px rgba(47,53,48,.45);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Source Sans 3',system-ui,sans-serif;
+  --r:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:18.5px}
+body{
+  font-family:var(--sans);
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.72;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+/* faint botanical wattle texture via radial dots */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:radial-gradient(circle at 1px 1px,rgba(90,148,139,.06) 1px,transparent 0);
+  background-size:26px 26px;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+
+/* ---------- NAV ---------- */
+nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(243,239,230,.86);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{max-width:1180px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;margin-right:auto}
+.brand .crest{width:34px;height:34px;flex:none}
+.brand b{font-family:var(--serif);font-size:1.45rem;font-weight:600;color:var(--teal-deep);letter-spacing:.2px;line-height:1}
+.brand span{display:block;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{
+  font-size:.92rem;font-weight:600;color:var(--ink-soft);text-decoration:none;
+  padding:8px 15px;border-radius:999px;transition:.2s;letter-spacing:.02em;
+}
+.nav-links a:hover{color:var(--teal-deep);background:var(--sage)}
+.nav-links a.active{color:#fff;background:var(--teal)}
+
+/* ---------- HERO ---------- */
+header.hero{
+  position:relative;color:#fff;overflow:hidden;
+  background:linear-gradient(150deg,#6aa79c 0%,var(--teal) 38%,var(--teal-deep) 100%);
+}
+.hero-bg{position:absolute;inset:0;opacity:.5;}
+.hero-inner{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:84px 24px 92px}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.84rem;letter-spacing:.26em;text-transform:uppercase;font-weight:700;background:rgba(255,255,255,.16);padding:8px 17px;border-radius:999px;border:1px solid rgba(255,255,255,.3)}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(3rem,6.5vw,5rem);line-height:1.02;margin:22px 0 6px;letter-spacing:.5px}
+.hero h1 em{font-style:italic;color:#fbe9a4}
+.hero .sub{font-family:var(--serif);font-size:clamp(1.45rem,2.8vw,2.1rem);font-weight:400;opacity:.95;font-style:italic}
+.hero p.lede{max-width:620px;margin-top:22px;font-size:1.15rem;opacity:.95;font-weight:300}
+.hero-stats{display:flex;gap:34px;margin-top:38px;flex-wrap:wrap}
+.hero-stats div b{font-family:var(--serif);font-size:2.5rem;font-weight:600;display:block;line-height:1;color:#fbe9a4}
+.hero-stats div span{font-size:.86rem;letter-spacing:.14em;text-transform:uppercase;opacity:.88;font-weight:600}
+.wattle-band{height:54px;background:
+  radial-gradient(circle at 10% 60%,var(--gold) 5px,transparent 6px),
+  radial-gradient(circle at 22% 40%,var(--gold) 4px,transparent 5px),
+  radial-gradient(circle at 34% 65%,var(--gold) 6px,transparent 7px),
+  radial-gradient(circle at 48% 45%,var(--gold) 4px,transparent 5px),
+  radial-gradient(circle at 60% 62%,var(--gold) 5px,transparent 6px),
+  radial-gradient(circle at 73% 42%,var(--gold) 4px,transparent 5px),
+  radial-gradient(circle at 86% 64%,var(--gold) 6px,transparent 7px),
+  radial-gradient(circle at 95% 46%,var(--gold) 4px,transparent 5px),
+  var(--teal-deep);
+  opacity:.92;
+}
+
+/* ---------- SECTION SHELL ---------- */
+section{padding:70px 0 30px;position:relative;z-index:1}
+.sec-head{margin-bottom:34px;max-width:760px}
+.sec-tag{font-size:.82rem;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:var(--gold-deep)}
+.sec-head h2{font-family:var(--serif);font-size:clamp(2.2rem,4.2vw,3.2rem);font-weight:600;color:var(--teal-deep);line-height:1.05;margin:8px 0 10px}
+.sec-head p{color:var(--ink-soft);font-size:1.12rem}
+
+/* ---------- PART REFERENCE CARDS ---------- */
+.parts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-bottom:14px}
+.part-card{
+  background:var(--slate);color:#fff;border-radius:var(--r);padding:26px 24px;
+  cursor:pointer;transition:.28s cubic-bezier(.2,.7,.3,1);position:relative;overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.part-card:nth-child(odd){background:var(--teal)}
+.part-card::after{content:"";position:absolute;right:-30px;bottom:-30px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.07)}
+.part-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.part-card .n{font-family:var(--serif);font-size:.9rem;letter-spacing:.2em;text-transform:uppercase;opacity:.8}
+.part-card h3{font-family:var(--serif);font-size:1.55rem;font-weight:600;margin:6px 0 8px;line-height:1.1}
+.part-card p{font-size:.9rem;opacity:.9;font-weight:300}
+.part-card .go{margin-top:16px;font-size:.8rem;font-weight:700;letter-spacing:.04em;display:inline-flex;align-items:center;gap:6px}
+
+/* ---------- CONCEPT ACCORDION ---------- */
+.concept-block{margin-bottom:46px}
+.concept-block > h3{
+  font-family:var(--serif);font-size:1.7rem;color:var(--teal-deep);font-weight:600;
+  display:flex;align-items:center;gap:12px;margin-bottom:4px;
+}
+.concept-block > h3 .badge{font-family:var(--sans);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;background:var(--sage);color:var(--teal-deep);padding:4px 10px;border-radius:999px;font-weight:700}
+.concept-block > .blurb{color:var(--ink-soft);margin-bottom:18px;max-width:780px}
+.acc{border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:10px;background:var(--cream-card);box-shadow:0 1px 0 rgba(47,53,48,.02)}
+.acc summary{
+  list-style:none;cursor:pointer;padding:16px 20px;display:flex;align-items:center;gap:14px;
+  font-weight:600;font-size:1.02rem;color:var(--ink);transition:.2s;
+}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary:hover{background:#fff}
+.acc summary .dot{width:9px;height:9px;border-radius:50%;background:var(--gold);flex:none;box-shadow:0 0 0 4px rgba(233,201,63,.18)}
+.acc summary .chev{margin-left:auto;color:var(--teal);transition:.3s;font-size:1.1rem}
+.acc[open] summary .chev{transform:rotate(90deg)}
+.acc[open] summary{background:#fff;border-bottom:1px solid var(--line)}
+.acc .body{padding:6px 20px 20px 43px;color:var(--ink-soft);font-size:.97rem}
+.acc .body p{margin-bottom:10px}
+.acc .body ul{margin:8px 0 8px 18px}
+.acc .body li{margin-bottom:6px}
+.acc .body strong{color:var(--ink)}
+.key{background:rgba(233,201,63,.22);padding:1px 6px;border-radius:5px;font-weight:600;color:var(--ink)}
+
+/* ---------- MAP ---------- */
+.map-layout{display:grid;grid-template-columns:1.35fr .95fr;gap:30px;align-items:start}
+@media(max-width:880px){.map-layout{grid-template-columns:1fr}}
+.map-shell{background:var(--cream-card);border:1px solid var(--line);border-radius:var(--r);padding:18px;box-shadow:var(--shadow);position:relative}
+#ausmap{width:100%;height:auto;display:block}
+#ausmap .state{fill:#cfe0d9;stroke:#fff;stroke-width:2.5;cursor:pointer;transition:fill .25s,transform .25s;transform-origin:center}
+#ausmap .state:hover{fill:var(--teal)}
+#ausmap .state.sel{fill:var(--teal-deep)}
+#ausmap .capdot{fill:var(--abor-red);stroke:#fff;stroke-width:1.5;pointer-events:none}
+#ausmap .capstar{fill:var(--gold);stroke:#7a5d00;stroke-width:.6;pointer-events:none}
+#ausmap .lbl{font-family:var(--sans);font-weight:700;fill:#3a443d;pointer-events:none}
+#ausmap .lbl.cap{fill:#7a3030;font-weight:600}
+.map-info{background:var(--cream-card);border:1px solid var(--line);border-radius:var(--r);padding:24px;box-shadow:var(--shadow);min-height:320px}
+.map-info .pill{display:inline-block;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#fff;background:var(--teal);padding:4px 11px;border-radius:999px}
+.map-info h3{font-family:var(--serif);font-size:1.9rem;color:var(--teal-deep);font-weight:600;margin:12px 0 2px;line-height:1.05}
+.map-info .cap-line{font-size:.95rem;color:var(--ink-soft);margin-bottom:14px}
+.map-info .cap-line b{color:var(--abor-red)}
+.map-info p{font-size:.96rem;color:var(--ink-soft);margin-bottom:12px}
+.map-info .icons{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.map-info .icons span{font-size:.8rem;background:var(--sage);color:var(--teal-deep);padding:5px 11px;border-radius:8px;font-weight:600}
+.map-hint{font-size:.85rem;color:var(--ink-soft);font-style:italic;margin-top:14px}
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:14px;font-size:.8rem;color:var(--ink-soft)}
+.legend i{display:inline-block;width:13px;height:13px;border-radius:3px;margin-right:6px;vertical-align:-2px}
+
+/* ---------- FLAGS ---------- */
+.flag-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.flag-tabs button{
+  font-family:var(--sans);font-weight:600;font-size:.85rem;border:1px solid var(--line);
+  background:var(--cream-card);color:var(--ink-soft);padding:9px 16px;border-radius:999px;cursor:pointer;transition:.2s;
+}
+.flag-tabs button:hover{border-color:var(--teal);color:var(--teal-deep)}
+.flag-tabs button.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+.flag-stage{display:grid;grid-template-columns:1.1fr 1fr;gap:30px;align-items:center;background:var(--cream-card);border:1px solid var(--line);border-radius:var(--r);padding:30px;box-shadow:var(--shadow)}
+@media(max-width:760px){.flag-stage{grid-template-columns:1fr}}
+.flag-canvas{position:relative}
+.flag-canvas svg{width:100%;height:auto;border-radius:10px;box-shadow:var(--shadow-lg);display:block;background:#fff}
+.flag-hot{cursor:pointer;transition:.2s}
+.flag-hot:hover{opacity:.55}
+.flag-meta h3{font-family:var(--serif);font-size:1.9rem;color:var(--teal-deep);font-weight:600;margin-bottom:4px;line-height:1.05}
+.flag-meta .colours{display:flex;gap:8px;margin:10px 0 16px}
+.flag-meta .colours i{width:26px;height:26px;border-radius:6px;border:1px solid rgba(0,0,0,.1)}
+.flag-feat{border-left:3px solid var(--gold);padding:4px 0 4px 14px;margin-bottom:12px}
+.flag-feat b{display:block;color:var(--ink);font-size:.98rem}
+.flag-feat span{font-size:.9rem;color:var(--ink-soft)}
+.flag-feat.lit{border-color:var(--teal);background:rgba(90,148,139,.07)}
+.tip{font-size:.84rem;color:var(--ink-soft);font-style:italic;margin-top:6px}
+.state-flag-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.sf{background:var(--cream-card);border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center;box-shadow:var(--shadow);transition:.25s}
+.sf:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.sf svg{width:100%;height:auto;border-radius:5px;border:1px solid var(--line)}
+.sf b{display:block;font-size:.82rem;margin-top:9px;color:var(--ink)}
+.sf span{font-size:.74rem;color:var(--ink-soft)}
+
+/* ---------- GOV FLOWCHART ---------- */
+.flow-wrap{background:var(--cream-card);border:1px solid var(--line);border-radius:var(--r);padding:30px;box-shadow:var(--shadow);overflow-x:auto}
+.flow-tier{margin-bottom:14px}
+.flow-tier-label{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--gold-deep);margin-bottom:8px}
+.flow-row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.node{
+  background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:14px 18px;min-width:150px;max-width:230px;
+  text-align:center;cursor:pointer;transition:.25s;position:relative;box-shadow:0 1px 0 rgba(0,0,0,.02);
+}
+.node:hover{border-color:var(--teal);transform:translateY(-3px);box-shadow:var(--shadow)}
+.node.crown{background:var(--slate);color:#fff;border-color:var(--slate)}
+.node.power{background:var(--teal);color:#fff;border-color:var(--teal)}
+.node b{font-family:var(--serif);font-size:1.05rem;font-weight:600;display:block;line-height:1.15}
+.node small{font-size:.76rem;opacity:.8;display:block;margin-top:3px}
+.flow-connector{text-align:center;color:var(--teal);font-size:1.4rem;line-height:1;margin:2px 0}
+.flow-detail{margin-top:20px;background:#fff;border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:12px;padding:18px 22px;min-height:70px}
+.flow-detail h4{font-family:var(--serif);font-size:1.3rem;color:var(--teal-deep);font-weight:600;margin-bottom:4px}
+.flow-detail p{font-size:.95rem;color:var(--ink-soft)}
+.lawmaking{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:0;margin-top:30px;counter-reset:step}
+.law-step{position:relative;padding:18px 16px 18px 16px;text-align:center}
+.law-step .num{width:40px;height:40px;border-radius:50%;background:var(--gold);color:#5a4500;font-family:var(--serif);font-weight:700;font-size:1.2rem;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;box-shadow:0 4px 12px -4px rgba(201,168,56,.6)}
+.law-step b{display:block;font-size:.95rem;color:var(--ink);margin-bottom:3px}
+.law-step span{font-size:.83rem;color:var(--ink-soft)}
+.law-step:not(:last-child)::after{content:"→";position:absolute;right:-9px;top:34px;color:var(--teal);font-size:1.3rem}
+@media(max-width:620px){.law-step:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-4px;transform:translateX(-50%)}}
+
+/* ---------- TIMELINE ---------- */
+.tl{position:relative;margin-top:20px;padding-left:6px}
+.tl::before{content:"";position:absolute;left:21px;top:6px;bottom:6px;width:3px;background:linear-gradient(var(--teal),var(--gold))}
+.tl-item{position:relative;padding:0 0 30px 64px;cursor:default}
+.tl-node{position:absolute;left:11px;top:2px;width:24px;height:24px;border-radius:50%;background:#fff;border:3px solid var(--teal);transition:.25s;z-index:2}
+.tl-item.major .tl-node{background:var(--gold);border-color:var(--gold-deep);box-shadow:0 0 0 6px rgba(233,201,63,.22)}
+.tl-item:hover .tl-node{transform:scale(1.25)}
+.tl-year{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--teal-deep);line-height:1}
+.tl-card{background:var(--cream-card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-top:8px;box-shadow:var(--shadow);transition:.25s;position:relative}
+.tl-item:hover .tl-card{border-color:var(--teal);box-shadow:var(--shadow-lg);transform:translateX(4px)}
+.tl-card h4{font-family:var(--serif);font-size:1.2rem;color:var(--ink);font-weight:600;margin-bottom:4px}
+.tl-card p{font-size:.92rem;color:var(--ink-soft)}
+.tl-card .info{margin-left:6px;display:inline-flex;width:18px;height:18px;border-radius:50%;background:var(--teal);color:#fff;font-size:.72rem;align-items:center;justify-content:center;font-weight:700;cursor:help;vertical-align:1px}
+.tl-tip{
+  display:none;margin-top:10px;background:#fff;border:1px dashed var(--teal);border-radius:9px;
+  padding:11px 14px;font-size:.88rem;color:var(--ink);
+}
+.tl-tip strong{color:var(--teal-deep)}
+.tl-item.open .tl-tip{display:block;animation:fade .3s ease}
+@keyframes fade{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+
+/* ---------- SYMBOLS STRIP ---------- */
+.sym-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
+.sym{background:var(--cream-card);border:1px solid var(--line);border-radius:14px;padding:24px 20px;box-shadow:var(--shadow);transition:.25s;text-align:center}
+.sym:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+.sym .ico{width:110px;height:110px;margin:0 auto 14px;border-radius:14px;object-fit:contain;display:block;background:#f0ede6}
+.sym b{font-family:var(--serif);font-size:1.2rem;color:var(--teal-deep);display:block;margin-bottom:5px}
+.sym span{font-size:.9rem;color:var(--ink-soft);line-height:1.55}
+
+/* ---------- NATIONAL ANTHEM SECTION ---------- */
+.anthem-section{margin-top:32px;background:linear-gradient(135deg,var(--teal-deep) 0%,#3a6b62 50%,#2c5248 100%);border-radius:22px;overflow:hidden;box-shadow:0 20px 60px -20px rgba(47,53,48,.45),0 0 0 1px rgba(255,255,255,.06);position:relative}
+.anthem-section::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 80% 0%,rgba(233,201,63,.15),transparent 60%),radial-gradient(ellipse at 20% 100%,rgba(255,255,255,.04),transparent 50%);pointer-events:none}
+.anthem-inner{display:grid;grid-template-columns:1fr 1.25fr;min-height:520px;position:relative;z-index:1}
+@media(max-width:860px){.anthem-inner{grid-template-columns:1fr;min-height:unset}}
+.anthem-left{padding:36px 32px 36px 38px;display:flex;flex-direction:column;gap:18px;overflow:hidden}
+.anthem-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;font-weight:800;color:rgba(233,201,63,.9)}
+.anthem-eyebrow::before{content:"♪";font-size:.95rem}
+.anthem-title{font-family:var(--serif);font-size:clamp(1.9rem,3vw,2.75rem);font-weight:600;color:#fff;line-height:1.04;letter-spacing:.3px}
+.anthem-title em{color:#fbe9a4;font-style:italic}
+.anthem-desc{font-size:.94rem;color:rgba(255,255,255,.82);line-height:1.7;font-weight:300}
+.anthem-lyrics{background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:18px 20px;overflow-y:auto;max-height:280px;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.2) transparent}
+.anthem-lyrics::-webkit-scrollbar{width:4px}
+.anthem-lyrics::-webkit-scrollbar-thumb{background:rgba(255,255,255,.25);border-radius:2px}
+.anthem-lyrics p{font-family:var(--serif);font-size:.97rem;font-style:italic;color:rgba(255,255,255,.9);line-height:1.75;margin-bottom:11px}
+.anthem-lyrics p:last-child{margin-bottom:0}
+.anthem-lyrics .chorus{color:#fbe9a4;font-weight:500}
+.anthem-right{position:relative;background:#000;border-radius:0 22px 22px 0}
+@media(max-width:860px){.anthem-right{border-radius:0 0 22px 22px;min-height:280px}}
+.anthem-video-wrap{position:absolute;inset:0;border-radius:0 22px 22px 0;overflow:hidden}
+@media(max-width:860px){.anthem-video-wrap{position:relative;inset:unset;border-radius:0 0 22px 22px;height:280px}}
+.anthem-video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:none;display:block}
+.anthem-video-label{position:absolute;top:0;left:0;right:0;background:linear-gradient(to bottom,rgba(0,0,0,.72),transparent);padding:16px 18px 32px;pointer-events:none;z-index:2}
+.anthem-video-label span{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:rgba(255,255,255,.75)}
+.anthem-video-label b{display:block;font-family:var(--serif);font-size:1.08rem;color:#fff;font-weight:600;margin-top:2px}
+.pledge{background:linear-gradient(150deg,var(--teal),var(--teal-deep));color:#fff;border-radius:var(--r);padding:46px;text-align:center;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+.pledge::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 10%,rgba(233,201,63,.18),transparent 50%)}
+.pledge h3{font-family:var(--serif);font-size:1rem;letter-spacing:.2em;text-transform:uppercase;opacity:.85;position:relative}
+.pledge p{font-family:var(--serif);font-size:clamp(1.3rem,2.6vw,1.9rem);line-height:1.5;font-style:italic;margin-top:16px;position:relative}
+.pledge small{display:block;margin-top:18px;font-family:var(--sans);font-size:.82rem;opacity:.8;position:relative}
+
+footer{padding:50px 0 70px;text-align:center;color:var(--ink-soft);font-size:.85rem}
+footer a{color:var(--teal-deep)}
+.up{position:fixed;right:22px;bottom:22px;width:46px;height:46px;border-radius:50%;background:var(--teal);color:#fff;border:none;cursor:pointer;font-size:1.2rem;box-shadow:var(--shadow-lg);opacity:0;transform:translateY(20px);transition:.3s;z-index:60}
+.up.show{opacity:1;transform:none}
+
+/* ---------- MAP TOOLTIP (floating, with flag) ---------- */
+.map-shell{position:relative}
+#ausmap .state{fill:#cfe0d9;stroke:#fff;stroke-width:2;cursor:pointer;transition:fill .2s}
+#ausmap .state:hover{fill:var(--teal)}
+#ausmap .state.sel{fill:var(--teal-deep)}
+#ausmap .reglbl{font-family:var(--sans);font-weight:800;font-size:21px;fill:#2f3a33;pointer-events:none;paint-order:stroke;stroke:#fff;stroke-width:4px;stroke-linejoin:round}
+#ausmap .caplbl{font-family:var(--sans);font-weight:700;font-size:15px;fill:#8a3030;pointer-events:none;paint-order:stroke;stroke:#fff;stroke-width:3.5px;stroke-linejoin:round}
+#ausmap .capdot{fill:var(--abor-red);stroke:#fff;stroke-width:2;pointer-events:none}
+#ausmap .callout-line{stroke:#7a8a82;stroke-width:1.6;stroke-dasharray:3 3}
+#ausmap .callout{cursor:pointer}
+#ausmap .callout rect{fill:#fff;stroke:#5a948b;stroke-width:2;transition:.2s}
+#ausmap .callout:hover rect,#ausmap .callout.sel rect{fill:var(--teal);stroke:var(--teal-deep)}
+#ausmap .callout text{font-family:var(--sans);font-weight:800;font-size:18px;fill:var(--teal-deep);pointer-events:none;transition:.2s}
+#ausmap .callout:hover text,#ausmap .callout.sel text{fill:#fff}
+.maptip{
+  position:absolute;z-index:30;width:300px;max-width:84vw;pointer-events:none;
+  background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow-lg);
+  padding:14px;opacity:0;transform:translateY(6px) scale(.97);transition:.16s;
+}
+.maptip.show{opacity:1;transform:none}
+.maptip .ttop{display:flex;align-items:center;gap:12px}
+.maptip .tflag{width:116px;flex:none;border-radius:6px;overflow:hidden;box-shadow:0 4px 12px -4px rgba(0,0,0,.4);border:1px solid var(--line);background:#f3efe6;line-height:0}
+.maptip .tflag img,.maptip .tflag svg{display:block;width:116px;height:58px;object-fit:fill}
+.flag-canvas{position:relative;line-height:0}
+.flag-canvas svg{width:100%;height:auto;border-radius:10px;box-shadow:var(--shadow-lg);display:block;background:#fff}
+.flag-canvas img{display:block;width:100%;height:auto;border-radius:10px;box-shadow:var(--shadow-lg);background:#fff;max-height:240px}
+.sf{background:var(--cream-card);border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center;box-shadow:var(--shadow);transition:.25s;line-height:0}
+.sf:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.sf img,.sf svg{display:block;width:100%;height:auto;border-radius:5px;border:1px solid var(--line);aspect-ratio:2/1;object-fit:fill;background:#fff}
+.sf b{display:block;font-size:.88rem;margin-top:9px;color:var(--ink);line-height:1.3}
+.sf span{font-size:.78rem;color:var(--ink-soft);line-height:1.3}
+/* pinned flag in side panel */
+.pin-flag{display:block;width:168px;border-radius:8px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:#fff;line-height:0;margin:12px 0}
+.pin-flag img,.pin-flag svg{display:block;width:100%;height:auto}
+.maptip h4{font-family:var(--serif);font-size:1.25rem;color:var(--teal-deep);font-weight:600;line-height:1}
+.maptip .tcap{font-size:.82rem;color:var(--ink-soft)}
+.maptip .tcap b{color:var(--abor-red)}
+.maptip .tsig{font-size:.82rem;color:var(--ink-soft);margin-top:10px;border-top:1px dashed var(--line);padding-top:9px}
+.maptip .tsig em{color:var(--teal-deep);font-style:normal;font-weight:600}
+.maptip .ticons{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px}
+.maptip .ticons span{font-size:.72rem;background:var(--sage);color:var(--teal-deep);padding:3px 8px;border-radius:6px;font-weight:600}
+
+/* ---------- GOV DIAGRAM v3 – enhanced with state/territory roles ---------- */
+.gov3{background:var(--cream-card);border:1px solid var(--line);border-radius:var(--r);padding:30px 22px;box-shadow:var(--shadow);overflow-x:auto}
+.gtier{margin-bottom:6px}
+.gtier-lbl{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--gold-deep);text-align:center;margin:0 0 10px}
+.grow2{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:4px}
+.gconn2{text-align:center;color:var(--teal);font-size:1.2rem;line-height:1.2;margin:2px 0;user-select:none}
+.gn{background:#fff;border:1.5px solid var(--line);border-radius:11px;padding:11px 15px;min-width:148px;max-width:220px;text-align:center;cursor:pointer;transition:.2s;position:relative}
+.gn:hover{border-color:var(--teal);transform:translateY(-3px);box-shadow:var(--shadow)}
+.gn.active{border-color:var(--gold-deep);box-shadow:0 0 0 3px rgba(233,201,63,.28)}
+.gn b{font-family:var(--serif);font-size:1.05rem;font-weight:600;display:block;line-height:1.15}
+.gn small{font-size:.76rem;color:var(--ink-soft);display:block;margin-top:2px}
+.gn.crown{background:var(--slate);color:#fff;border-color:var(--slate)}
+.gn.crown small{color:rgba(255,255,255,.82)}
+.gn.leg{background:#edf6f2;border-color:#7bbaa6}
+.gn.exe{background:#fdf8e8;border-color:#c9a838}
+.gn.jud{background:#f1eef7;border-color:#8a7fb0}
+.gn.st2{background:#f5f9ff;border-color:#6a96cc}
+.gn.loc2{background:#fef9f0;border-color:#c9a838}
+/* Three-column separation-of-powers columns */
+.sep3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:6px 0}
+@media(max-width:800px){.sep3{grid-template-columns:1fr}}
+.pcol2{border-radius:14px;padding:14px 12px;border:1.5px solid}
+.pcol2.leg{background:#edf6f2;border-color:#7bbaa6}
+.pcol2.exe{background:#fdf8e8;border-color:#c9a838}
+.pcol2.jud{background:#f1eef7;border-color:#8a7fb0}
+.pcol2 .pwhead{font-family:var(--serif);font-size:1.12rem;font-weight:700;margin-bottom:2px;text-align:center}
+.pcol2 .pwsub{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;opacity:.6;text-align:center;margin-bottom:10px}
+.pcol2 .gn{margin-bottom:8px;width:100%;box-sizing:border-box;max-width:none}
+/* Two-column state vs local */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+@media(max-width:700px){.two-col{grid-template-columns:1fr}}
+.lvlbox{border-radius:13px;padding:16px;border:1.5px solid}
+.lvlbox.fed2{border-top:4px solid var(--teal);background:#edf6f2}
+.lvlbox.st2b{border-top:4px solid #6a96cc;background:#f5f9ff}
+.lvlbox.loc2b{border-top:4px solid #c9a838;background:#fef9f0}
+.lvlbox.note{border:1.5px dashed var(--teal);background:#f0f8f4}
+.lvlbox h6{font-family:var(--serif);font-size:1.08rem;color:var(--teal-deep);margin-bottom:3px;font-weight:700}
+.lvlbox .sub2{font-size:.78rem;color:var(--ink-soft);margin-bottom:9px}
+.lvlbox ul{list-style:none;font-size:.88rem;color:var(--ink-soft)}
+.lvlbox li{padding:3px 0 3px 15px;position:relative}
+.lvlbox li::before{content:"";position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.gdetail2{margin-top:16px;background:#fff;border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:12px;padding:15px 20px;min-height:60px;transition:border-color .3s}
+.gdetail2 h4{font-family:var(--serif);font-size:1.2rem;color:var(--teal-deep);font-weight:600;margin-bottom:3px}
+.gdetail2 p{font-size:.94rem;color:var(--ink-soft)}
+
+/* dated timeline tweaks */
+.tl-date{font-size:.8rem;font-weight:700;letter-spacing:.04em;color:var(--gold-deep);text-transform:uppercase}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="brand">
+      <svg class="crest" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" fill="#5a948b"/>
+        <path d="M20 7l1.6 4.2 4.4.2-3.4 2.8 1.2 4.3L20 16.2l-3.8 2.5 1.2-4.3-3.4-2.8 4.4-.2z" fill="#e9c93f"/>
+        <path d="M11 30c2-4 5-5 9-5s7 1 9 5" fill="none" stroke="#fff" stroke-width="1.6"/>
+      </svg>
+      <div><b>Our Common Bond</b><span>Citizenship Study Guide</span></div>
+    </div>
+    <div class="nav-links" id="navlinks">
+      <a href="#parts">The Four Parts</a>
+      <a href="#map">Map &amp; Capitals</a>
+      <a href="#flags">Flags</a>
+      <a href="#symbols">Symbols</a>
+      <a href="#government">Government</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#values">Values</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <svg class="hero-bg" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1.1">
+      <path d="M60 120c40-30 70-10 90 20M120 90c10 25 0 50-15 70"/>
+      <path d="M1050 380c40-30 70-10 90 20M1110 350c10 25 0 50-15 70"/>
+    </g>
+    <g fill="rgba(255,255,255,.4)">
+      <circle cx="70" cy="110" r="4"/><circle cx="95" cy="95" r="3"/><circle cx="120" cy="120" r="4"/>
+      <circle cx="1060" cy="370" r="4"/><circle cx="1090" cy="355" r="3"/><circle cx="1120" cy="380" r="4"/>
+    </g>
+  </svg>
+  <div class="hero-inner">
+    <span class="eyebrow">★ Australian Citizenship · Testable Section</span>
+    <h1>Our <em>Common</em> Bond</h1>
+    <div class="sub">An interactive guide to every concept you need to know</div>
+    <p class="lede">Explore Australia's people, democratic beliefs, government and values — built directly from the official resource book, with an interactive map, living flags, a government flowchart and a tappable history timeline.</p>
+    <div class="hero-stats">
+      <div><b>4</b><span>Testable Parts</span></div>
+      <div><b>6+2</b><span>States &amp; Territories</span></div>
+      <div><b>65,000</b><span>Years of Culture</span></div>
+      <div><b>1901</b><span>Federation</span></div>
+    </div>
+  </div>
+  <div class="wattle-band"></div>
+</header>
+<!-- SECTIONS -->
+
+<section id="parts">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">Start Here</div>
+      <h2>The Four Testable Parts</h2>
+      <p>Everything in the citizenship test comes from these four parts of the resource book. Tap a card to jump to its concepts.</p>
+    </div>
+    <div class="parts-grid">
+      <a class="part-card" href="#part1" style="text-decoration:none">
+        <div class="n">Part One</div><h3>Australia &amp; its People</h3>
+        <p>Indigenous heritage, European settlement, federation, states, symbols and important days.</p>
+        <span class="go">Explore →</span>
+      </a>
+      <a class="part-card" href="#part2" style="text-decoration:none">
+        <div class="n">Part Two</div><h3>Democratic Beliefs, Rights &amp; Liberties</h3>
+        <p>Parliamentary democracy, the Rule of Law, our freedoms, equalities, responsibilities &amp; privileges.</p>
+        <span class="go">Explore →</span>
+      </a>
+      <a class="part-card" href="#part3" style="text-decoration:none">
+        <div class="n">Part Three</div><h3>Government &amp; the Law</h3>
+        <p>How we vote, the Constitution, the three powers, Parliament, courts, police and laws.</p>
+        <span class="go">Explore →</span>
+      </a>
+      <a class="part-card" href="#part4" style="text-decoration:none">
+        <div class="n">Part Four</div><h3>Australian Values</h3>
+        <p>Freedom, respect, fairness and equality of opportunity — the values you pledge to uphold.</p>
+        <span class="go">Explore →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PART 1 -->
+<section id="part1">
+  <div class="wrap">
+    <div class="concept-block">
+      <h3><span class="badge">Part 1</span> Australia and its People</h3>
+      <p class="blurb">Understanding Australia's community, population, Indigenous heritage, and how the nation developed into a stable, successful multicultural society.</p>
+
+      <details class="acc" open><summary><span class="dot"></span>Aboriginal &amp; Torres Strait Islander peoples<span class="chev">›</span></summary>
+        <div class="body">
+          <p>Australia's first inhabitants are the <strong>Aboriginal and Torres Strait Islander peoples</strong>, who have the <span class="key">oldest continuous cultures and traditions in the world</span>.</p>
+          <p>The archaeological record indicates Aboriginal peoples arrived between <span class="key">65,000 and 40,000 years ago</span>. Aboriginal people are historically from mainland Australia and Tasmania; <strong>Torres Strait Islander people</strong> are from islands between the northern tip of Queensland and Papua New Guinea.</p>
+          <p>They have a deep connection with the land, expressed in their stories, art and dance. They make up approximately <span class="key">three per cent</span> of the Australian population, and there are more than <strong>100 distinct Indigenous languages</strong>.</p>
+        </div>
+      </details>
+
+      <details class="acc"><summary><span class="dot"></span>European settlement &amp; the gold rush<span class="chev">›</span></summary>
+        <div class="body">
+          <p>European settlement began when the first 11 convict ships — the <span class="key">First Fleet</span> — arrived from Great Britain on <strong>26 January 1788</strong>. The first Governor of the colony of New South Wales was <strong>Captain Arthur Phillip</strong>.</p>
+          <p>British laws were harsh and jails were overcrowded, so convicts were transported to the new colony of New South Wales. Early free settlers came from Great Britain and Ireland — a heritage that strongly shaped Australia's culture and politics.</p>
+          <p>In <span class="key">1851 a gold rush began</span> in NSW and Victoria. <strong>Chinese people</strong> arriving then were the first large group of migrants not from Europe. In 10 years Australia's population more than doubled.</p>
+        </div>
+      </details>
+
+      <details class="acc"><summary><span class="dot"></span>The nation of Australia &amp; migration<span class="chev">›</span></summary>
+        <div class="body">
+          <p>In <span class="key">1901</span> the separate colonies united into a federation called the <strong>Commonwealth of Australia</strong>, establishing the national parliament, government and High Court under the new Constitution. The population was then about four million — a figure that did <strong>not</strong> include Aboriginal and Torres Strait Islander peoples until after the <span class="key">1967 Referendum</span>.</p>
+          <p>A wave of non-British migration came after <strong>World War II</strong>. Today migration and refugee programs bring people from all over the world. Australia's <strong>national language is English</strong>, an important part of national identity.</p>
+        </div>
+      </details>
+
+      <details class="acc"><summary><span class="dot"></span>Traditions: Welcome &amp; Acknowledgement of Country<span class="chev">›</span></summary>
+        <div class="body">
+          <p>A <span class="key">Welcome to Country</span> is performed by an Aboriginal or Torres Strait Islander <strong>custodian of the local region</strong>, welcoming visitors to their traditional land. It can take the form of songs, dances, smoking ceremonies or speeches, and is usually the <strong>first item</strong> to open an event.</p>
+          <p>An <span class="key">Acknowledgement of Country</span> recognises the gathering is on Aboriginal or Torres Strait Islander land and pays respect to Traditional Custodians and Elders. <strong>Anyone</strong> can deliver it — usually the Chair or Master of Ceremonies.</p>
+        </div>
+      </details>
+
+      <details class="acc"><summary><span class="dot"></span>Important days: Australia Day &amp; Anzac Day<span class="chev">›</span></summary>
+        <div class="body">
+          <p><strong>Australia Day — 26 January.</strong> A public holiday in every state and territory, marking the anniversary of the arrival of the First Fleet in 1788. The biggest annual public holiday; the Prime Minister announces the <span class="key">Australian of the Year</span> awards in Canberra.</p>
+          <p><strong>Anzac Day — 25 April.</strong> Named after the <span class="key">Australian and New Zealand Army Corps</span>, which landed at Gallipoli in Türkiye during WWI on 25 April 1915. A solemn day remembering all Australians who served and died in wars, conflicts and peacekeeping.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- MAP, FLAGS, SYMBOLS get injected here -->
+
+<section id="map">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">Australia &amp; its People</div>
+      <h2>States, Territories &amp; Capitals</h2>
+      <p>The Commonwealth is a federation of <strong>six states</strong> and <strong>two mainland territories</strong>. Canberra is the national capital. Hover or tap a region to learn its capital and icons.</p>
+    </div>
+    <div class="map-layout">
+      <div class="map-shell">
+        <svg id="ausmap" viewBox="0 0 820 720" role="img" aria-label="Interactive map of Australia"></svg>
+        <div class="maptip" id="maptip"></div>
+        <div class="legend">
+          <span><i style="background:#cfe0d9"></i>Hover or tap a region</span>
+          <span><i style="background:var(--abor-red)"></i>Capital city</span>
+        </div>
+      </div>
+      <div class="map-info" id="mapinfo">
+        <span class="pill">Interactive</span>
+        <h3>Explore Australia</h3>
+        <div class="cap-line">Hover any state or territory for its flag, capital and icons — tap to pin the detail here.</div>
+        <p>Canberra, in the Australian Capital Territory between Sydney and Melbourne, is the nation's capital — home to Parliament House and the High Court.</p>
+        <p class="map-hint">Tip: the Commonwealth Star on the national flag has seven points — one for each of the six states, and one for the territories.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="flags">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">Symbols of the Nation</div>
+      <h2>Australia's Flags</h2>
+      <p>The national flag plus two officially recognised flags — and every state &amp; territory flag. Hover the highlighted parts of the national flags to learn what each element means.</p>
+    </div>
+    <div class="flag-tabs" id="flagtabs">
+      <button class="active" data-f="national">Australian National Flag</button>
+      <button data-f="aboriginal">Aboriginal Flag</button>
+      <button data-f="tsi">Torres Strait Islander Flag</button>
+      <button data-f="states">State &amp; Territory Flags</button>
+    </div>
+    <div id="flagstage"></div>
+  </div>
+</section>
+
+<section id="symbols">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">Australia &amp; its People</div>
+      <h2>National Symbols</h2>
+      <p>The symbols that identify Australia and represent our national unity.</p>
+    </div>
+    <div class="sym-grid" id="symgrid">
+      <div class="sym">
+        <img class="ico" src="https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_the_Commonwealth_of_Australia.svg" alt="Commonwealth Coat of Arms" loading="lazy">
+        <b>Commonwealth Coat of Arms</b>
+        <span>The official symbol of Australia — its shield represents the six states, supported by a kangaroo &amp; emu, beneath the seven-pointed Commonwealth Star, backed by golden wattle.</span>
+      </div>
+      <div class="sym">
+        <img class="ico" src="https://news.cgtn.com/news/78637a4e324d444e7a456a4e3241544f796b6a4e31457a6333566d54/img/84b72d4e19d9446ebd6f3268d4e57f44/84b72d4e19d9446ebd6f3268d4e57f44.png" alt="Golden Wattle" loading="lazy">
+        <b>Golden Wattle</b>
+        <span>Australia's national flower (Acacia pycnantha). Bright green leaves and fluffy golden-yellow flower balls in spring. Grows mainly in south-eastern Australia.</span>
+      </div>
+      <div class="sym">
+        <img class="ico" src="https://yt3.googleusercontent.com/PFCBRi64tqz173lvaWUx-Cn-9KzjgWvxirpeRrWjmlMEXG2sBgQhwO4RVGO61qJOZutY6PI1bNc=s900-c-k-c0x00ffffff-no-rj" alt="National Colours Green and Gold" loading="lazy" style="border-radius:50%">
+        <b>National Colours — Green &amp; Gold</b>
+        <span>The colours of the golden wattle. Australia's national sports teams wear green and gold uniforms.</span>
+      </div>
+      <div class="sym">
+        <img class="ico" src="https://d3n8a8pro7vhmx.cloudfront.net/monarchist/pages/770/attachments/original/1600843842/OPAL.jpg?1600843842" alt="Australian Opal" loading="lazy">
+        <b>The Opal</b>
+        <span>Australia's national gemstone. Aboriginal legend says a rainbow touched the earth and created its colours. Australia produces most of the world's precious opal.</span>
+      </div>
+      <div class="sym">
+        <div class="ico" style="background:linear-gradient(135deg,var(--teal-deep),#2c5248);display:flex;align-items:center;justify-content:center;border-radius:14px;position:relative;overflow:hidden">
+          <svg viewBox="0 0 110 80" width="110" height="80"><rect width="110" height="80" fill="none"/><g fill="rgba(255,255,255,.15)"><rect x="6" y="24" width="60" height="2" rx="1"/><rect x="6" y="34" width="50" height="2" rx="1"/><rect x="6" y="44" width="55" height="2" rx="1"/><rect x="6" y="54" width="45" height="2" rx="1"/></g><circle cx="82" cy="40" r="18" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.3)" stroke-width="1.5"/><polygon points="77,33 91,40 77,47" fill="#fbe9a4"/></svg>
+        </div>
+        <b>National Anthem</b>
+        <span>'Advance Australia Fair' — sung at citizenship ceremonies and major sporting events. ↓ Watch &amp; listen below.</span>
+      </div>
+    </div>
+
+    <!-- NATIONAL ANTHEM — full section with YouTube embed and lyrics -->
+    <div class="anthem-section">
+      <div class="anthem-inner">
+        <div class="anthem-left">
+          <div>
+            <div class="anthem-eyebrow">Australia's National Anthem</div>
+            <h3 class="anthem-title"><em>Advance<br>Australia Fair</em></h3>
+            <p class="anthem-desc">'Advance Australia Fair' is Australia's national anthem. It is sung on occasions of national importance — at citizenship ceremonies, major sporting events, and national celebrations.</p>
+          </div>
+          <div class="anthem-lyrics">
+            <p>Australians all let us rejoice,<br>
+            For we are one and free;<br>
+            We've golden soil and wealth for toil;<br>
+            Our home is girt by sea;<br>
+            Our land abounds in nature's gifts<br>
+            Of beauty rich and rare;<br>
+            In history's page, let every stage<br>
+            Advance Australia Fair.</p>
+            <p class="chorus">In joyful strains then let us sing,<br>
+            <strong>Advance Australia Fair.</strong></p>
+            <p>Beneath our radiant Southern Cross<br>
+            We'll toil with hearts and hands;<br>
+            To make this Commonwealth of ours<br>
+            Renowned of all the lands;<br>
+            For those who've come across the seas<br>
+            We've boundless plains to share;<br>
+            With courage let us all combine<br>
+            To Advance Australia Fair.</p>
+            <p class="chorus">In joyful strains then let us sing,<br>
+            <strong>Advance Australia Fair.</strong></p>
+          </div>
+        </div>
+        <div class="anthem-right">
+          <div class="anthem-video-wrap">
+            <div class="anthem-video-label">
+              <span>Watch &amp; Listen</span>
+              <b>Official Performance · YouTube</b>
+            </div>
+            <iframe
+              src="https://www.youtube.com/embed/W9K4ve5pMqI?rel=0&modestbranding=1&color=white"
+              title="Advance Australia Fair — Australian National Anthem"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PART 2 -->
+<section id="part2">
+  <div class="wrap">
+    <div class="concept-block">
+      <h3><span class="badge">Part 2</span> Democratic Beliefs, Rights &amp; Liberties</h3>
+      <p class="blurb">At the ceremony you pledge to share Australia's democratic beliefs and respect its rights and liberties. Here they all are.</p>
+
+      <details class="acc" open><summary><span class="dot"></span>Our four democratic beliefs<span class="chev">›</span></summary>
+        <div class="body">
+          <ul>
+            <li><strong>Parliamentary democracy</strong> — government power comes from the people, because citizens vote for representatives who must answer to them through elections.</li>
+            <li><strong>The Rule of Law</strong> — all Australians are equal under the law; <span class="key">no person, group or religious rule is above the law</span>, including government, community and religious leaders, business people and police.</li>
+            <li><strong>Living peacefully</strong> — change should occur through discussion, peaceful persuasion and the democratic process. We reject violence.</li>
+            <li><strong>Respect for all individuals</strong> regardless of race, origin, gender, sexual orientation, marital status, age, disability, heritage, culture, politics, wealth or religion.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="acc"><summary><span class="dot"></span>Our freedoms<span class="chev">›</span></summary>
+        <div class="body">
+          <ul>
+            <li><strong>Freedom of speech &amp; expression</strong> — say, write and discuss your ideas; criticise government and protest peacefully — while obeying the law.</li>
+            <li><strong>Freedom of association</strong> — form and join (or not join) any legal group: political party, trade union, religious, cultural or social. Nobody can be forced.</li>
+            <li><strong>Freedom of religion</strong> — Australia has <span class="key">no official national religion</span>; the government is <strong>secular</strong>. Where law and religious practice conflict, <strong>Australian law prevails</strong>.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="acc"><summary><span class="dot"></span>Our equalities — and a 'fair go'<span class="chev">›</span></summary>
+        <div class="body">
+          <p><strong>Gender equality:</strong> men and women have equal rights; it is against the law to discriminate based on gender.</p>
+          <p><strong>Equality of opportunity ('a fair go'):</strong> what you achieve should come from your <span class="key">talents, work and effort</span> — not wealth or background. There are no formal class distinctions in Australian society.</p>
+        </div>
+      </details>
+
+      <details class="acc"><summary><span class="dot"></span>Responsibilities &amp; privileges of citizenship<span class="chev">›</span></summary>
+        <div class="body">
+          <p><strong>Responsibilities — what you give Australia:</strong></p>
+          <ul>
+            <li>Obey the laws of Australia</li>
+            <li>Vote in federal, state/territory elections and referenda</li>
+            <li>Defend Australia should the need arise</li>
+            <li>Serve on a jury if called</li>
+          </ul>
+          <p><strong>Privileges — what Australia gives you:</strong></p>
+          <ul>
+            <li>Vote in elections and referenda</li>
+            <li>Apply for children born overseas to be citizens by descent</li>
+            <li>Apply for jobs in the Australian Public Service / Defence Force</li>
+            <li>Seek election to parliament &nbsp;·&nbsp; Apply for an Australian passport &amp; re-enter freely</li>
+            <li>Ask for consular assistance overseas</li>
+          </ul>
+          <p class="tip">Voting is <strong>compulsory</strong> in federal and state/territory elections for citizens aged 18+.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- GOVERNMENT FLOWCHART injected here -->
+
+<section id="government">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">Government &amp; the Law</div>
+      <h2>How Australia is Governed</h2>
+      <p>A parliamentary democracy and constitutional monarchy. Tap any role to see what it does — then follow how a Bill becomes law.</p>
+    </div>
+    <div class="gov3">
+
+      <!-- TIER 1: HEAD OF STATE -->
+      <div class="gtier">
+        <p class="gtier-lbl">Head of State</p>
+        <div class="grow2">
+          <div class="gn crown" data-role="king"><b>The King of Australia</b><small>His Majesty King Charles III</small></div>
+        </div>
+      </div>
+      <div class="gconn2">↓ appoints on PM's advice &nbsp;|&nbsp; appoints on GG's advice ↓</div>
+
+      <!-- TIER 2: THE CROWN'S REPRESENTATIVES -->
+      <div class="gtier">
+        <p class="gtier-lbl">The Crown's Representatives</p>
+        <div class="grow2">
+          <div class="gn crown" data-role="gg"><b>Governor-General</b><small>National representative · neutral &amp; non-party</small></div>
+          <div class="gn crown" data-role="governor"><b>State Governors</b><small>One per state · represents King in each state</small></div>
+          <div class="gn crown" data-role="ntadmin"><b>NT Administrator</b><small>Appointed by GG · similar role to a Governor</small></div>
+        </div>
+      </div>
+      <div class="gconn2">↓ &nbsp; Constitution divides power three ways &nbsp; ↓</div>
+
+      <!-- TIER 3: SEPARATION OF POWERS — FEDERAL -->
+      <div class="gtier">
+        <p class="gtier-lbl">Separation of Powers — Federal Government</p>
+        <div class="sep3">
+          <!-- LEGISLATIVE -->
+          <div class="pcol2 leg">
+            <div class="pwhead">⚖ Legislative</div>
+            <div class="pwsub">Makes &amp; changes the laws</div>
+            <div class="gn leg" data-role="parliament"><b>Parliament of Australia</b><small>The King + two Houses</small></div>
+            <div class="gn leg" data-role="hor"><b>House of Representatives</b><small>150+ MPs · Lower / People's House</small></div>
+            <div class="gn leg" data-role="senate"><b>The Senate</b><small>76 Senators · Upper / States' House</small></div>
+            <div class="gn leg" data-role="mp"><b>Member of Parliament (MP)</b><small>Elected rep for an electorate</small></div>
+            <div class="gn leg" data-role="senator"><b>Senator</b><small>Elected rep for a state or territory</small></div>
+            <div class="gn leg" data-role="opposition"><b>The Opposition</b><small>Leader of the Opposition · holds govt to account</small></div>
+            <div class="gn leg" data-role="parties"><b>Political Parties &amp; Independents</b><small>Liberal · Labor · Nationals · Greens · others</small></div>
+          </div>
+          <!-- EXECUTIVE -->
+          <div class="pcol2 exe">
+            <div class="pwhead">🏛 Executive</div>
+            <div class="pwsub">Puts laws into practice</div>
+            <div class="gn exe" data-role="pm"><b>Prime Minister</b><small>Leader of the Australian Government</small></div>
+            <div class="gn exe" data-role="cabinet"><b>Cabinet</b><small>Most senior ministers · key decision-making body</small></div>
+            <div class="gn exe" data-role="ministers"><b>Government Ministers</b><small>Each responsible for a portfolio</small></div>
+            <div class="gn exe" data-role="ps"><b>Australian Public Service</b><small>Govt departments &amp; agencies</small></div>
+            <div class="gn exe" data-role="ato"><b>Services Australia / ATO</b><small>Deliver welfare, tax &amp; services</small></div>
+            <div class="gn exe" data-role="adf"><b>Australian Defence Force</b><small>Army · Navy · Air Force · citizens can enlist</small></div>
+            <div class="gn exe" data-role="aec"><b>Australian Electoral Commission</b><small>Independent · runs federal elections</small></div>
+          </div>
+          <!-- JUDICIAL -->
+          <div class="pcol2 jud">
+            <div class="pwhead">🔨 Judicial</div>
+            <div class="pwsub">Interprets &amp; applies the laws</div>
+            <div class="gn jud" data-role="highcourt"><b>High Court of Australia</b><small>Ultimate power to apply &amp; interpret laws</small></div>
+            <div class="gn jud" data-role="fedcourts"><b>Federal Courts</b><small>Independent of parliament &amp; government</small></div>
+            <div class="gn jud" data-role="judges"><b>Judges &amp; Magistrates</b><small>Highest authority in court · independent</small></div>
+            <div class="gn jud" data-role="juries"><b>Juries</b><small>Ordinary citizens · decide innocent or guilty</small></div>
+            <div class="gn jud" data-role="afp"><b>Australian Federal Police (AFP)</b><small>Federal crimes, national security, ACT policing</small></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DETAIL PANEL -->
+      <div class="gdetail2" id="gdetail">
+        <h4>Tap any box to learn more</h4>
+        <p>Each role plays a distinct part in Australia's parliamentary democracy. Click any card to read its responsibilities.</p>
+      </div>
+
+      <div class="gconn2" style="margin-top:22px">↓ &nbsp; Parallel structure: State &amp; Territory governments &nbsp; ↓</div>
+
+      <!-- TIER 4: STATE / TERRITORY STRUCTURE (mirroring federal) -->
+      <div class="gtier" style="margin-top:10px">
+        <p class="gtier-lbl">State &amp; Territory Governments (mirror the federal structure)</p>
+        <div class="sep3">
+          <!-- STATE LEGISLATIVE -->
+          <div class="pcol2 st2">
+            <div class="pwhead" style="color:#2a5080">📋 State/Territory Legislative</div>
+            <div class="pwsub">Makes state/territory laws</div>
+            <div class="gn st2" data-role="stparliament"><b>State / Territory Parliament</b><small>Each state has its own constitution</small></div>
+            <div class="gn st2" data-role="stmp"><b>State/Territory Members of Parliament</b><small>Elected reps for their area</small></div>
+          </div>
+          <!-- STATE EXECUTIVE -->
+          <div class="pcol2 exe">
+            <div class="pwhead">🏛 State/Territory Executive</div>
+            <div class="pwsub">Puts state laws into practice</div>
+            <div class="gn exe" data-role="premier"><b>Premier</b><small>Leader of a state government</small></div>
+            <div class="gn exe" data-role="chiefmin"><b>Chief Minister</b><small>Leader of a territory government</small></div>
+            <div class="gn exe" data-role="stmins"><b>State/Territory Ministers</b><small>Responsible for state portfolios</small></div>
+          </div>
+          <!-- STATE JUDICIAL -->
+          <div class="pcol2 jud">
+            <div class="pwhead">🔨 State/Territory Judicial</div>
+            <div class="pwsub">State courts &amp; police</div>
+            <div class="gn jud" data-role="stcourts"><b>State &amp; Territory Courts</b><small>Judges &amp; magistrates apply state law</small></div>
+            <div class="gn jud" data-role="stpolice"><b>State &amp; Territory Police Forces</b><small>Deal with crimes under state/territory laws</small></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIER 5: LOCAL GOVERNMENT -->
+      <div class="gconn2">↓ &nbsp; Below state level &nbsp; ↓</div>
+      <div class="gtier">
+        <p class="gtier-lbl">Local Government</p>
+        <div class="grow2">
+          <div class="gn loc2" data-role="mayor"><b>Mayor / Shire President</b><small>Leader of a local council</small></div>
+          <div class="gn loc2" data-role="councillor"><b>Councillors</b><small>Elected members of the local council</small></div>
+          <div class="gn loc2" data-role="council"><b>Local Council</b><small>Cities, shires, towns &amp; municipalities</small></div>
+        </div>
+      </div>
+
+      <!-- RESPONSIBILITIES COMPARISON -->
+      <p class="gtier-lbl" style="margin-top:26px">Responsibilities at each level</p>
+      <div class="two-col" style="grid-template-columns:1fr 1fr 1fr">
+        <div class="lvlbox fed2">
+          <h6>Federal Government</h6>
+          <div class="sub2">Led by the Prime Minister · Parliament in Canberra</div>
+          <ul>
+            <li>Taxation &amp; economic management</li>
+            <li>Immigration &amp; citizenship</li>
+            <li>Defence &amp; foreign affairs</li>
+            <li>Social security · pensions &amp; family support</li>
+            <li>Postal services &amp; communications</li>
+            <li>Trade, commerce &amp; airports</li>
+          </ul>
+        </div>
+        <div class="lvlbox st2b">
+          <h6>State &amp; Territory Governments</h6>
+          <div class="sub2">Led by Premier (state) or Chief Minister (territory)</div>
+          <ul>
+            <li>Hospitals &amp; health services</li>
+            <li>Schools &amp; education</li>
+            <li>Roads, railways &amp; public transport</li>
+            <li>Police &amp; ambulance services</li>
+            <li>Forestry</li>
+          </ul>
+        </div>
+        <div class="lvlbox loc2b">
+          <h6>Local Government (Councils)</h6>
+          <div class="sub2">Led by Mayor / Shire President &amp; Councillors</div>
+          <ul>
+            <li>Local roads, footpaths &amp; bridges</li>
+            <li>Rubbish collection</li>
+            <li>Parks, pools &amp; sports grounds</li>
+            <li>Building permits &amp; local planning</li>
+            <li>Libraries, animal &amp; noise control</li>
+          </ul>
+        </div>
+      </div>
+      <div class="lvlbox note" style="margin-top:14px">
+        <b style="color:var(--teal-deep)">Key relationship:</b> States have rights and powers recognised by the Constitution and pass laws in their own right. Territory laws <em>can be altered or revoked by the Australian Government</em> at any time. Some responsibilities overlap, but each level generally provides different services.
+      </div>
+
+      <!-- HOW A BILL BECOMES LAW -->
+      <p class="gtier-lbl" style="margin-top:30px">How a Bill becomes Law</p>
+      <div class="lawmaking">
+        <div class="law-step"><div class="num">1</div><b>Proposal (Bill)</b><span>An MP proposes a new law or change to an existing one.</span></div>
+        <div class="law-step"><div class="num">2</div><b>Debate &amp; vote</b><span>Both Houses consider, debate and vote on the Bill.</span></div>
+        <div class="law-step"><div class="num">3</div><b>Both Houses agree</b><span>A majority in each House must vote yes.</span></div>
+        <div class="law-step"><div class="num">4</div><b>Royal Assent</b><span>Governor-General signs it into law.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PART 3 -->
+<section id="part3">
+  <div class="wrap">
+    <div class="concept-block">
+      <h3><span class="badge">Part 3</span> Government and the Law</h3>
+      <p class="blurb">How Australia's parliamentary democracy works — voting, the Constitution, the separation of powers, and how laws are made and enforced.</p>
+
+      <details class="acc" open><summary><span class="dot"></span>How I have my say — voting<span class="chev">›</span></summary>
+        <div class="body">
+          <p>Citizens aged 18+ must <strong>enrol</strong> to vote in federal, state/territory elections and referenda. Voting is <span class="key">compulsory</span> and by <strong>secret ballot</strong>.</p>
+          <p>The <strong>Australian Electoral Commission (AEC)</strong> runs federal elections and referendums and is <span class="key">independent of government</span> — parties and politicians cannot influence it. Failing to vote without a good reason can mean a fine. Citizens can also contact their elected representative to raise concerns.</p>
+        </div>
+      </details>
+
+      <details class="acc"><summary><span class="dot"></span>Federation &amp; the Australian Constitution<span class="chev">›</span></summary>
+        <div class="body">
+          <p>Before 1901, Australia was <strong>six separate self-governing British colonies</strong>, each with its own constitution and laws. On <span class="key">1 January 1901</span> they united into the Commonwealth of Australia.</p>
+          <p>The <em>Commonwealth of Australia Constitution Act 1900</em> is the legal document setting the basic rules of government. It established the <strong>Parliament</strong> (House of Representatives + Senate) and the <strong>High Court</strong>. It can only be changed by a <span class="key">referendum requiring a 'double majority'</span> — a majority of voters nationally <em>and</em> a majority of voters in a majority of states.</p>
+        </div>
+      </details>
+
+      <details class="acc"><summary><span class="dot"></span>The three powers (separation of powers)<span class="chev">›</span></summary>
+        <div class="body">
+          <ul>
+            <li><strong>Legislative power</strong> — Parliament makes and changes laws.</li>
+            <li><strong>Executive power</strong> — the Prime Minister, ministers and Governor-General put laws into practice.</li>
+            <li><strong>Judicial power</strong> — judges interpret and apply the law; courts are <span class="key">independent</span> of parliament and government.</li>
+          </ul>
+          <p>Dividing power this way stops one person or group from holding all the power.</p>
+        </div>
+      </details>
+
+      <details class="acc"><summary><span class="dot"></span>Head of State &amp; constitutional monarchy<span class="chev">›</span></summary>
+        <div class="body">
+          <p>Australia's Head of State is the <span class="key">King of Australia, His Majesty King Charles III</span>. The King appoints the <strong>Governor-General</strong> as his representative (on the PM's advice). Australia is a <strong>constitutional monarchy</strong>: the King is Head of State but must act in accordance with the Constitution. The <strong>Prime Minister</strong> is the leader of the Australian Government.</p>
+          <p>The Governor-General gives <span class="key">Royal Assent</span> to Bills, performs ceremonial duties, starts federal elections, is Commander-in-Chief of the Defence Force, and holds special 'reserve powers'.</p>
+        </div>
+      </details>
+
+      <details class="acc"><summary><span class="dot"></span>Parliament: the two Houses<span class="chev">›</span></summary>
+        <div class="body">
+          <p><strong>House of Representatives</strong> (Lower / People's House): over <span class="key">150 members</span>; the number per state/territory depends on population. MPs represent electorates.</p>
+          <p><strong>Senate</strong> (Upper / House of Review / States' House): <span class="key">76 senators</span> — 12 from each state and 2 each from the ACT and NT. All states are equally represented regardless of size.</p>
+        </div>
+      </details>
+
+      <details class="acc"><summary><span class="dot"></span>Three levels of government<span class="chev">›</span></summary>
+        <div class="body">
+          <ul>
+            <li><strong>Federal:</strong> taxation, defence, immigration &amp; citizenship, foreign affairs, social security, postal &amp; communications, trade, airports.</li>
+            <li><strong>State / Territory:</strong> hospitals, schools, roads &amp; railways, police &amp; ambulance, public transport, forestry.</li>
+            <li><strong>Local councils:</strong> local roads &amp; footpaths, rubbish collection, parks, building permits, libraries, animal control.</li>
+          </ul>
+          <p class="tip">States have rights recognised by the Constitution; territory laws can be altered or revoked by the Australian Government.</p>
+        </div>
+      </details>
+
+      <details class="acc"><summary><span class="dot"></span>Political parties &amp; forming government<span class="chev">›</span></summary>
+        <div class="body">
+          <p>Main parties: <strong>Liberal Party of Australia, Australian Labor Party, the Nationals, the Australian Greens</strong>. Members with no party are <em>independents</em>.</p>
+          <p>After an election, government is formed by the party or <span class="key">coalition</span> with the majority in the House of Representatives; its leader becomes <strong>Prime Minister</strong>. The second-largest forms the <strong>Opposition</strong>. The most senior ministers form the <span class="key">Cabinet</span> — the key decision-making body.</p>
+        </div>
+      </details>
+
+      <details class="acc"><summary><span class="dot"></span>Enforcing the law: courts, juries &amp; police<span class="chev">›</span></summary>
+        <div class="body">
+          <p><strong>Courts</strong> are independent and decide on the evidence before them. <strong>Judges &amp; magistrates</strong> are the highest authority in court; government cannot remove them for their decisions.</p>
+          <p><strong>Juries</strong> are ordinary citizens randomly chosen; people are <span class="key">innocent until proven guilty</span> and everyone has the right to a lawyer. The <strong>police</strong> protect life and property, are independent of government, and the national force is the <strong>Australian Federal Police (AFP)</strong>. It is a <span class="key">serious crime to bribe police</span>.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE injected here -->
+
+<section id="timeline">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">Our Shared Story</div>
+      <h2>Timeline of Australian History</h2>
+      <p>The key events from the resource book. <strong>Gold</strong> nodes are major milestones — tap the <span style="display:inline-flex;width:18px;height:18px;border-radius:50%;background:var(--teal);color:#fff;font-size:.72rem;align-items:center;justify-content:center;font-weight:700">i</span> on any card for extra context.</p>
+    </div>
+    <div class="tl" id="timeline-list">
+      <div class="tl-item major"><div class="tl-node"></div>
+        <div class="tl-date">c. 65,000 – 40,000 years ago</div>
+        <div class="tl-year">First Peoples</div>
+        <div class="tl-card"><h4>The oldest continuous cultures <span class="info">i</span></h4>
+          <p>Aboriginal and Torres Strait Islander peoples inhabit Australia — the oldest continuous cultures on Earth.</p>
+          <div class="tl-tip"><strong>Why it matters:</strong> The archaeological record dates arrival to between 65,000 and 40,000 years ago. Aboriginal peoples are from mainland Australia and Tasmania; Torres Strait Islander peoples from islands between Queensland and Papua New Guinea.</div>
+        </div>
+      </div>
+      <div class="tl-item major"><div class="tl-node"></div>
+        <div class="tl-date">26 January 1788</div>
+        <div class="tl-year">1788</div>
+        <div class="tl-card"><h4>Arrival of the First Fleet <span class="info">i</span></h4>
+          <p>The first 11 convict ships arrive from Great Britain, beginning European settlement at Sydney Cove.</p>
+          <div class="tl-tip"><strong>Key facts:</strong> Captain Arthur Phillip was the first Governor of the colony of New South Wales. This date — 26 January — is now commemorated each year as <em>Australia Day</em>.</div>
+        </div>
+      </div>
+      <div class="tl-item"><div class="tl-node"></div>
+        <div class="tl-date">1851</div>
+        <div class="tl-year">1851</div>
+        <div class="tl-card"><h4>The Gold Rush begins <span class="info">i</span></h4>
+          <p>Gold is discovered in the colonies of New South Wales and Victoria; people arrive from around the world.</p>
+          <div class="tl-tip"><strong>Context:</strong> Chinese arrivals were the first large group of migrants not from Europe. Australia's population more than doubled within ten years.</div>
+        </div>
+      </div>
+      <div class="tl-item major"><div class="tl-node"></div>
+        <div class="tl-date">1 January 1901</div>
+        <div class="tl-year">1901</div>
+        <div class="tl-card"><h4>Federation — the Commonwealth of Australia <span class="info">i</span></h4>
+          <p>On 1 January, the six self-governing colonies unite into one nation under the Australian Constitution.</p>
+          <div class="tl-tip"><strong>What was established:</strong> the national Parliament (House of Representatives &amp; Senate) and the High Court. The population was about four million — a count that did not yet include Aboriginal and Torres Strait Islander peoples.</div>
+        </div>
+      </div>
+      <div class="tl-item"><div class="tl-node"></div>
+        <div class="tl-date">25 April 1915</div>
+        <div class="tl-year">1915</div>
+        <div class="tl-card"><h4>The Gallipoli landing — first Anzac Day <span class="info">i</span></h4>
+          <p>The Australian and New Zealand Army Corps (ANZAC) land at Gallipoli, in Türkiye, during World War I.</p>
+          <div class="tl-tip"><strong>Remembered as:</strong> Anzac Day, commemorated on <em>25 April</em> each year — a solemn day honouring all Australians who served and died in wars, conflicts and peacekeeping operations.</div>
+        </div>
+      </div>
+      <div class="tl-item"><div class="tl-node"></div>
+        <div class="tl-date">After 1945</div>
+        <div class="tl-year">Post-WWII</div>
+        <div class="tl-card"><h4>Post-war migration <span class="info">i</span></h4>
+          <p>After World War II, large numbers of non-British Europeans arrive to build new lives in Australia.</p>
+          <div class="tl-tip"><strong>Significance:</strong> This wave began Australia's transformation into one of the most culturally diverse societies in the world — people from over 200 countries now call it home.</div>
+        </div>
+      </div>
+      <div class="tl-item major"><div class="tl-node"></div>
+        <div class="tl-date">27 May 1967</div>
+        <div class="tl-year">1967</div>
+        <div class="tl-card"><h4>The 1967 Referendum <span class="info">i</span></h4>
+          <p>More than 90% of Australians vote 'Yes' to allow Aboriginal peoples to be counted in the Census.</p>
+          <div class="tl-tip"><strong>Why it's tested:</strong> It is the standout example of changing the Constitution by referendum, and the point from which Aboriginal and Torres Strait Islander peoples were included in official population estimates.</div>
+        </div>
+      </div>
+      <div class="tl-item"><div class="tl-node"></div>
+        <div class="tl-date">2019 – 2020</div>
+        <div class="tl-year">2019–20</div>
+        <div class="tl-card"><h4>The Black Summer bushfires <span class="info">i</span></h4>
+          <p>A devastating bushfire season brings communities together in the spirit of mateship.</p>
+          <div class="tl-tip"><strong>Example of values:</strong> Chinese, Vietnamese and Cambodian communities in Victoria fundraised, and the Sikh community donated thousands of bottles of water to communities and firefighters in Queensland.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PART 4 -->
+<section id="values">
+  <div class="wrap">
+    <div class="concept-block" id="part4">
+      <h3><span class="badge">Part 4</span> Australian Values</h3>
+      <p class="blurb">Values based on <strong>freedom, respect, fairness and equality of opportunity</strong> — central to keeping Australia secure, prosperous and peaceful.</p>
+
+      <details class="acc" open><summary><span class="dot"></span>Commitment to the Rule of Law<span class="chev">›</span></summary>
+        <div class="body"><p>All Australians are protected by, and equal under, the law. <span class="key">No person or group is above the law.</span> You should obey the law even if no one is watching — regardless of your background or culture.</p></div>
+      </details>
+      <details class="acc"><summary><span class="dot"></span>Parliamentary democracy<span class="chev">›</span></summary>
+        <div class="body"><p>Laws are determined by parliaments <strong>elected by the people</strong>. Government power comes from the people through their vote. Voting is compulsory, showing the importance of participating.</p></div>
+      </details>
+      <details class="acc"><summary><span class="dot"></span>Freedom of speech, association &amp; religion<span class="chev">›</span></summary>
+        <div class="body">
+          <p>Express ideas freely within the law; meet for social or political discussion; media share the same freedom. Peaceful protest is essential to democracy.</p>
+          <p>It is <span class="key">never acceptable to promote violence</span> against a person or group. Religious laws have <strong>no legal status</strong>; practices such as <strong>polygamy and forced marriage are against the law</strong>.</p>
+        </div>
+      </details>
+      <details class="acc"><summary><span class="dot"></span>Equality of all people under the law<span class="chev">›</span></summary>
+        <div class="body">
+          <p>Equal rights regardless of gender, sexual orientation, age, disability, religion, race or origin. <span class="key">Two people can marry each other, including two men or two women.</span> Men and women have equal access to education, employment, voting and the Defence/police forces. <strong>Divorce is acceptable.</strong></p>
+        </div>
+      </details>
+      <details class="acc"><summary><span class="dot"></span>Equality of opportunity — a 'fair go'<span class="chev">›</span></summary>
+        <div class="body"><p>Everyone deserves a fair go, free of class distinction. Success should come from <span class="key">hard work and talent</span>; jobs go to the person with the best skills and experience — not gender, wealth or ethnicity.</p></div>
+      </details>
+      <details class="acc"><summary><span class="dot"></span>Mutual respect &amp; tolerance for others<span class="chev">›</span></summary>
+        <div class="body">
+          <p>Respect the freedom, dignity, opinions and choices of others. <strong>All violence — verbal or physical — is illegal.</strong> The age of sexual consent is <span class="key">16 or 17 depending on the state/territory</span>. <strong>Racism has no place in Australia</strong>, including online or at sporting events.</p>
+        </div>
+      </details>
+      <details class="acc"><summary><span class="dot"></span>Our community: contribution, mateship &amp; loyalty<span class="chev">›</span></summary>
+        <div class="body">
+          <p>Everyone is expected to participate and support themselves and their families where able. Australians value <span class="key">'mateship'</span> — helping each other in times of need — and a strong tradition of volunteering.</p>
+          <p>English is valued as the unifying national language. We help keep society safe (report serious crime; report child abuse to police; cyber abuse is not accepted). In the pledge, citizens promise <strong>loyalty to Australia</strong>; dual citizenship is allowed, but Australian law must always be followed.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="pledge" style="margin-top:30px">
+      <h3>★ The Australian Citizenship Pledge ★</h3>
+      <p>"From this time forward,<span style="opacity:.7">* under God,</span><br>
+      I pledge my loyalty to Australia and its people,<br>
+      whose democratic beliefs I share,<br>
+      whose rights and liberties I respect, and<br>
+      whose laws I will uphold and obey."</p>
+      <small>*A person may choose whether or not to use the words 'under God'.</small>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Built from <strong>Australian Citizenship: Our Common Bond</strong> (© Commonwealth of Australia 2020) — testable section, for study purposes.</p>
+    <p style="margin-top:8px">Official information: <a href="https://www.citizenship.gov.au" target="_blank" rel="noopener">citizenship.gov.au</a></p>
+  </div>
+</footer>
+
+<button class="up" id="up" aria-label="Back to top">↑</button>
+
+<script>
+const MAPDATA={"paths":{"NT":"M293.7,64.7 L293.8,63.9 L294.0,62.7 L294.5,62.1 L294.8,62.9 L294.7,64.1 L295.0,64.6 L295.8,65.3 L297.0,65.7 L300.9,65.6 L303.4,64.7 L303.9,65.4 L306.0,66.1 L307.1,65.1 L307.5,64.6 L308.2,64.4 L308.5,64.0 L308.9,65.4 L309.3,64.7 L310.1,64.4 L310.7,64.9 L311.0,65.8 L311.2,64.8 L311.5,63.7 L313.3,62.7 L314.0,63.2 L315.4,63.7 L316.2,63.6 L316.5,63.9 L316.2,63.5 L315.5,63.4 L314.3,62.6 L314.5,60.2 L314.8,59.8 L314.5,58.8 L313.6,58.3 L314.5,57.5 L314.8,56.6 L315.7,56.5 L315.9,55.7 L315.5,56.0 L315.2,55.6 L314.0,56.1 L313.1,55.6 L314.0,55.3 L313.2,55.1 L313.8,54.9 L313.5,54.3 L313.1,53.6 L312.8,53.0 L312.3,53.7 L311.8,53.3 L310.3,53.1 L309.3,53.5 L308.6,53.3 L307.0,54.3 L306.1,54.4 L305.5,53.8 L305.7,53.3 L305.6,52.8 L304.8,52.9 L304.3,52.6 L304.7,52.2 L304.5,51.7 L303.8,51.9 L304.0,51.3 L302.8,50.9 L302.5,51.2 L301.6,51.4 L301.3,51.0 L302.0,50.9 L302.7,50.7 L302.2,49.6 L302.5,49.9 L303.1,50.0 L303.2,49.2 L303.6,49.6 L303.9,50.4 L304.4,50.3 L304.7,49.9 L304.4,49.2 L304.5,48.5 L305.0,48.4 L305.6,49.5 L306.0,49.2 L306.3,50.0 L306.6,49.7 L306.4,50.5 L306.5,51.3 L306.8,51.7 L307.0,51.0 L307.3,51.4 L307.1,52.2 L307.5,52.8 L308.0,52.7 L307.8,51.8 L308.2,52.0 L308.5,51.6 L307.9,51.0 L307.5,51.3 L307.9,50.8 L307.6,50.1 L307.4,49.3 L307.0,48.4 L307.7,48.5 L307.8,48.9 L308.5,49.4 L308.9,50.4 L308.9,49.1 L309.7,49.0 L310.0,48.6 L310.7,49.6 L310.5,50.9 L311.0,50.5 L311.3,49.8 L312.5,50.6 L312.7,51.3 L313.1,51.6 L313.8,52.5 L314.8,54.1 L315.8,54.3 L317.6,52.4 L318.2,52.9 L318.4,52.2 L317.9,51.6 L318.7,51.5 L319.4,52.7 L320.0,53.0 L320.5,54.0 L320.9,54.3 L320.9,54.9 L322.2,57.2 L323.5,57.6 L325.1,56.9 L324.5,57.5 L325.3,58.1 L325.9,57.5 L325.8,58.1 L326.6,58.2 L327.9,57.9 L327.7,59.2 L327.3,59.7 L327.8,59.4 L328.3,58.6 L328.9,58.6 L329.7,58.8 L330.0,58.4 L331.0,58.2 L331.7,57.4 L332.3,57.3 L332.7,57.8 L333.5,57.6 L333.9,58.0 L333.2,58.6 L332.5,58.7 L332.2,59.1 L333.0,60.1 L333.6,60.2 L334.6,59.9 L335.3,59.3 L335.9,60.0 L335.9,60.6 L336.7,60.0 L337.4,60.9 L337.0,61.3 L337.6,62.0 L337.2,63.0 L337.5,63.5 L337.7,62.7 L338.5,62.1 L338.5,61.3 L339.1,61.3 L339.5,61.9 L340.9,62.5 L342.0,62.6 L343.5,62.4 L343.7,62.8 L343.4,63.4 L343.9,62.9 L343.7,62.3 L344.6,61.8 L345.1,61.0 L346.0,60.8 L346.1,61.5 L346.8,62.6 L347.3,62.4 L347.5,63.5 L348.3,63.9 L349.3,63.9 L349.7,64.7 L350.5,65.4 L351.9,65.1 L353.5,66.4 L353.0,65.9 L353.6,65.7 L352.9,65.8 L352.1,64.9 L353.6,64.8 L354.0,65.3 L354.8,65.2 L355.1,64.6 L355.8,64.2 L355.2,64.2 L354.9,64.6 L354.5,65.1 L353.1,64.3 L354.3,63.9 L354.3,63.3 L355.2,62.8 L356.0,62.8 L356.5,63.2 L357.3,62.8 L357.5,62.5 L358.3,63.1 L359.4,62.2 L363.3,60.8 L362.8,61.3 L362.1,61.3 L361.2,62.2 L361.0,62.7 L359.5,63.8 L359.4,64.5 L359.9,65.2 L360.3,65.4 L360.3,66.1 L361.0,65.3 L361.3,64.8 L361.7,64.5 L362.4,64.3 L362.9,63.8 L362.8,65.1 L363.3,63.7 L364.0,63.8 L364.6,63.3 L365.3,62.5 L364.2,64.2 L363.6,64.8 L364.2,65.6 L364.8,65.0 L365.6,65.1 L365.1,65.9 L364.3,67.1 L364.1,67.6 L364.9,67.4 L364.5,68.1 L364.9,68.4 L365.6,67.9 L365.8,68.3 L366.9,68.0 L368.0,68.5 L369.1,67.5 L369.2,67.0 L369.6,66.5 L369.9,65.8 L370.2,65.3 L369.7,64.5 L368.1,64.7 L367.3,64.3 L367.8,63.8 L368.3,63.2 L368.6,62.5 L369.1,62.3 L369.7,62.4 L370.9,60.9 L371.5,60.6 L372.0,60.8 L372.4,60.6 L373.1,60.2 L373.1,59.6 L373.3,60.3 L372.9,60.6 L371.7,61.0 L371.3,61.5 L372.0,62.0 L372.2,61.4 L372.7,62.1 L373.0,62.6 L373.4,62.8 L373.4,64.3 L374.3,65.0 L374.3,65.5 L375.2,65.8 L375.7,65.6 L376.0,65.1 L375.8,64.7 L375.2,64.4 L376.3,63.9 L376.7,64.6 L377.7,64.8 L377.9,65.2 L378.1,65.7 L378.6,66.4 L377.8,67.0 L378.4,66.6 L378.9,66.8 L378.1,67.3 L376.2,69.4 L376.5,68.8 L376.6,68.2 L375.5,68.6 L375.7,69.2 L375.6,69.8 L375.0,69.9 L374.6,70.3 L375.0,70.0 L375.6,70.0 L375.0,70.7 L374.8,71.4 L374.9,72.1 L374.1,71.9 L373.7,72.3 L373.9,73.0 L373.7,73.7 L373.3,73.3 L372.8,72.5 L372.5,72.8 L372.7,73.6 L371.9,73.0 L371.9,73.7 L372.3,74.5 L372.9,74.6 L372.8,75.2 L374.2,75.7 L374.5,76.5 L374.1,76.7 L373.9,75.9 L373.3,76.4 L373.0,75.9 L372.6,76.3 L372.0,76.3 L371.4,76.1 L372.2,76.4 L372.6,76.7 L372.7,77.3 L372.6,78.7 L372.1,78.5 L371.8,78.9 L371.6,80.1 L371.2,79.7 L370.6,80.0 L369.8,81.2 L369.7,80.5 L370.2,80.2 L370.4,79.8 L370.0,78.6 L370.1,77.4 L369.7,77.1 L369.1,77.9 L369.4,78.2 L369.3,78.9 L368.4,78.7 L367.9,78.5 L368.3,79.0 L367.9,79.5 L367.7,80.1 L367.1,80.0 L367.3,80.6 L366.9,80.3 L366.7,79.5 L366.9,78.8 L366.7,78.3 L366.1,78.7 L365.9,79.9 L365.4,81.0 L364.8,79.6 L364.3,79.8 L364.1,80.8 L363.8,80.3 L363.4,80.5 L362.8,81.7 L363.4,82.1 L363.6,82.6 L364.2,82.5 L364.0,83.1 L363.6,83.3 L363.0,82.7 L362.5,83.0 L362.6,84.8 L362.2,85.2 L362.6,85.7 L362.8,86.3 L363.5,86.5 L362.9,86.7 L363.4,87.6 L364.0,87.5 L365.1,86.6 L365.4,86.0 L365.9,86.3 L365.5,86.5 L365.2,87.5 L364.9,88.7 L364.5,89.2 L364.5,89.8 L363.9,90.7 L363.7,90.3 L363.3,91.3 L363.4,92.0 L362.8,93.8 L363.2,94.2 L361.9,94.8 L360.8,95.6 L360.2,95.5 L360.5,95.9 L359.7,97.3 L358.9,97.7 L358.5,98.9 L357.7,99.8 L357.5,100.7 L357.8,101.2 L356.6,101.5 L356.0,102.3 L355.5,102.0 L354.7,101.9 L354.4,102.5 L354.0,102.2 L354.4,102.0 L353.7,101.5 L353.5,102.1 L352.8,102.6 L352.1,102.8 L351.9,102.4 L351.7,103.0 L351.0,103.3 L350.2,103.5 L349.9,103.3 L349.3,103.1 L350.3,103.6 L350.8,103.5 L351.2,103.3 L351.8,102.5 L352.2,102.9 L352.8,102.7 L353.7,102.1 L353.9,101.6 L354.3,101.8 L353.8,102.2 L354.4,102.6 L354.7,102.0 L355.4,102.2 L355.8,104.3 L356.2,104.9 L355.9,105.2 L356.8,105.9 L357.6,106.5 L358.8,107.1 L359.6,107.1 L359.5,108.3 L358.8,108.3 L359.5,108.3 L359.8,107.5 L359.2,109.0 L357.8,109.6 L357.0,110.3 L355.9,111.2 L357.0,110.4 L357.8,110.1 L358.0,109.6 L359.2,109.4 L359.6,108.9 L360.0,108.7 L360.8,108.0 L362.7,109.1 L364.3,110.6 L367.4,112.3 L367.6,112.7 L368.2,112.5 L368.7,114.5 L369.4,115.4 L370.8,115.6 L372.8,117.2 L373.2,117.5 L373.7,116.9 L374.3,116.4 L375.5,116.7 L374.9,117.9 L374.1,117.6 L374.8,118.3 L374.3,118.5 L374.1,119.1 L373.3,119.8 L372.7,119.7 L371.8,120.2 L371.6,119.8 L370.9,120.1 L371.3,119.8 L371.8,120.3 L372.6,119.8 L373.3,119.9 L373.7,119.3 L374.2,119.1 L374.4,118.6 L375.3,119.0 L374.9,120.0 L375.3,120.2 L376.1,119.6 L376.9,119.7 L378.7,120.3 L378.3,119.7 L378.9,119.3 L379.8,119.6 L380.0,120.5 L379.7,119.3 L380.6,120.2 L383.3,121.4 L384.3,122.6 L385.3,123.2 L386.0,123.6 L386.2,124.2 L386.1,123.6 L386.7,124.0 L386.0,123.5 L386.6,123.5 L387.2,123.7 L387.1,124.4 L387.4,124.0 L387.7,124.5 L388.6,124.8 L387.8,124.5 L387.8,124.0 L388.3,123.8 L388.6,124.7 L388.4,123.9 L389.2,124.3 L389.4,124.9 L389.2,124.2 L389.9,124.6 L390.6,124.8 L391.3,125.7 L392.5,127.7 L394.5,129.3 L394.5,270.4 L260.2,270.5 L260.2,104.3 L260.8,104.6 L260.6,105.1 L260.9,104.5 L261.8,105.1 L261.7,106.0 L262.1,105.4 L262.9,106.1 L262.7,106.9 L262.7,107.5 L263.1,108.1 L262.8,108.5 L262.5,109.5 L261.8,109.9 L262.1,110.4 L261.9,109.8 L262.6,109.7 L263.2,108.7 L263.2,109.9 L263.8,107.8 L264.1,108.0 L264.8,107.9 L264.1,107.9 L264.2,106.8 L263.7,106.4 L263.6,105.7 L263.7,105.0 L264.4,105.1 L264.1,104.6 L264.5,104.1 L265.4,104.4 L265.9,105.5 L266.6,105.9 L266.9,106.7 L266.7,105.9 L265.9,105.3 L267.4,105.5 L268.0,106.5 L267.7,106.8 L267.6,107.3 L267.8,106.7 L269.1,107.8 L268.5,108.8 L269.0,109.4 L268.8,108.8 L269.8,108.3 L269.7,107.0 L270.2,106.7 L269.6,106.7 L269.5,105.0 L270.3,104.8 L270.2,105.6 L270.3,106.2 L270.8,105.6 L270.5,104.9 L269.8,104.6 L269.8,103.8 L270.8,104.0 L271.6,103.9 L271.4,103.4 L271.8,103.1 L272.1,102.5 L271.7,103.0 L271.2,103.1 L270.1,102.4 L270.9,102.3 L269.9,102.1 L269.5,101.5 L270.5,101.1 L271.4,100.3 L271.9,99.3 L270.1,100.0 L269.5,99.8 L269.8,99.5 L269.4,99.7 L268.8,99.7 L268.0,99.5 L267.5,98.8 L267.7,98.4 L267.4,98.7 L267.2,98.2 L266.9,98.9 L266.5,98.4 L266.2,97.8 L265.5,97.6 L265.6,96.3 L266.2,95.8 L266.3,94.8 L267.1,94.2 L267.5,93.1 L267.3,92.1 L267.9,92.4 L268.3,92.7 L268.4,93.7 L268.0,94.4 L268.4,93.9 L268.5,93.1 L268.7,92.5 L268.8,93.1 L269.2,93.4 L268.8,93.0 L269.3,92.2 L269.0,91.8 L269.8,92.0 L270.8,91.5 L271.2,91.0 L271.3,90.1 L270.9,89.7 L270.9,89.1 L271.7,88.2 L272.2,87.6 L271.9,88.0 L271.9,86.3 L272.6,84.8 L272.3,83.9 L273.3,83.8 L273.5,83.0 L273.7,84.0 L274.5,84.3 L275.2,84.2 L276.6,83.2 L277.4,83.0 L278.7,81.4 L279.1,80.9 L278.5,80.5 L277.5,79.1 L276.8,78.9 L277.0,78.1 L276.8,77.4 L277.2,76.3 L277.0,75.9 L277.2,75.3 L277.7,75.0 L278.1,75.6 L280.2,74.8 L280.4,73.5 L280.2,71.9 L280.8,71.7 L281.1,72.4 L281.0,71.4 L281.4,71.0 L282.0,71.0 L282.4,71.4 L282.7,72.1 L283.5,71.9 L283.7,72.6 L284.1,72.2 L284.5,73.1 L284.7,72.5 L284.4,72.0 L285.4,72.3 L286.0,72.4 L285.3,72.1 L285.7,71.8 L285.2,72.0 L284.7,71.7 L283.9,71.6 L283.3,70.9 L283.8,70.8 L283.9,71.3 L284.0,70.7 L284.5,70.6 L283.9,70.3 L283.8,69.1 L283.8,68.3 L284.4,68.1 L283.8,67.5 L284.4,67.2 L286.4,67.9 L286.0,69.3 L286.8,68.5 L286.5,69.8 L286.0,70.2 L286.8,69.8 L286.7,70.5 L286.9,69.7 L287.3,70.2 L287.7,69.7 L288.1,70.3 L287.7,70.6 L288.1,71.1 L288.6,71.3 L288.3,70.6 L289.0,70.5 L289.6,71.5 L289.3,70.5 L289.0,70.1 L288.4,70.0 L288.0,69.0 L288.6,69.1 L289.2,69.7 L289.9,69.6 L289.2,69.3 L289.1,68.5 L288.5,68.7 L288.1,68.3 L287.4,68.3 L287.6,67.9 L287.3,67.5 L287.7,67.1 L288.5,66.3 L290.5,66.8 L290.8,66.3 L290.5,66.0 L290.5,65.0 L290.0,64.1 L290.5,63.6 L291.1,63.9 L291.7,63.8 L292.1,64.2 L292.6,64.0 L293.4,65.0 L293.7,64.7 Z","ACT":"M555.5,413.6 L555.2,412.3 L555.6,411.0 L555.9,410.6 L555.7,409.9 L555.9,409.5 L560.5,406.8 L561.5,407.3 L561.8,408.3 L562.3,408.2 L562.8,408.7 L563.5,409.0 L564.1,409.5 L564.7,409.7 L564.1,410.1 L562.6,409.8 L561.8,410.0 L560.8,411.3 L561.0,412.2 L560.7,413.1 L560.9,413.7 L559.9,413.6 L560.4,415.3 L560.1,416.3 L560.3,417.0 L559.5,418.6 L558.9,418.3 L558.2,418.3 L557.4,417.6 L557.1,417.0 L557.3,416.2 L557.1,415.6 L556.6,416.2 L555.6,415.4 L555.7,414.8 L555.3,414.5 L555.3,413.9 L555.5,413.6 Z","TAS":"M512.8,527.3 L513.0,526.6 L512.6,527.2 L512.8,528.0 L512.4,528.2 L511.9,528.4 L512.5,528.2 L512.9,528.8 L512.0,529.1 L511.7,528.7 L511.2,528.5 L510.9,527.1 L510.3,527.1 L509.8,526.3 L509.4,526.0 L509.0,525.7 L509.3,525.3 L508.7,525.0 L507.8,523.9 L506.4,524.1 L506.2,523.0 L505.1,521.0 L504.9,520.2 L504.5,519.2 L504.0,518.8 L503.0,518.8 L503.5,518.4 L503.2,517.8 L502.8,517.1 L502.5,516.4 L502.8,516.0 L502.2,514.8 L501.9,514.2 L502.2,513.6 L501.8,512.5 L502.8,513.7 L503.7,513.7 L504.0,514.4 L504.9,515.0 L505.7,515.4 L506.1,517.3 L506.1,516.0 L506.7,515.9 L507.3,514.7 L506.7,515.0 L506.4,514.2 L506.0,514.6 L505.5,514.1 L504.5,513.1 L504.5,512.4 L503.9,511.9 L503.0,512.4 L503.2,512.8 L502.3,512.6 L502.9,512.0 L502.8,509.7 L501.8,508.5 L500.2,507.2 L498.8,505.6 L498.3,505.2 L497.7,504.8 L498.1,504.5 L498.4,504.1 L498.9,503.8 L499.6,503.7 L500.0,504.1 L500.6,504.2 L500.0,504.1 L499.6,503.7 L498.7,503.8 L497.8,504.4 L496.2,501.6 L495.2,500.8 L495.8,500.5 L494.3,498.1 L494.5,497.5 L494.1,496.9 L494.1,495.7 L494.0,495.3 L493.2,494.6 L493.5,494.0 L493.2,493.5 L493.9,493.2 L494.7,492.3 L494.5,491.6 L494.7,490.9 L494.3,490.7 L494.5,489.8 L494.9,489.1 L495.3,489.8 L495.6,490.6 L495.8,490.1 L496.2,490.4 L496.6,490.7 L497.7,490.8 L498.7,490.6 L499.0,491.0 L499.4,491.4 L500.3,491.8 L500.8,492.0 L501.5,491.8 L500.7,491.4 L501.9,491.5 L502.7,491.3 L502.3,491.6 L502.9,491.5 L502.9,490.2 L503.6,490.9 L503.0,491.5 L503.2,491.9 L503.2,491.3 L503.6,492.1 L505.1,492.3 L505.7,492.5 L506.6,492.2 L506.8,492.8 L507.4,493.2 L509.9,493.6 L511.5,495.0 L511.2,495.6 L511.1,496.1 L510.7,496.3 L510.3,496.6 L509.9,497.0 L509.5,497.2 L509.9,497.0 L510.2,496.7 L510.6,496.4 L511.2,496.0 L511.6,495.3 L513.5,495.4 L513.1,496.4 L513.3,496.9 L513.0,497.3 L512.9,497.8 L512.6,498.2 L512.1,498.7 L512.6,498.2 L512.9,497.3 L513.3,497.0 L513.1,496.4 L513.6,495.7 L516.4,496.6 L515.8,496.8 L517.7,496.8 L517.7,497.3 L517.6,497.9 L517.8,498.4 L517.7,497.7 L517.7,496.7 L519.2,496.8 L519.4,497.3 L519.6,497.9 L519.4,497.5 L521.2,496.7 L521.9,496.2 L522.3,497.0 L522.4,498.0 L522.7,497.7 L522.8,498.2 L523.0,497.6 L522.6,497.2 L522.9,496.8 L522.4,496.9 L523.1,496.5 L523.6,496.1 L524.2,495.9 L524.6,495.6 L525.4,495.6 L526.2,496.5 L525.5,496.9 L526.1,496.6 L526.4,497.4 L526.8,497.0 L527.0,496.7 L527.7,497.0 L527.4,497.6 L528.1,498.4 L528.5,499.1 L529.4,499.7 L530.0,499.6 L530.0,500.3 L530.7,500.6 L531.4,501.2 L531.2,500.7 L530.8,500.9 L530.1,499.9 L529.6,499.5 L528.5,499.1 L529.1,498.6 L528.5,498.0 L528.0,497.6 L527.4,496.5 L526.4,496.5 L525.7,495.3 L527.0,494.7 L528.1,494.8 L529.1,494.2 L531.2,494.6 L531.9,494.6 L532.6,493.7 L533.4,493.8 L534.0,493.5 L534.2,494.1 L534.9,494.6 L535.6,494.5 L536.8,493.7 L537.8,492.2 L538.9,491.8 L539.5,492.4 L540.1,492.3 L541.1,492.8 L542.0,492.5 L543.2,491.0 L542.9,490.6 L544.3,490.7 L545.1,491.1 L545.8,491.9 L546.3,492.0 L547.1,492.2 L547.7,492.8 L548.6,494.3 L548.4,494.8 L548.2,495.3 L547.7,495.1 L548.3,495.4 L547.9,496.3 L548.0,497.0 L547.6,497.3 L548.1,497.6 L548.1,498.3 L548.9,498.4 L548.5,498.9 L548.0,498.7 L547.4,499.3 L547.9,499.6 L548.8,498.7 L548.3,500.0 L547.8,501.3 L547.8,502.0 L548.0,502.7 L548.5,503.1 L548.6,503.8 L548.2,504.4 L548.1,505.4 L547.8,506.6 L547.9,507.2 L548.5,507.5 L548.6,508.1 L548.3,508.4 L547.9,510.0 L548.5,510.3 L549.0,511.2 L548.3,512.0 L549.1,512.1 L548.4,513.6 L548.1,513.1 L547.6,512.8 L548.2,512.2 L547.7,511.8 L548.3,511.3 L547.5,511.1 L546.9,510.5 L546.2,510.5 L546.4,510.0 L547.0,509.9 L547.5,509.2 L546.8,509.7 L546.3,509.3 L545.9,510.1 L545.7,510.6 L547.3,510.8 L545.1,510.9 L545.1,511.9 L544.0,513.0 L544.1,513.6 L543.4,514.4 L542.8,514.5 L543.2,514.7 L543.7,514.1 L544.2,514.6 L543.5,515.5 L544.0,516.0 L543.7,516.8 L543.3,517.2 L543.0,517.7 L542.5,517.1 L541.9,517.7 L543.0,518.5 L543.2,519.1 L542.9,519.9 L542.0,520.9 L541.8,521.6 L542.0,522.0 L541.8,521.7 L541.4,522.2 L540.7,522.8 L539.6,522.6 L538.9,522.8 L538.5,522.5 L539.1,522.3 L538.5,522.5 L538.0,522.3 L537.8,521.1 L537.2,521.3 L536.6,521.1 L536.2,521.4 L535.7,521.1 L536.2,521.6 L536.7,521.8 L537.5,521.7 L538.0,522.0 L537.2,521.9 L536.4,522.3 L536.3,523.0 L536.8,523.3 L536.5,523.8 L537.2,524.1 L536.7,524.2 L536.3,524.5 L535.1,525.0 L534.7,523.9 L535.3,524.7 L535.9,524.6 L536.0,524.0 L535.6,523.8 L535.8,523.2 L535.4,522.9 L535.0,523.4 L534.9,522.6 L534.2,522.5 L533.1,521.4 L532.8,520.6 L531.9,520.2 L530.6,520.9 L531.9,520.5 L532.6,520.8 L533.1,521.2 L532.8,521.6 L533.7,521.8 L534.0,522.5 L534.3,523.2 L533.7,524.0 L534.0,525.1 L533.1,524.4 L532.7,525.4 L533.4,525.6 L532.8,525.9 L532.5,526.5 L532.8,527.7 L532.3,528.4 L531.4,528.5 L531.0,528.0 L530.2,527.9 L530.6,527.4 L530.3,526.8 L529.8,527.6 L528.7,527.1 L529.5,525.1 L528.5,526.3 L528.3,527.1 L529.8,528.0 L530.4,528.6 L529.9,529.2 L529.6,528.9 L529.0,529.0 L528.5,529.2 L529.8,529.6 L529.1,530.3 L529.1,530.9 L528.5,530.7 L527.7,530.5 L528.6,531.1 L528.9,531.4 L528.5,531.3 L527.9,531.5 L528.5,531.6 L528.1,532.3 L527.6,532.4 L527.2,532.9 L527.7,533.2 L527.0,533.8 L526.3,533.9 L525.7,533.3 L524.5,533.7 L524.2,533.2 L523.7,533.0 L522.0,532.1 L520.8,532.4 L519.5,532.3 L519.1,532.0 L518.3,532.4 L518.0,531.7 L517.2,531.5 L517.0,532.3 L516.1,531.8 L515.6,532.1 L514.4,532.8 L514.6,531.9 L514.4,531.3 L513.9,530.3 L513.4,530.0 L512.8,529.9 L513.6,529.6 L513.8,530.2 L513.6,529.5 L514.9,529.5 L515.3,529.8 L514.9,529.4 L515.8,529.6 L516.1,530.4 L516.0,529.9 L516.6,530.0 L517.1,529.7 L517.4,529.1 L516.8,529.0 L516.5,528.6 L515.9,529.5 L515.3,529.2 L514.9,528.7 L514.7,529.3 L513.9,529.2 L513.3,528.5 L513.6,527.8 L512.8,527.3 Z","SA":"M438.8,450.5 L436.8,450.3 L434.3,450.6 L433.4,450.1 L431.2,448.8 L430.3,448.5 L428.2,445.2 L427.0,443.9 L426.1,443.5 L426.3,443.0 L425.1,441.9 L424.3,442.0 L422.1,439.6 L420.5,437.4 L421.0,437.2 L421.2,436.3 L420.5,435.8 L420.5,435.1 L419.5,434.1 L421.2,433.2 L422.0,432.4 L422.3,430.6 L421.5,427.5 L419.9,424.3 L417.4,420.6 L414.8,418.0 L411.0,415.1 L407.8,413.3 L409.2,413.6 L412.5,415.8 L414.8,417.8 L415.3,418.4 L417.3,420.2 L420.2,424.1 L418.9,421.9 L418.4,421.2 L418.1,420.7 L417.8,420.0 L416.4,418.5 L416.0,418.3 L415.5,418.0 L415.1,417.4 L412.8,415.7 L408.9,413.2 L408.3,413.4 L406.7,412.7 L407.7,413.2 L405.1,412.6 L404.7,412.9 L403.9,413.0 L403.4,413.6 L402.3,414.5 L400.9,414.3 L398.5,414.5 L397.3,414.8 L395.9,414.2 L397.0,412.6 L398.9,411.9 L399.5,410.8 L401.1,410.1 L401.1,409.0 L401.5,408.4 L401.5,406.6 L402.2,405.3 L401.6,402.9 L401.8,402.0 L402.2,401.4 L402.2,402.1 L401.9,402.5 L402.4,402.0 L402.9,402.3 L402.5,401.0 L401.3,400.3 L400.9,399.9 L400.8,399.3 L399.9,398.7 L399.4,397.7 L398.5,397.1 L397.8,394.6 L397.4,394.0 L396.7,394.0 L396.9,393.3 L396.0,392.0 L395.1,392.7 L394.6,393.5 L394.7,394.2 L394.6,395.2 L393.2,396.4 L392.8,397.7 L392.6,399.0 L393.1,399.2 L392.7,400.0 L392.4,401.6 L391.5,403.0 L390.9,404.8 L390.9,405.5 L390.2,405.7 L390.9,406.6 L389.9,407.0 L389.7,407.4 L389.1,407.4 L387.8,406.6 L385.8,406.3 L384.8,406.9 L384.6,407.4 L383.5,407.2 L382.9,407.4 L382.2,408.4 L381.2,408.5 L379.8,408.2 L378.8,409.1 L377.8,409.4 L377.0,408.5 L377.3,407.7 L377.9,407.6 L378.7,406.7 L379.0,406.0 L378.6,405.3 L379.1,404.8 L379.3,404.0 L379.8,403.7 L380.9,403.7 L383.7,403.3 L384.2,403.8 L384.8,403.8 L385.2,404.2 L386.3,403.5 L387.2,398.9 L386.7,397.6 L386.8,396.5 L385.9,397.0 L386.2,396.0 L387.0,394.7 L387.1,393.4 L386.3,392.1 L387.1,392.0 L388.0,390.6 L387.5,390.0 L389.0,388.7 L388.6,388.1 L390.3,386.6 L390.9,385.7 L391.6,385.4 L392.7,384.0 L393.4,383.9 L393.0,384.4 L393.6,383.4 L394.1,383.5 L393.6,383.3 L393.7,382.7 L392.6,381.0 L392.8,380.0 L392.2,379.9 L391.7,379.1 L392.1,378.1 L393.1,377.6 L393.6,377.3 L394.6,377.0 L394.7,377.5 L395.2,376.9 L394.9,376.5 L394.7,375.5 L393.8,375.1 L392.9,371.6 L393.5,371.4 L392.1,370.5 L392.3,370.1 L391.5,369.2 L391.8,368.8 L391.1,368.5 L391.0,368.0 L391.1,367.3 L391.0,366.8 L390.9,368.1 L390.7,370.6 L391.6,371.1 L391.6,372.6 L391.4,373.7 L390.7,373.9 L391.3,375.0 L390.3,374.9 L389.9,374.5 L389.2,374.4 L388.6,374.7 L388.5,375.6 L387.6,376.5 L386.3,377.1 L386.1,378.3 L385.2,379.6 L385.3,380.6 L385.0,381.4 L384.3,382.0 L383.7,383.5 L382.8,385.0 L381.8,385.5 L380.4,385.5 L379.5,385.9 L379.1,385.5 L378.6,385.1 L378.4,385.6 L377.7,386.0 L377.8,386.7 L378.5,386.4 L378.9,386.2 L377.4,387.0 L376.6,387.0 L376.3,387.4 L375.6,387.5 L374.6,388.2 L373.5,388.5 L373.2,389.1 L371.2,390.1 L370.0,391.1 L370.0,391.8 L369.5,392.6 L368.8,393.3 L368.6,393.9 L367.9,394.6 L366.4,395.3 L366.5,396.0 L366.1,396.4 L366.5,396.9 L366.1,398.0 L365.8,397.5 L365.5,397.1 L364.9,397.4 L364.3,397.5 L363.7,397.9 L363.2,398.8 L363.7,399.1 L363.8,399.7 L363.3,399.2 L362.6,399.5 L362.5,400.7 L362.8,401.1 L361.5,402.1 L362.2,402.2 L363.1,402.0 L364.0,401.3 L364.3,401.7 L364.4,400.9 L364.8,402.0 L364.1,402.6 L364.7,404.7 L364.1,404.7 L363.6,404.1 L362.6,403.8 L362.4,403.1 L361.5,402.8 L360.4,402.9 L360.3,403.5 L360.0,404.1 L359.5,403.9 L359.1,403.5 L358.8,403.1 L356.7,401.0 L355.4,400.3 L354.6,400.3 L355.0,399.8 L354.8,399.3 L353.5,398.2 L352.4,398.3 L351.9,398.8 L351.8,397.5 L352.9,396.4 L353.0,397.4 L355.0,397.8 L354.5,397.7 L354.2,398.2 L355.0,398.6 L355.2,399.2 L355.9,399.5 L356.5,399.2 L357.4,399.1 L356.6,398.7 L356.8,399.2 L356.2,399.0 L356.4,398.0 L355.8,397.5 L356.0,398.2 L355.7,398.8 L355.7,398.2 L355.4,397.7 L355.6,397.1 L355.5,396.5 L355.1,396.2 L354.9,394.0 L354.3,392.7 L353.7,392.6 L353.4,392.2 L353.9,391.7 L353.9,390.9 L353.5,389.7 L352.7,388.8 L352.4,388.1 L350.2,386.3 L348.1,384.9 L347.7,384.7 L347.2,384.4 L347.7,383.3 L347.5,381.9 L346.8,380.0 L344.7,378.5 L345.6,378.5 L345.3,377.7 L343.8,377.1 L343.2,377.4 L343.5,377.9 L344.3,378.3 L343.7,378.1 L342.2,377.4 L341.1,377.3 L340.6,377.7 L340.2,377.0 L339.2,376.2 L338.9,375.4 L338.7,376.1 L339.0,376.6 L340.2,377.3 L340.1,377.9 L338.7,377.3 L338.8,376.6 L338.3,375.8 L337.8,375.6 L337.4,375.8 L337.0,375.5 L337.7,375.3 L337.9,374.7 L337.3,373.9 L336.9,374.2 L336.6,373.8 L336.1,373.9 L336.9,372.6 L336.5,371.6 L335.8,370.9 L337.9,371.0 L337.3,371.0 L337.8,371.2 L337.7,371.9 L339.1,370.6 L339.2,370.1 L338.8,368.7 L337.7,367.4 L336.3,366.9 L335.5,367.0 L335.0,367.2 L334.7,367.7 L333.6,367.5 L333.2,368.2 L332.5,368.2 L332.8,366.3 L333.3,366.1 L333.7,366.5 L334.0,366.2 L332.1,363.6 L331.4,364.1 L331.1,363.2 L330.0,363.1 L330.2,362.4 L329.5,362.3 L329.9,361.7 L328.7,361.4 L328.4,361.9 L328.1,362.6 L327.6,362.1 L326.9,361.6 L326.6,362.1 L326.1,362.0 L325.9,362.5 L326.8,362.5 L326.1,362.6 L326.7,362.7 L327.2,363.2 L326.6,362.8 L325.7,363.1 L324.7,362.8 L324.0,362.9 L323.7,363.3 L322.2,362.6 L321.8,363.2 L321.9,362.7 L320.7,361.7 L319.9,361.3 L319.6,361.7 L319.3,361.1 L317.4,359.8 L316.1,359.3 L314.9,359.4 L313.9,359.1 L312.8,359.1 L311.7,359.6 L311.5,360.1 L312.0,360.5 L311.1,360.1 L309.9,360.5 L307.9,360.5 L307.2,360.1 L306.8,359.3 L306.0,358.8 L301.0,355.7 L297.4,354.0 L292.3,352.1 L291.4,352.5 L290.6,353.2 L287.0,354.3 L277.5,353.8 L268.2,354.4 L260.2,355.4 L260.2,270.5 L439.3,270.5 L439.4,390.3 L438.8,389.6 L438.8,450.5 Z","VIC":"M463.3,456.3 L462.1,455.7 L461.1,455.6 L459.8,454.9 L458.2,455.1 L457.8,455.5 L456.4,455.5 L453.4,453.9 L450.7,453.4 L449.5,453.6 L448.3,454.3 L448.4,454.9 L449.0,455.5 L447.9,455.5 L447.5,456.1 L446.9,455.3 L446.0,455.0 L445.4,455.2 L444.8,455.3 L445.3,454.7 L444.9,454.1 L443.3,452.6 L441.5,451.5 L438.8,450.5 L438.8,389.6 L439.1,390.4 L439.6,390.7 L440.3,390.7 L441.1,390.9 L441.6,390.8 L441.9,391.0 L442.4,390.9 L443.0,391.2 L444.1,391.6 L444.7,391.6 L445.1,391.9 L445.8,392.1 L446.7,392.2 L447.1,392.6 L446.9,393.2 L447.3,392.8 L448.3,392.8 L448.0,392.2 L448.5,392.0 L449.4,391.4 L450.1,391.6 L450.7,391.4 L451.9,391.9 L452.5,391.6 L453.3,392.0 L453.9,391.6 L454.6,391.8 L454.8,391.4 L455.4,391.9 L455.5,392.5 L456.0,392.3 L456.7,392.2 L457.5,392.6 L457.9,393.0 L457.7,393.7 L458.0,394.2 L458.5,394.4 L460.2,395.0 L459.8,395.3 L459.5,395.9 L459.7,396.4 L459.5,396.9 L460.1,397.3 L459.9,397.6 L460.1,398.1 L460.6,398.3 L461.0,398.6 L461.3,399.1 L461.3,400.0 L461.9,400.3 L461.7,401.0 L462.6,401.5 L463.7,401.6 L463.5,400.8 L464.1,400.7 L464.4,400.1 L464.8,399.2 L465.6,398.9 L466.1,398.1 L466.0,398.7 L466.5,398.9 L466.8,399.3 L467.3,399.6 L467.5,400.1 L468.0,399.6 L468.6,399.9 L468.8,400.3 L469.0,399.8 L469.4,400.3 L470.0,400.4 L470.9,400.1 L471.4,400.6 L472.2,400.9 L472.5,401.2 L473.1,401.1 L473.3,401.8 L473.8,401.6 L474.4,401.8 L474.3,402.6 L474.0,403.2 L474.3,403.9 L473.9,404.2 L473.9,404.8 L474.2,405.4 L474.4,406.4 L475.0,407.0 L475.0,407.7 L475.9,407.7 L476.2,408.1 L477.7,408.0 L477.6,408.5 L478.0,409.1 L477.6,409.9 L478.1,410.1 L478.4,410.6 L479.4,410.4 L479.8,410.7 L480.3,410.6 L480.6,411.2 L481.4,411.4 L482.0,412.0 L483.1,412.4 L483.7,412.3 L484.1,412.9 L484.3,413.3 L484.7,413.1 L485.1,413.5 L485.7,413.7 L485.9,414.2 L486.4,414.5 L486.6,414.9 L487.4,415.2 L487.8,415.6 L488.1,416.1 L488.5,415.9 L489.3,416.3 L489.5,416.7 L489.9,417.1 L490.3,417.7 L490.2,418.4 L491.1,418.8 L491.5,419.3 L491.8,419.7 L492.5,419.9 L492.9,420.4 L493.3,420.9 L493.6,420.5 L493.9,420.9 L494.4,420.7 L494.9,421.1 L495.2,421.4 L495.7,421.7 L496.2,421.3 L497.0,420.7 L498.0,420.8 L498.8,420.9 L497.9,419.5 L498.4,419.2 L498.7,418.1 L498.9,417.6 L500.9,417.1 L501.4,417.3 L502.7,417.3 L503.9,417.6 L504.3,417.8 L505.2,417.5 L505.9,417.2 L506.8,417.1 L507.4,417.0 L507.9,417.5 L508.4,417.7 L509.2,418.5 L509.8,418.8 L510.7,419.2 L511.1,419.7 L511.9,419.4 L512.5,419.1 L513.2,419.4 L513.5,420.0 L514.5,419.6 L515.7,419.8 L516.6,420.1 L517.0,420.4 L517.6,420.2 L518.1,420.0 L518.9,420.4 L519.5,420.5 L520.3,419.3 L520.9,419.6 L521.5,419.2 L522.2,419.7 L522.7,419.5 L523.2,419.7 L523.7,419.9 L524.1,420.1 L524.9,420.1 L525.2,420.7 L526.0,420.6 L526.3,421.1 L527.0,420.9 L527.5,421.1 L528.1,421.5 L528.2,421.0 L528.6,421.2 L529.4,421.5 L530.6,419.8 L531.1,420.3 L532.0,420.5 L533.1,420.4 L533.7,420.7 L534.2,419.6 L534.9,419.0 L535.6,419.1 L536.3,418.9 L537.1,419.9 L537.6,419.6 L537.1,419.5 L537.9,419.5 L538.5,419.0 L539.5,418.7 L540.5,419.3 L542.1,419.8 L542.7,420.4 L543.8,420.5 L543.5,421.1 L543.7,421.6 L544.4,421.9 L544.2,422.4 L544.4,422.9 L544.4,424.4 L544.4,425.6 L545.0,426.1 L545.7,426.7 L545.8,428.3 L546.2,428.4 L547.1,428.7 L546.8,429.8 L546.4,430.4 L545.8,430.8 L545.3,431.5 L546.7,431.7 L573.4,442.2 L572.3,442.7 L570.4,443.0 L570.7,442.7 L570.9,441.9 L570.3,442.0 L569.8,442.5 L569.5,442.2 L568.9,441.6 L569.2,442.1 L569.5,442.4 L570.1,442.8 L569.7,443.6 L568.8,444.9 L566.5,445.8 L566.2,445.5 L566.1,446.2 L563.6,446.3 L562.8,446.7 L562.5,446.4 L561.0,446.3 L560.8,445.5 L560.5,446.0 L560.8,446.3 L559.2,446.4 L558.6,445.8 L558.0,446.3 L558.9,446.4 L555.8,446.5 L554.7,446.8 L554.3,446.7 L552.1,446.7 L551.6,446.4 L547.9,446.9 L545.6,447.4 L546.0,446.8 L545.3,447.3 L544.9,446.9 L545.1,447.6 L543.2,448.2 L542.7,447.7 L541.7,448.1 L541.1,447.6 L539.6,447.3 L539.0,447.6 L538.6,447.3 L539.1,447.9 L539.9,447.6 L539.2,448.0 L539.7,448.1 L539.2,448.4 L537.1,450.1 L536.6,449.7 L536.1,450.1 L535.7,450.9 L537.6,450.4 L538.9,449.1 L539.6,449.2 L538.2,450.1 L539.7,449.4 L540.2,449.2 L542.3,448.3 L540.3,448.9 L541.2,448.6 L542.9,448.1 L540.0,449.4 L538.5,450.3 L530.1,456.6 L527.9,458.6 L527.3,458.8 L526.1,458.8 L525.6,459.0 L524.8,459.4 L524.4,459.7 L523.8,459.7 L523.5,459.2 L523.8,459.5 L523.1,459.9 L521.4,459.9 L520.0,460.4 L519.2,459.7 L517.2,460.0 L517.1,460.8 L517.3,461.2 L517.5,461.7 L518.4,463.2 L520.2,462.3 L520.6,461.3 L521.1,461.5 L521.0,462.5 L521.3,463.3 L520.5,464.3 L520.6,464.8 L521.1,465.0 L521.2,465.5 L520.5,465.7 L520.4,466.5 L519.2,466.5 L518.8,466.0 L519.1,465.6 L518.8,465.1 L518.3,465.0 L518.1,464.6 L516.8,462.7 L516.4,461.8 L516.7,462.5 L514.7,461.8 L514.0,462.2 L514.1,462.8 L512.9,463.2 L512.5,462.1 L511.6,460.5 L510.1,459.3 L511.0,459.5 L511.7,460.0 L511.4,459.3 L510.1,459.1 L508.9,459.8 L508.1,459.7 L507.5,459.4 L506.3,458.0 L505.7,457.7 L504.7,457.7 L505.4,457.3 L505.3,456.7 L505.6,456.0 L506.8,455.9 L507.3,455.3 L506.8,454.7 L506.9,454.1 L506.5,453.8 L506.4,453.2 L504.7,452.9 L503.9,453.2 L503.4,452.8 L502.9,453.0 L502.4,453.9 L501.9,454.5 L502.3,454.9 L501.8,455.3 L502.5,455.8 L500.9,455.5 L499.8,456.1 L499.5,456.9 L498.0,457.1 L497.4,457.0 L496.6,456.1 L493.9,454.3 L495.1,454.5 L495.6,455.0 L496.4,455.2 L498.0,454.9 L498.9,454.4 L499.5,453.5 L499.5,452.9 L500.8,451.9 L500.7,450.3 L500.0,449.5 L498.8,448.5 L498.6,447.6 L497.7,447.3 L498.3,447.0 L497.6,447.1 L497.8,447.7 L497.1,447.6 L496.4,447.8 L496.1,448.5 L495.1,448.8 L493.8,449.7 L491.8,450.4 L491.7,451.1 L490.2,451.0 L489.5,451.3 L489.6,451.9 L490.3,452.0 L490.9,452.0 L492.5,452.0 L493.5,451.3 L494.3,451.4 L494.9,451.9 L494.6,452.9 L493.5,453.5 L494.1,453.6 L493.5,453.8 L492.1,453.8 L491.6,453.9 L490.6,453.9 L489.1,454.5 L487.9,455.6 L486.1,456.2 L485.7,456.6 L484.7,456.7 L483.8,457.6 L483.1,458.4 L482.1,459.7 L479.4,460.6 L479.2,461.3 L478.3,461.6 L477.5,462.4 L476.7,462.4 L476.1,461.7 L474.6,460.9 L473.7,460.9 L473.1,461.2 L472.5,461.0 L470.6,459.5 L469.5,459.0 L467.5,458.8 L467.3,458.3 L466.1,458.2 L463.3,456.3 Z","WA":"M87.9,404.4 L87.3,404.6 L86.5,404.4 L85.9,405.0 L85.0,405.2 L83.7,405.2 L83.3,405.9 L82.4,405.3 L81.3,405.4 L80.5,405.1 L80.1,405.3 L79.9,405.8 L79.0,405.7 L77.7,405.1 L75.5,405.7 L75.2,405.4 L74.1,404.9 L73.3,405.1 L72.3,404.2 L69.9,403.0 L68.3,402.6 L66.1,402.6 L66.1,402.0 L65.5,401.3 L65.3,400.7 L63.7,399.0 L61.2,397.2 L61.8,397.0 L61.1,397.1 L59.9,396.3 L59.3,396.3 L58.9,395.8 L57.7,395.2 L56.5,394.7 L54.3,394.6 L53.8,394.8 L53.6,395.4 L53.2,395.6 L53.0,395.0 L51.6,393.7 L51.8,392.9 L51.1,391.4 L51.2,390.1 L50.9,389.4 L50.9,387.9 L51.2,387.0 L50.8,385.5 L51.5,384.9 L51.6,384.4 L51.2,383.0 L52.5,383.5 L53.0,384.3 L54.3,384.8 L55.7,384.8 L56.6,384.6 L57.5,384.2 L59.6,382.0 L60.8,379.5 L61.1,379.8 L61.3,379.2 L61.5,376.9 L60.2,370.2 L60.6,369.0 L61.8,367.9 L61.9,368.4 L61.2,368.7 L60.7,369.3 L61.4,371.3 L61.7,371.8 L62.0,371.3 L61.1,369.3 L61.7,369.7 L62.3,369.7 L62.8,369.0 L62.4,368.5 L61.9,367.9 L62.2,367.5 L62.4,366.6 L61.8,365.6 L62.3,365.0 L61.7,364.7 L61.4,364.1 L62.0,364.2 L62.8,362.9 L62.6,362.2 L62.2,360.9 L62.5,360.5 L62.9,360.2 L63.3,360.5 L63.8,360.1 L64.0,360.8 L64.4,360.4 L63.8,359.6 L64.4,359.6 L64.8,359.3 L65.1,359.0 L65.6,358.7 L64.7,359.1 L64.4,359.6 L63.7,359.5 L63.2,360.1 L62.7,359.9 L62.4,360.5 L62.1,360.8 L62.4,360.1 L62.4,357.9 L61.4,355.0 L59.2,351.2 L57.7,349.3 L56.9,347.0 L55.0,343.5 L54.2,342.5 L53.9,341.9 L52.4,338.9 L52.0,337.8 L52.2,337.4 L51.8,336.4 L51.7,335.3 L51.4,335.0 L51.7,334.4 L51.6,333.8 L51.0,333.7 L51.1,332.2 L50.4,331.0 L50.9,329.0 L50.5,325.4 L51.1,322.6 L50.5,321.3 L50.5,320.6 L49.8,319.4 L49.2,317.0 L45.6,313.5 L45.4,312.3 L44.8,312.1 L45.3,311.7 L45.2,310.1 L44.0,307.7 L42.6,306.2 L40.9,303.8 L39.7,303.1 L38.7,302.1 L38.3,300.0 L37.7,298.1 L38.0,296.9 L38.6,296.0 L37.7,292.8 L36.2,289.8 L33.4,285.2 L30.6,281.4 L29.2,279.8 L25.6,276.5 L25.6,275.7 L25.3,274.9 L23.5,272.7 L25.0,273.4 L25.4,274.2 L25.5,271.0 L26.1,273.6 L25.9,274.1 L26.2,275.2 L26.0,275.7 L26.5,275.5 L26.6,276.3 L27.1,276.5 L26.5,275.0 L26.7,273.6 L26.8,273.0 L27.0,272.1 L26.6,271.4 L26.6,270.8 L27.0,271.6 L27.1,273.0 L27.5,272.4 L27.9,273.1 L28.3,274.6 L28.6,275.6 L28.4,276.2 L28.6,276.8 L28.3,277.3 L28.6,277.6 L28.7,276.7 L29.1,275.9 L28.9,275.3 L28.8,274.6 L29.3,274.9 L29.5,275.8 L29.6,277.0 L29.4,277.6 L29.8,278.1 L29.4,279.3 L29.9,279.8 L30.5,279.8 L30.0,279.1 L30.1,278.1 L30.5,278.6 L30.6,277.4 L30.5,279.0 L30.7,279.7 L31.0,280.5 L31.6,280.6 L31.9,280.1 L32.1,279.7 L32.3,280.1 L32.6,279.3 L33.1,279.7 L33.3,279.1 L33.8,279.4 L33.6,278.8 L34.3,278.3 L34.4,277.7 L34.2,276.4 L34.4,276.0 L34.3,275.4 L33.4,274.4 L31.5,273.7 L30.7,272.3 L29.8,271.9 L29.5,269.8 L28.9,269.3 L29.3,269.0 L28.7,268.2 L28.1,267.7 L28.1,267.1 L28.3,266.5 L28.0,265.8 L27.8,266.4 L27.9,266.9 L28.1,267.3 L27.8,266.7 L27.3,266.4 L27.7,264.9 L28.8,263.3 L29.0,264.7 L29.5,265.2 L30.2,266.3 L31.6,267.5 L32.0,268.8 L32.1,269.8 L32.1,270.7 L31.6,271.2 L32.0,273.5 L33.0,273.6 L34.4,271.4 L34.1,269.8 L34.5,270.2 L34.5,270.8 L34.8,272.2 L35.4,272.6 L35.1,273.1 L35.3,274.0 L35.3,274.7 L35.7,275.5 L36.8,276.6 L37.3,277.5 L38.3,276.7 L38.5,276.2 L39.2,276.1 L39.7,275.2 L39.1,274.2 L38.9,273.0 L39.5,272.2 L39.9,272.7 L39.6,272.3 L39.5,271.4 L39.7,271.8 L39.4,271.3 L39.0,270.3 L39.6,270.4 L40.4,270.5 L40.0,270.0 L39.8,269.5 L40.3,268.3 L39.9,267.8 L39.4,267.9 L39.2,267.4 L38.6,267.6 L38.6,267.0 L38.1,266.4 L37.6,265.7 L36.9,265.3 L36.5,263.9 L35.1,262.4 L34.2,259.9 L33.8,259.3 L33.4,258.1 L32.1,257.4 L31.5,256.8 L31.0,255.6 L31.1,254.9 L31.5,254.5 L31.1,254.0 L30.9,253.5 L30.6,252.7 L31.2,252.9 L30.6,252.7 L30.4,251.8 L27.6,248.3 L27.2,247.1 L27.3,245.4 L27.0,244.1 L27.8,243.3 L27.4,242.0 L27.5,241.2 L28.3,240.5 L28.4,239.1 L29.0,238.4 L29.4,237.1 L30.5,235.1 L32.6,233.6 L33.0,232.6 L33.0,231.3 L33.2,230.3 L32.7,227.5 L33.4,227.1 L33.7,226.4 L33.7,224.9 L32.6,222.0 L31.9,221.4 L31.4,221.5 L31.6,220.7 L31.3,220.1 L31.1,219.4 L31.3,218.9 L32.1,218.4 L32.5,217.5 L32.6,216.9 L33.6,215.4 L35.3,210.4 L36.2,208.9 L37.5,208.0 L38.7,207.6 L39.1,208.0 L38.5,208.8 L37.5,213.1 L37.6,213.8 L38.3,214.7 L38.2,215.6 L38.5,215.3 L38.9,216.1 L38.1,217.1 L38.1,217.8 L38.4,218.5 L39.5,218.3 L39.7,217.6 L41.0,217.2 L41.1,218.0 L41.7,218.1 L42.2,217.6 L42.3,216.1 L42.9,216.2 L42.4,215.6 L42.7,215.2 L43.1,215.4 L42.7,214.9 L43.1,213.9 L43.7,214.1 L43.1,213.3 L43.8,213.3 L43.7,212.7 L44.0,211.9 L43.7,210.9 L44.2,210.8 L44.5,211.5 L44.8,211.0 L45.4,210.6 L45.6,209.8 L45.9,208.5 L46.3,208.2 L46.5,208.7 L46.9,207.8 L47.8,207.7 L49.9,206.1 L50.0,206.7 L50.5,207.3 L50.0,206.5 L50.8,205.8 L51.3,206.1 L52.0,206.0 L52.8,205.3 L53.2,205.5 L54.2,204.8 L54.8,204.5 L55.9,204.7 L58.1,203.2 L58.7,203.5 L58.7,202.7 L59.1,202.3 L60.4,201.0 L61.3,200.5 L61.7,200.0 L62.3,200.0 L62.6,199.7 L63.5,199.5 L64.3,197.7 L64.9,197.0 L67.7,195.8 L68.5,195.4 L69.2,193.4 L70.5,194.1 L72.0,193.2 L73.0,193.2 L74.1,192.1 L75.0,192.0 L75.4,191.6 L76.0,191.8 L75.7,191.5 L76.5,191.1 L77.0,190.5 L77.3,190.2 L78.0,189.6 L78.3,188.8 L79.0,188.8 L78.4,189.6 L78.0,190.8 L78.5,191.5 L79.2,191.8 L80.0,191.6 L80.9,190.8 L81.6,190.6 L82.4,190.3 L83.0,190.7 L83.1,190.3 L83.7,189.8 L84.0,190.4 L83.6,191.1 L84.0,190.9 L84.2,191.4 L86.3,192.0 L86.8,192.4 L87.0,191.9 L87.6,192.1 L89.3,191.6 L90.5,190.9 L90.6,191.5 L91.0,191.0 L91.5,191.2 L92.7,191.0 L93.9,190.0 L94.1,189.3 L94.8,189.5 L95.2,189.2 L95.0,188.8 L95.1,188.1 L96.2,187.8 L98.7,186.0 L99.0,186.4 L98.5,186.7 L99.7,186.5 L100.3,186.3 L101.1,185.9 L101.4,186.4 L102.4,186.0 L103.2,186.1 L103.4,185.6 L104.0,185.9 L104.4,185.3 L104.3,185.9 L104.9,186.2 L105.1,185.8 L104.5,185.5 L105.4,185.3 L106.0,186.0 L107.1,185.3 L108.4,185.1 L108.6,184.4 L109.3,183.5 L110.3,182.7 L110.7,181.6 L112.0,181.1 L112.4,180.4 L113.1,180.7 L113.3,181.1 L114.2,181.4 L113.4,181.0 L113.6,180.3 L116.6,181.0 L117.2,180.9 L117.5,181.2 L118.2,181.2 L119.5,182.1 L120.9,181.5 L121.1,181.0 L121.5,181.4 L122.0,181.2 L121.8,180.6 L122.4,180.3 L123.8,180.5 L125.4,180.0 L129.3,179.5 L135.5,177.4 L140.7,175.1 L144.3,172.6 L145.8,171.0 L148.3,167.6 L148.5,166.7 L149.1,165.7 L149.0,165.2 L149.7,164.1 L150.5,163.2 L150.6,162.6 L149.9,162.2 L150.5,161.6 L151.2,161.6 L152.0,161.2 L152.5,160.9 L152.3,160.0 L151.6,159.7 L152.1,159.4 L152.5,158.6 L152.9,158.4 L152.9,157.8 L153.8,158.2 L154.3,158.0 L156.0,156.9 L156.6,156.0 L157.7,155.6 L158.2,154.8 L158.8,154.6 L160.3,153.7 L161.2,152.9 L161.3,151.6 L161.3,151.0 L160.1,150.7 L159.4,150.3 L158.8,151.2 L158.2,150.7 L158.8,150.1 L158.6,147.8 L159.1,147.6 L158.6,147.5 L158.6,146.4 L157.8,144.6 L157.9,141.6 L158.2,140.1 L158.8,139.8 L159.4,138.6 L160.3,138.5 L160.0,138.1 L159.5,137.9 L161.1,136.4 L162.6,135.2 L162.2,135.9 L162.8,134.6 L163.4,135.2 L164.5,135.5 L163.6,133.7 L164.1,133.6 L164.2,132.7 L165.1,133.2 L165.9,132.9 L166.6,132.8 L167.0,132.4 L167.4,132.7 L168.1,133.0 L168.1,132.3 L167.3,132.2 L166.8,131.8 L167.2,130.7 L167.2,130.0 L167.8,129.3 L168.3,129.4 L168.8,129.2 L168.4,128.9 L169.1,128.7 L169.1,128.0 L169.4,127.1 L170.4,127.0 L171.2,126.6 L170.9,127.5 L171.3,127.9 L170.8,128.0 L170.3,128.4 L170.2,129.0 L170.7,129.1 L169.9,130.0 L170.5,130.3 L171.4,131.6 L171.8,131.2 L172.1,131.9 L172.7,131.5 L172.6,132.2 L172.1,132.6 L172.3,133.1 L172.9,133.3 L173.2,134.1 L172.8,134.4 L172.7,135.1 L174.0,135.7 L174.7,136.7 L174.9,137.9 L175.6,138.4 L176.3,139.8 L176.4,141.0 L177.4,141.4 L178.3,142.6 L178.7,143.1 L179.2,144.0 L179.3,145.0 L179.1,145.5 L179.4,145.1 L179.4,144.0 L179.2,143.5 L179.3,142.7 L179.0,142.3 L179.3,141.4 L179.9,139.1 L180.1,139.9 L180.3,140.5 L180.2,139.1 L180.7,139.5 L180.8,140.2 L181.0,139.9 L179.6,138.2 L179.3,136.7 L179.6,136.3 L180.0,136.6 L180.3,136.2 L180.4,136.8 L181.4,138.3 L181.8,138.7 L181.4,138.2 L180.9,137.1 L183.4,139.4 L184.2,139.4 L184.2,140.0 L184.7,140.4 L184.3,140.0 L184.3,139.3 L183.0,138.3 L182.4,136.3 L183.0,136.2 L183.6,136.7 L184.1,136.7 L184.4,137.7 L184.2,136.7 L183.6,136.6 L182.9,135.5 L184.9,133.9 L184.6,133.5 L182.5,134.9 L182.1,134.5 L181.9,133.9 L181.4,133.2 L181.2,132.4 L179.8,131.5 L179.4,131.2 L178.1,131.1 L178.4,130.8 L179.1,130.7 L178.8,130.2 L179.7,130.1 L179.4,129.3 L178.3,129.4 L178.7,129.8 L178.2,130.1 L177.9,129.4 L177.5,129.2 L177.0,128.9 L177.9,129.0 L177.5,128.4 L178.5,128.8 L180.1,129.2 L179.6,128.8 L180.4,128.5 L179.5,128.0 L178.3,127.6 L179.3,127.6 L178.1,126.9 L179.5,127.3 L179.9,127.8 L180.5,127.8 L181.2,127.5 L180.0,126.7 L180.5,127.0 L181.2,126.8 L181.0,126.4 L179.7,125.5 L179.9,126.0 L178.8,125.5 L179.5,125.2 L179.2,124.8 L179.5,124.5 L179.0,124.3 L179.2,123.8 L179.9,124.6 L179.6,123.8 L180.2,124.0 L179.9,123.6 L180.9,123.4 L181.1,124.1 L181.4,123.8 L181.1,123.2 L182.3,124.0 L182.8,124.4 L182.3,124.6 L181.7,124.0 L182.2,124.7 L182.5,125.2 L181.9,124.7 L181.3,125.0 L182.1,125.5 L182.4,125.8 L182.8,126.2 L183.1,125.9 L183.7,126.9 L183.1,126.6 L183.6,127.9 L184.0,127.6 L183.8,126.5 L183.8,125.8 L184.9,126.8 L185.3,127.5 L184.9,127.0 L185.4,127.3 L185.0,126.9 L185.4,127.0 L184.5,125.7 L184.9,125.4 L185.3,125.8 L184.8,125.2 L184.2,124.4 L185.1,125.1 L187.3,125.4 L188.1,125.9 L188.8,127.5 L190.1,127.4 L190.1,128.1 L189.3,128.0 L190.0,128.2 L191.3,127.9 L191.7,128.9 L191.5,129.7 L191.9,128.6 L192.7,128.9 L191.5,128.3 L191.4,127.6 L190.5,127.6 L191.3,126.4 L191.5,126.8 L191.8,127.1 L192.2,127.4 L192.9,127.2 L194.5,127.4 L196.7,127.1 L197.9,127.7 L199.1,127.6 L199.7,126.9 L198.9,127.5 L197.6,127.5 L197.1,127.0 L196.3,126.8 L195.7,126.4 L194.1,126.1 L191.7,126.6 L191.4,126.3 L191.4,125.7 L191.6,124.7 L191.4,123.8 L192.0,124.0 L192.1,122.2 L192.6,122.5 L193.4,124.3 L193.3,123.8 L193.8,123.0 L195.0,122.7 L194.5,122.9 L194.1,121.2 L195.1,121.1 L194.5,120.7 L194.8,120.0 L195.3,119.0 L195.6,119.5 L196.0,118.4 L197.1,118.3 L196.7,117.2 L197.3,116.7 L197.5,116.2 L197.2,116.5 L196.5,115.5 L196.8,118.3 L196.0,118.1 L195.4,118.1 L196.0,117.3 L195.0,118.0 L194.1,119.2 L193.0,121.2 L193.1,120.3 L192.5,119.6 L192.4,119.0 L192.0,119.3 L191.5,117.6 L191.2,117.0 L191.3,116.3 L191.7,115.8 L192.2,116.2 L192.0,115.6 L191.5,115.4 L191.9,114.8 L192.5,114.2 L192.7,113.7 L193.1,114.1 L192.8,113.5 L192.1,113.7 L192.7,113.3 L193.3,113.3 L193.8,113.8 L194.3,114.0 L194.8,113.8 L194.9,113.0 L195.2,112.6 L195.1,113.2 L195.7,113.5 L195.6,113.0 L195.6,112.3 L196.7,111.7 L196.1,111.7 L195.4,111.7 L195.9,111.3 L195.9,110.7 L195.7,110.1 L196.0,110.5 L196.7,110.5 L197.0,110.8 L196.5,111.4 L197.0,111.1 L197.2,110.7 L198.0,111.2 L197.8,111.7 L198.3,111.5 L199.4,111.8 L199.9,112.6 L200.5,113.0 L199.8,113.4 L200.4,113.4 L200.7,114.1 L201.0,113.8 L201.6,113.1 L203.4,114.3 L204.0,114.8 L204.9,115.3 L201.5,112.8 L201.8,111.6 L202.6,111.1 L201.8,111.3 L202.1,110.3 L201.7,110.9 L201.1,110.8 L199.3,111.6 L199.0,111.3 L198.6,110.9 L198.8,110.4 L199.6,110.1 L199.4,109.7 L200.0,109.4 L200.6,109.9 L200.9,109.2 L201.4,109.0 L200.9,108.9 L200.4,109.2 L200.1,108.8 L200.0,109.3 L199.2,109.5 L198.6,110.2 L198.8,109.7 L198.5,109.2 L198.9,108.9 L198.4,109.0 L198.0,108.7 L199.2,107.9 L200.1,108.3 L200.6,107.7 L201.2,107.4 L200.8,107.0 L200.6,106.0 L201.5,105.9 L201.4,106.7 L201.6,107.3 L202.1,106.8 L202.3,107.6 L203.0,108.9 L203.0,108.2 L204.4,107.8 L204.7,108.4 L205.3,108.8 L205.6,108.4 L206.2,108.5 L206.6,108.8 L207.1,108.5 L208.1,108.8 L207.6,108.3 L206.4,108.2 L205.9,107.9 L206.6,107.6 L206.0,107.4 L207.8,106.1 L207.0,106.3 L206.5,106.1 L206.2,106.7 L205.9,106.2 L205.5,106.0 L205.2,106.4 L204.5,106.0 L204.9,105.7 L204.3,106.0 L204.1,105.4 L203.8,105.8 L203.2,105.7 L203.7,105.5 L204.2,105.1 L204.8,105.3 L205.3,104.5 L205.0,104.2 L204.0,104.3 L203.2,103.8 L203.4,103.1 L202.5,102.5 L202.8,102.2 L203.2,102.4 L203.1,101.8 L203.6,102.1 L203.6,101.3 L204.4,101.6 L205.0,101.0 L204.7,100.7 L204.2,100.5 L204.9,99.9 L205.3,99.6 L205.6,99.1 L205.9,99.7 L205.5,100.5 L206.0,99.9 L206.5,99.4 L206.7,100.1 L206.8,100.8 L207.1,101.1 L207.1,100.5 L207.6,99.7 L207.5,99.2 L207.8,99.6 L207.8,99.0 L208.4,99.1 L208.5,99.7 L209.4,99.7 L209.0,99.5 L209.6,98.9 L209.7,97.1 L209.2,96.7 L209.2,95.8 L209.4,95.4 L209.1,95.2 L209.4,94.8 L210.1,95.3 L210.5,95.6 L211.0,95.9 L211.4,95.5 L211.0,96.2 L210.4,96.3 L210.2,97.1 L210.7,98.7 L210.2,100.3 L210.1,101.0 L211.4,97.4 L211.8,98.0 L211.5,98.5 L212.1,98.5 L212.4,98.0 L213.2,98.1 L212.7,98.7 L213.1,99.3 L212.9,99.9 L213.2,100.4 L213.8,100.6 L214.0,101.0 L214.0,99.9 L214.2,99.3 L214.8,99.1 L215.3,99.6 L215.5,99.1 L216.1,99.1 L216.0,98.3 L215.7,98.0 L215.6,97.4 L215.2,97.6 L215.5,97.2 L216.0,96.6 L216.6,96.5 L216.2,95.1 L216.6,94.9 L217.2,94.9 L217.7,94.0 L216.9,92.5 L216.3,92.4 L215.8,92.7 L215.2,92.3 L215.1,91.2 L215.5,91.7 L215.5,92.3 L215.7,91.5 L216.0,91.1 L216.4,91.9 L216.6,91.2 L215.5,90.2 L216.3,90.4 L216.8,89.7 L217.0,90.1 L216.6,90.5 L217.3,90.5 L217.8,90.1 L217.2,90.8 L217.7,91.0 L217.0,91.5 L218.2,90.9 L218.6,91.2 L217.5,91.5 L218.1,91.6 L218.7,91.7 L217.6,92.3 L218.2,92.3 L217.8,93.0 L218.5,92.5 L218.6,93.1 L218.0,93.3 L218.1,93.8 L219.0,94.0 L218.8,94.4 L218.4,95.0 L218.7,95.3 L218.9,94.7 L219.4,94.4 L219.3,94.9 L220.0,94.3 L220.7,94.2 L220.1,93.4 L220.0,92.7 L220.4,92.0 L221.2,92.0 L221.9,91.1 L222.6,91.3 L222.8,90.7 L223.4,90.3 L224.0,90.6 L222.7,91.4 L222.7,92.0 L222.3,92.3 L222.1,92.7 L223.2,92.5 L222.8,92.8 L223.0,93.7 L223.8,93.4 L223.9,94.9 L224.5,95.0 L224.4,94.0 L225.1,93.9 L225.1,92.4 L225.5,92.8 L225.8,93.5 L226.1,93.0 L226.4,92.3 L226.7,92.0 L226.6,91.5 L226.2,91.8 L225.9,90.9 L226.3,91.3 L226.6,90.9 L227.5,91.1 L228.4,91.0 L227.6,90.8 L229.2,91.3 L228.8,91.0 L227.9,90.2 L227.4,90.3 L227.3,89.5 L226.9,89.2 L226.8,88.4 L227.2,88.2 L227.6,87.9 L227.7,88.5 L228.6,88.5 L228.0,87.7 L229.2,87.9 L229.1,87.4 L229.7,87.4 L230.1,87.6 L230.3,88.2 L230.8,88.6 L231.0,89.1 L231.5,88.9 L231.2,89.3 L231.2,89.9 L231.8,89.6 L231.7,90.3 L232.1,90.5 L232.5,91.2 L232.6,90.3 L233.1,89.9 L233.0,90.5 L233.4,91.0 L233.7,90.4 L233.8,89.9 L234.4,90.4 L235.1,90.7 L235.6,91.1 L235.3,90.8 L235.1,90.1 L235.6,89.9 L235.8,90.4 L236.3,90.6 L237.3,91.3 L237.0,91.7 L237.1,92.3 L237.5,92.6 L238.0,92.2 L238.0,93.0 L238.3,92.7 L239.1,93.4 L240.0,93.7 L240.3,94.0 L240.6,94.4 L241.7,95.8 L242.0,96.3 L241.6,96.8 L242.0,96.5 L242.1,97.1 L242.7,97.3 L242.6,98.0 L243.2,97.7 L243.1,98.7 L243.6,98.4 L243.8,98.8 L244.6,99.3 L244.3,99.7 L244.6,100.1 L245.2,99.7 L246.3,100.6 L247.3,101.2 L247.8,101.9 L248.5,101.9 L248.8,102.3 L247.5,102.2 L248.0,102.4 L248.0,103.3 L248.2,103.9 L246.6,104.3 L247.4,104.4 L246.9,105.7 L246.8,107.2 L246.4,107.8 L246.7,108.8 L246.6,110.5 L246.2,110.8 L246.6,112.1 L246.3,112.9 L245.2,114.0 L243.2,114.9 L242.9,115.3 L243.3,116.0 L243.3,115.3 L244.0,115.2 L245.5,113.8 L246.7,113.3 L247.2,111.0 L246.8,110.0 L247.1,109.1 L247.9,109.6 L249.0,110.8 L249.4,111.4 L249.6,113.1 L250.2,113.8 L249.7,112.5 L249.7,111.0 L248.6,109.5 L248.6,108.4 L248.2,107.6 L248.7,106.2 L249.5,105.9 L250.8,107.5 L250.6,106.1 L251.5,106.9 L252.0,107.1 L252.1,106.3 L251.8,105.9 L251.3,104.4 L252.8,105.9 L252.9,106.4 L252.9,105.8 L252.4,105.4 L252.3,104.6 L251.9,104.0 L251.0,103.6 L253.0,102.8 L254.7,103.3 L254.4,103.0 L256.0,103.3 L256.3,103.6 L258.1,104.1 L258.8,103.9 L260.2,104.3 L260.2,355.4 L257.3,356.5 L254.9,357.9 L248.8,360.2 L245.6,361.2 L240.9,362.2 L238.0,363.3 L235.2,364.0 L229.7,364.6 L226.9,364.5 L225.7,364.8 L221.7,364.4 L218.4,363.6 L216.7,364.2 L215.9,364.2 L214.5,364.6 L212.3,365.8 L208.8,368.2 L206.8,368.9 L205.1,369.3 L202.1,370.8 L200.7,371.1 L198.7,372.7 L196.7,373.6 L191.6,374.2 L189.1,375.3 L187.4,377.0 L185.6,381.2 L185.2,383.4 L183.8,384.0 L183.0,384.8 L182.2,385.5 L181.8,386.6 L180.5,387.7 L180.1,388.1 L179.3,388.2 L178.9,388.8 L178.5,389.1 L177.7,388.5 L176.1,388.4 L174.4,389.9 L173.1,390.2 L172.9,389.6 L172.6,388.4 L171.1,387.8 L170.7,388.2 L169.4,388.2 L168.1,388.6 L167.2,388.1 L166.8,388.4 L164.7,388.4 L164.4,388.7 L164.2,389.4 L163.9,389.0 L163.3,389.3 L162.5,388.8 L161.1,388.6 L160.5,388.9 L159.8,389.4 L159.9,390.0 L159.1,389.8 L158.2,390.0 L157.4,390.3 L157.1,389.9 L157.5,389.6 L157.0,388.5 L155.7,387.4 L154.4,387.6 L154.2,388.1 L152.6,388.6 L151.3,387.9 L150.4,388.4 L150.0,387.9 L149.1,387.4 L148.3,387.6 L147.8,387.3 L146.6,387.2 L145.2,387.3 L144.8,387.7 L143.7,387.6 L143.4,388.1 L142.2,387.7 L141.5,387.8 L140.9,388.0 L138.8,387.8 L138.0,388.3 L134.4,388.4 L134.1,388.9 L132.2,389.6 L129.5,389.0 L128.2,389.0 L127.6,389.2 L126.4,388.8 L125.6,388.9 L124.9,389.5 L124.4,389.4 L123.0,389.6 L122.4,390.5 L120.6,391.2 L119.9,391.9 L119.5,392.4 L118.9,393.2 L118.4,394.3 L118.5,395.2 L119.5,395.7 L118.6,396.1 L118.1,396.0 L117.2,395.5 L116.8,396.2 L117.2,396.8 L116.6,397.2 L116.1,396.6 L115.4,396.6 L115.0,396.9 L115.1,397.8 L114.5,398.0 L114.2,397.4 L113.6,397.2 L112.0,396.8 L110.2,396.7 L109.5,396.9 L109.6,397.5 L108.0,397.6 L107.1,398.3 L107.6,399.1 L106.8,399.8 L106.0,399.9 L105.6,400.3 L103.7,400.7 L102.7,401.2 L102.0,402.3 L101.9,403.1 L102.4,403.4 L102.0,403.7 L100.9,403.3 L100.4,403.6 L99.2,403.7 L98.6,404.0 L99.1,404.7 L98.8,405.3 L98.5,404.8 L97.5,404.7 L96.5,405.2 L95.1,404.9 L94.8,405.4 L93.7,405.4 L94.7,406.1 L94.7,405.5 L95.1,406.2 L96.0,406.2 L95.2,406.8 L94.4,406.7 L92.6,405.8 L91.3,405.5 L90.7,405.8 L90.4,406.5 L89.2,406.1 L88.3,406.2 L87.1,405.4 L86.0,405.2 L86.9,404.8 L87.4,405.2 L88.2,404.8 L87.9,404.4 Z","QLD":"M604.5,310.7 L604.2,311.3 L604.1,312.6 L604.1,313.3 L603.7,313.9 L602.3,314.2 L601.3,313.9 L601.0,314.7 L600.2,314.7 L599.7,314.1 L599.6,313.4 L598.1,314.2 L596.7,314.6 L596.1,315.6 L595.9,316.1 L594.5,317.9 L593.3,317.8 L592.8,316.8 L593.0,316.1 L592.7,315.7 L592.7,314.4 L590.1,312.9 L589.3,313.0 L589.3,312.3 L589.0,311.8 L588.7,311.4 L587.7,311.3 L587.2,310.6 L584.9,309.8 L583.9,310.2 L583.1,310.5 L582.0,310.1 L580.3,310.3 L579.9,310.1 L579.2,309.6 L578.9,308.9 L578.0,308.4 L576.9,308.9 L576.0,308.6 L575.1,308.8 L573.9,309.0 L573.3,309.5 L569.5,309.5 L569.3,309.8 L568.6,309.5 L567.9,309.3 L567.5,308.9 L566.3,308.9 L565.5,309.2 L564.5,310.7 L564.1,310.6 L563.5,311.0 L562.8,311.5 L562.1,311.8 L561.6,311.9 L560.8,312.4 L560.7,312.8 L560.0,312.9 L559.2,314.6 L558.3,315.0 L439.3,315.3 L439.3,270.5 L394.5,270.4 L394.5,129.3 L397.2,131.5 L399.3,132.4 L400.0,132.3 L401.0,132.8 L401.8,132.9 L404.0,132.7 L407.1,134.2 L409.7,134.5 L410.1,134.8 L410.2,135.4 L410.9,136.2 L411.8,136.5 L411.6,137.4 L411.9,138.8 L412.6,140.4 L413.1,140.9 L414.1,141.5 L415.7,141.7 L416.5,142.0 L419.1,144.2 L420.3,144.4 L420.8,144.8 L421.7,144.7 L422.0,145.1 L423.4,145.5 L423.6,146.1 L424.5,146.8 L426.1,146.9 L430.3,146.2 L431.0,145.8 L432.3,145.5 L433.6,144.9 L435.1,143.7 L435.9,143.3 L436.8,143.0 L437.6,141.8 L438.0,139.7 L438.4,138.9 L438.7,136.1 L439.0,135.7 L440.3,134.3 L440.6,133.2 L441.3,132.9 L442.4,131.5 L442.8,130.0 L443.3,129.6 L443.8,128.5 L443.9,127.9 L443.7,127.1 L444.2,126.2 L444.8,124.2 L445.8,122.2 L444.9,119.9 L445.6,119.7 L445.9,116.1 L446.4,114.1 L447.8,110.8 L448.0,109.4 L448.7,109.5 L449.2,109.7 L449.5,110.1 L450.0,109.8 L450.5,109.7 L449.6,110.0 L448.9,109.7 L448.2,109.2 L448.8,108.7 L448.8,107.8 L449.3,106.5 L448.1,104.0 L447.6,100.0 L447.2,98.6 L448.2,95.3 L448.4,93.9 L448.1,92.5 L446.8,91.1 L446.3,90.2 L446.3,89.3 L447.2,84.8 L447.7,83.8 L447.3,84.9 L447.9,84.9 L447.5,84.3 L448.7,82.0 L449.2,82.3 L449.8,82.0 L449.6,83.0 L450.1,82.7 L450.2,82.1 L450.9,82.1 L450.3,82.1 L449.6,81.5 L450.3,81.2 L449.4,81.5 L449.7,80.2 L448.8,78.8 L448.6,77.0 L448.1,76.4 L448.3,75.8 L448.8,75.1 L450.4,74.2 L451.4,71.6 L452.2,71.8 L452.6,72.4 L452.7,74.0 L453.2,74.8 L452.9,73.0 L454.6,72.3 L453.7,72.2 L453.2,72.5 L452.5,71.5 L451.9,71.4 L452.7,70.5 L454.1,70.3 L454.4,69.9 L454.9,69.7 L454.1,70.2 L453.3,69.8 L452.8,70.3 L451.6,70.4 L450.9,70.0 L450.7,69.5 L449.7,69.2 L450.5,68.7 L449.7,68.6 L450.1,67.2 L449.6,67.7 L449.2,68.4 L449.1,69.5 L449.7,69.4 L448.7,70.2 L448.2,69.8 L450.0,65.0 L451.4,65.3 L451.0,64.8 L450.2,64.9 L451.5,62.2 L452.5,60.8 L452.6,61.3 L453.0,62.0 L453.1,63.2 L453.4,63.6 L452.8,64.0 L453.0,64.4 L452.7,64.9 L453.2,65.3 L452.8,65.0 L453.1,64.4 L453.5,63.7 L453.2,62.9 L453.6,62.1 L454.6,62.6 L455.0,61.4 L455.8,61.3 L456.5,61.8 L455.9,61.2 L455.4,61.1 L454.9,61.3 L454.5,62.1 L454.2,61.5 L453.4,61.1 L453.9,58.1 L455.7,57.6 L454.3,57.8 L454.5,56.6 L455.3,55.6 L454.7,56.5 L455.1,54.8 L455.9,54.5 L455.3,54.4 L455.6,53.5 L456.1,52.0 L456.0,50.0 L456.3,49.6 L456.5,48.5 L456.2,46.3 L456.4,45.8 L456.8,45.5 L457.4,45.3 L458.6,45.4 L459.6,44.8 L460.9,42.3 L461.5,42.4 L462.3,42.0 L462.6,42.5 L463.4,42.9 L462.5,44.1 L462.0,44.3 L461.8,45.9 L461.3,46.1 L462.2,45.4 L462.7,45.6 L462.4,45.1 L463.2,44.6 L463.5,45.2 L463.3,45.7 L464.4,45.9 L464.0,46.5 L464.0,47.1 L464.1,46.5 L465.0,46.0 L466.0,47.7 L466.1,50.7 L466.8,51.3 L467.2,52.3 L466.6,53.5 L467.1,56.1 L467.1,59.2 L468.8,60.5 L469.6,60.6 L470.8,59.9 L471.4,60.3 L471.8,61.1 L472.4,60.8 L472.9,61.1 L472.1,61.3 L470.7,63.6 L470.6,64.7 L470.4,66.5 L471.9,66.6 L472.9,67.1 L473.3,67.5 L473.4,68.2 L473.3,68.7 L473.8,69.7 L475.4,70.3 L475.8,70.6 L475.3,71.3 L474.7,73.1 L474.5,74.9 L474.8,74.6 L474.9,75.1 L475.0,74.4 L475.9,74.1 L476.4,74.4 L477.4,74.1 L476.7,75.7 L476.9,76.6 L476.8,78.5 L477.0,79.1 L477.1,81.3 L477.9,82.2 L478.2,82.8 L477.9,83.9 L477.5,85.4 L477.2,87.6 L477.4,88.4 L478.1,89.3 L478.7,91.1 L479.4,91.6 L479.8,94.6 L480.9,97.3 L482.2,98.4 L483.2,98.6 L483.4,99.1 L483.5,98.6 L484.6,98.5 L485.6,97.9 L486.0,97.4 L487.2,96.1 L487.1,95.2 L487.9,95.3 L488.4,95.9 L489.2,95.9 L490.8,95.0 L491.5,93.9 L493.0,95.3 L492.8,95.9 L493.0,96.8 L493.8,96.6 L493.4,97.6 L493.4,98.3 L494.1,99.0 L494.3,99.6 L495.7,99.5 L495.8,100.2 L496.6,100.5 L497.7,100.5 L497.9,101.1 L498.3,101.4 L498.3,102.3 L499.2,102.6 L499.5,103.2 L500.4,103.3 L501.7,103.9 L502.5,103.7 L502.3,104.4 L503.3,105.6 L504.3,105.6 L503.4,107.0 L502.6,108.2 L502.6,108.9 L503.0,110.1 L503.8,110.2 L504.1,109.7 L504.4,110.4 L503.5,110.9 L503.3,111.9 L502.8,112.6 L502.6,113.1 L503.3,113.7 L503.1,114.1 L503.3,114.6 L503.9,114.7 L503.7,115.9 L504.4,116.9 L504.5,117.8 L504.3,118.2 L504.7,118.8 L504.4,120.0 L505.5,120.8 L506.2,122.4 L505.6,123.8 L506.1,124.4 L506.3,125.3 L505.7,125.3 L505.1,125.5 L505.8,125.5 L505.3,126.3 L505.1,127.7 L505.3,128.3 L506.1,128.4 L507.8,131.4 L509.1,132.2 L509.3,132.7 L509.9,133.2 L510.4,134.0 L510.5,134.5 L510.7,135.0 L510.5,135.5 L510.6,136.0 L511.0,135.5 L510.8,135.1 L511.8,134.2 L512.0,134.7 L512.6,134.5 L512.8,134.1 L513.4,134.6 L512.6,135.8 L512.3,136.9 L513.4,138.6 L513.5,139.5 L512.9,139.4 L513.2,140.0 L513.5,139.5 L514.2,141.1 L515.1,142.0 L515.0,143.0 L515.2,143.5 L515.9,145.1 L515.6,145.7 L515.9,145.2 L516.2,145.9 L515.6,146.7 L515.6,147.7 L515.3,148.1 L515.5,148.6 L515.5,149.5 L515.4,150.6 L515.0,151.1 L514.4,151.4 L514.4,152.3 L514.1,153.0 L514.2,154.7 L515.2,155.8 L515.5,156.4 L516.0,156.6 L516.1,157.1 L516.1,156.5 L516.4,157.8 L517.0,157.9 L517.2,158.3 L517.0,158.8 L517.5,158.5 L518.1,158.9 L519.0,159.0 L518.8,159.7 L519.0,160.2 L518.7,160.7 L518.5,161.5 L517.9,164.0 L520.7,167.1 L524.2,168.9 L525.5,168.8 L525.8,169.6 L526.5,169.8 L526.3,170.3 L527.3,170.6 L527.9,170.6 L529.3,169.2 L529.9,169.8 L529.6,170.4 L530.7,171.7 L530.6,172.4 L531.0,172.1 L531.4,172.3 L532.4,172.2 L532.7,172.6 L533.5,172.0 L535.5,172.2 L535.7,171.7 L534.9,170.4 L535.6,171.3 L536.2,172.9 L536.7,173.6 L536.5,174.2 L537.1,173.9 L537.3,174.4 L537.4,175.0 L536.5,174.8 L537.1,174.8 L537.7,175.5 L537.2,175.8 L536.1,175.4 L536.9,176.4 L537.5,176.9 L537.9,177.4 L538.8,178.0 L539.8,178.6 L540.8,178.6 L540.3,178.2 L540.0,177.4 L540.2,176.9 L541.2,176.6 L541.6,177.0 L541.7,178.2 L542.1,179.0 L542.5,179.5 L542.3,179.2 L542.9,179.7 L543.7,179.8 L544.2,179.4 L545.0,179.2 L545.3,179.9 L546.2,180.4 L546.6,180.1 L547.1,180.3 L547.4,180.8 L547.8,181.3 L547.2,181.7 L548.0,182.1 L548.9,183.2 L549.8,183.4 L550.5,183.6 L551.0,182.8 L550.5,182.7 L550.4,182.0 L551.2,182.3 L552.2,182.0 L552.3,182.9 L552.3,183.5 L552.7,183.9 L553.0,183.6 L552.8,184.0 L553.3,183.5 L553.5,184.1 L553.9,183.6 L553.6,184.5 L553.9,185.0 L554.5,184.9 L555.0,184.5 L555.4,185.0 L556.3,186.2 L556.0,186.6 L556.3,187.3 L556.9,187.9 L557.7,188.9 L557.2,189.1 L556.6,188.8 L556.1,188.3 L555.7,187.2 L555.2,188.1 L554.1,187.5 L553.6,187.7 L554.4,188.3 L553.8,189.4 L554.2,190.4 L554.7,190.6 L554.2,191.2 L554.7,191.6 L555.2,192.0 L555.7,192.7 L556.3,193.2 L556.3,194.1 L556.9,194.1 L557.4,194.3 L558.0,194.1 L558.4,194.5 L558.8,194.6 L559.2,194.4 L559.6,194.8 L558.9,194.9 L559.2,195.3 L559.0,195.9 L560.1,195.5 L560.6,196.0 L561.1,196.3 L561.8,197.0 L562.0,198.1 L561.4,197.8 L560.7,198.0 L561.8,198.0 L561.6,199.0 L560.9,199.1 L561.4,198.9 L561.9,199.5 L561.4,200.1 L561.7,200.5 L561.2,200.8 L561.8,200.6 L562.5,199.6 L562.6,200.1 L563.2,200.0 L563.1,200.6 L563.5,201.2 L562.8,201.8 L563.2,202.1 L563.7,202.0 L563.2,202.3 L563.2,202.9 L563.2,203.9 L563.3,203.3 L563.8,203.0 L564.1,203.4 L564.6,203.2 L564.4,203.9 L565.2,204.1 L566.0,203.8 L566.0,204.4 L565.3,205.4 L565.6,206.5 L565.9,206.8 L565.0,207.0 L565.1,208.2 L565.8,208.4 L565.6,209.5 L565.8,210.2 L566.6,211.2 L566.6,212.3 L567.2,213.4 L566.9,213.7 L567.7,214.9 L567.0,215.3 L566.6,215.8 L567.1,215.3 L568.1,215.3 L568.6,216.1 L567.9,216.0 L567.5,216.3 L567.4,216.9 L567.8,216.1 L568.5,216.4 L569.0,216.0 L569.3,216.5 L569.1,217.2 L568.2,218.8 L568.2,219.6 L568.2,218.8 L568.7,218.3 L570.5,217.2 L570.8,216.5 L571.4,217.0 L572.0,218.1 L573.1,218.8 L573.5,219.7 L574.2,220.6 L573.7,218.6 L572.4,216.0 L573.0,216.0 L572.4,215.6 L572.4,214.9 L573.1,213.5 L574.3,212.7 L574.7,213.1 L575.1,214.1 L575.9,214.7 L576.0,215.4 L576.5,215.6 L576.3,216.2 L576.9,216.7 L578.2,216.8 L580.9,218.8 L581.3,219.3 L581.0,218.6 L581.8,219.1 L581.7,219.8 L582.1,219.2 L583.1,220.7 L582.9,220.1 L582.2,218.6 L582.7,218.6 L583.0,219.2 L583.4,218.8 L582.8,218.6 L582.2,218.4 L581.6,217.5 L582.4,217.7 L581.7,217.4 L581.6,216.5 L582.1,215.6 L583.0,215.8 L583.3,216.3 L582.9,216.7 L583.5,217.1 L583.1,217.3 L583.6,217.5 L583.7,216.8 L583.4,216.3 L584.1,217.3 L584.9,217.5 L584.7,217.9 L584.5,218.5 L583.9,218.0 L584.0,218.9 L584.5,219.2 L584.4,219.8 L584.2,220.2 L585.0,220.2 L585.2,219.0 L585.4,220.4 L585.7,220.8 L586.2,221.0 L585.5,223.9 L585.6,224.7 L584.7,224.6 L585.3,224.8 L585.1,225.7 L585.3,225.2 L584.9,227.7 L585.6,228.5 L585.2,228.8 L585.7,229.2 L586.1,229.6 L585.4,230.4 L585.0,230.1 L585.7,229.8 L585.3,230.1 L584.9,229.8 L585.5,230.6 L585.8,231.8 L586.7,233.0 L586.4,233.3 L584.6,233.0 L584.2,233.3 L583.7,233.1 L583.3,233.5 L583.8,233.0 L584.0,232.6 L583.6,233.1 L583.0,232.6 L581.9,231.4 L581.1,231.1 L580.9,230.5 L580.4,230.8 L580.0,229.5 L580.4,230.9 L580.8,230.5 L581.0,231.1 L581.5,231.6 L582.9,232.6 L583.4,233.1 L583.2,233.5 L583.9,233.2 L584.4,233.9 L583.9,234.3 L584.4,234.2 L584.2,234.6 L585.2,235.0 L585.7,234.2 L586.6,234.3 L586.5,234.9 L586.0,234.6 L586.2,235.2 L586.8,234.4 L587.2,235.0 L587.6,236.0 L587.8,235.4 L587.6,234.9 L588.3,234.1 L588.7,234.2 L588.7,234.9 L588.9,234.2 L589.3,235.2 L590.4,235.7 L590.6,236.1 L590.6,236.8 L590.8,237.2 L591.2,237.9 L591.8,238.0 L591.4,238.3 L592.0,238.0 L593.0,238.5 L593.0,239.7 L593.6,239.9 L593.4,240.3 L593.7,240.0 L593.0,239.6 L593.2,239.2 L593.6,239.5 L593.3,239.1 L594.0,239.7 L595.1,240.6 L594.7,241.0 L595.3,242.0 L595.3,241.0 L595.4,241.6 L595.9,241.9 L596.0,241.3 L596.5,241.5 L596.9,241.9 L597.2,241.2 L597.8,241.3 L598.1,241.5 L598.8,242.2 L598.6,241.6 L598.2,240.8 L598.0,240.3 L599.5,241.0 L599.0,241.4 L599.3,241.8 L599.8,241.1 L600.4,242.3 L600.0,242.6 L601.1,243.3 L601.7,243.2 L601.4,243.8 L601.9,242.9 L602.2,243.7 L602.7,244.2 L603.7,247.2 L604.4,248.3 L604.0,248.6 L604.6,248.7 L605.2,249.4 L606.6,250.6 L606.0,251.1 L606.9,251.0 L606.7,250.5 L607.8,251.4 L609.2,251.7 L609.8,252.0 L610.6,252.9 L610.9,254.4 L610.4,254.8 L610.9,254.6 L610.8,255.3 L611.8,256.6 L612.0,257.2 L613.0,257.8 L612.1,258.1 L612.8,258.4 L613.5,259.3 L615.1,259.6 L615.8,259.2 L616.0,259.7 L617.1,259.8 L617.4,262.0 L616.5,261.7 L617.2,262.0 L616.0,262.9 L617.5,262.0 L617.6,262.5 L617.0,262.9 L617.1,263.6 L616.5,263.9 L616.6,264.8 L617.2,265.7 L616.7,265.9 L617.3,266.2 L617.6,266.8 L618.3,267.1 L618.0,267.5 L618.9,268.0 L618.4,268.7 L619.0,269.0 L618.3,269.2 L618.6,269.6 L618.8,270.4 L618.9,269.9 L619.4,269.6 L618.9,269.2 L619.6,268.9 L619.3,268.4 L619.6,267.8 L619.9,269.0 L620.6,269.7 L621.5,269.5 L619.8,273.3 L619.5,275.2 L619.7,276.2 L619.1,276.0 L619.7,276.4 L619.4,277.2 L619.9,276.9 L619.9,276.3 L620.3,276.2 L620.0,278.2 L620.1,279.8 L620.5,280.8 L620.6,282.1 L620.8,282.5 L620.3,283.1 L620.2,283.8 L619.7,284.0 L619.1,285.3 L619.6,285.8 L620.2,286.3 L619.6,286.3 L620.4,286.4 L619.5,287.1 L619.2,287.7 L618.8,287.3 L619.1,287.8 L619.1,288.4 L619.9,288.5 L620.3,289.0 L620.1,289.4 L619.5,289.0 L619.0,289.6 L619.7,290.5 L620.5,291.0 L621.1,291.5 L621.3,292.7 L622.0,292.7 L622.5,293.3 L623.2,294.2 L623.3,295.8 L623.1,296.2 L623.8,295.9 L623.7,296.8 L624.3,297.3 L623.8,297.4 L624.2,298.0 L623.5,298.5 L623.9,298.2 L624.2,298.8 L623.6,298.9 L624.4,298.6 L624.7,300.3 L624.9,299.5 L625.4,301.9 L626.3,302.9 L625.6,302.7 L623.8,304.1 L622.7,303.8 L622.0,304.3 L621.1,304.1 L621.0,304.8 L620.4,305.1 L620.1,305.7 L619.1,305.4 L617.5,305.4 L616.7,305.0 L615.9,305.1 L615.6,305.6 L614.8,305.8 L613.5,305.0 L612.7,304.4 L612.2,305.4 L611.4,304.9 L611.5,304.3 L610.5,304.2 L610.2,304.8 L609.8,305.3 L609.3,305.9 L608.2,305.8 L606.8,307.1 L606.0,306.8 L605.3,307.3 L604.6,307.4 L603.8,308.2 L603.3,307.9 L602.9,308.1 L602.9,308.8 L603.3,309.1 L603.7,310.3 L604.5,310.7 Z","NSW":"M528.5,421.1 L528.1,421.5 L527.5,421.5 L526.9,420.9 L526.3,421.1 L526.0,420.6 L525.2,420.7 L524.9,420.1 L524.2,420.4 L523.8,420.2 L523.2,419.7 L522.7,419.5 L522.2,419.7 L521.5,419.2 L520.9,419.6 L520.3,419.3 L519.5,420.5 L519.0,420.2 L518.2,420.4 L517.8,420.0 L517.0,420.4 L516.6,420.1 L515.9,420.1 L514.5,419.6 L513.5,420.0 L513.2,419.4 L512.5,419.3 L511.8,419.2 L511.1,419.7 L510.7,419.2 L509.7,419.0 L509.5,418.6 L508.3,418.1 L507.9,417.5 L507.4,417.2 L507.0,416.8 L506.1,416.9 L505.3,417.2 L504.3,417.8 L503.9,417.6 L502.9,417.6 L501.3,417.4 L500.9,417.1 L498.9,417.6 L498.7,418.1 L498.3,418.8 L497.9,419.5 L498.8,420.5 L498.3,421.0 L497.0,420.7 L496.7,421.3 L496.2,421.6 L495.2,421.4 L494.9,421.1 L494.3,421.2 L493.9,420.9 L493.6,420.5 L493.3,420.9 L493.3,420.3 L492.5,419.9 L491.8,419.7 L491.6,419.3 L491.1,418.8 L490.3,418.4 L490.3,417.7 L489.7,417.3 L489.8,416.7 L489.3,416.3 L488.5,416.1 L487.8,415.6 L487.3,415.4 L486.6,414.9 L486.4,414.5 L485.9,414.2 L485.7,413.7 L485.1,413.5 L484.7,413.1 L484.3,413.3 L484.1,412.9 L483.7,412.3 L483.1,412.4 L482.0,412.0 L481.4,411.4 L480.6,411.2 L480.3,410.6 L479.8,410.7 L479.4,410.4 L478.8,410.8 L478.1,410.1 L477.6,409.9 L478.0,409.1 L477.6,408.5 L477.7,408.0 L476.2,408.1 L475.9,407.7 L475.0,407.7 L475.0,407.0 L474.6,406.4 L474.2,405.5 L473.9,404.8 L473.9,404.2 L474.3,403.9 L474.0,403.2 L474.5,402.7 L474.6,402.1 L473.8,401.6 L473.3,401.8 L473.0,401.5 L473.3,401.2 L472.8,401.1 L472.2,400.9 L471.9,400.5 L470.9,400.4 L470.3,400.1 L469.8,400.4 L469.4,400.0 L468.8,400.3 L468.6,399.9 L468.0,399.6 L467.5,400.1 L467.1,399.9 L467.2,399.3 L466.5,398.9 L466.0,398.7 L466.4,398.3 L465.7,398.4 L464.7,398.9 L464.5,399.7 L464.9,400.0 L464.7,400.7 L463.5,400.8 L463.9,401.3 L462.1,401.3 L461.7,401.0 L462.0,400.4 L461.7,399.9 L461.5,399.4 L461.3,398.4 L460.6,398.3 L460.3,398.0 L459.8,397.9 L460.2,397.7 L459.6,397.4 L460.0,397.1 L459.7,396.4 L459.5,395.9 L459.9,395.4 L460.2,395.0 L458.5,394.8 L457.8,394.5 L457.7,393.7 L457.9,393.1 L457.6,392.7 L456.7,392.7 L456.5,392.1 L456.0,392.5 L455.2,392.1 L454.7,391.8 L453.9,391.6 L453.3,392.0 L452.8,391.6 L452.4,391.9 L450.9,391.7 L450.2,391.3 L449.4,391.4 L448.8,391.7 L448.6,392.3 L448.1,392.6 L447.3,392.8 L447.0,393.2 L447.1,392.6 L446.8,392.3 L446.0,392.4 L445.4,392.1 L444.7,391.6 L444.2,392.0 L443.2,391.1 L442.4,390.9 L442.1,391.3 L441.6,391.2 L441.1,390.9 L440.4,390.9 L439.9,390.5 L439.3,315.3 L558.1,315.3 L559.2,314.6 L560.0,312.9 L560.7,312.8 L560.8,312.4 L561.4,312.3 L562.1,311.8 L562.4,311.4 L563.1,311.0 L564.1,310.6 L564.5,310.7 L565.5,309.2 L566.3,308.9 L567.5,308.9 L567.9,309.3 L568.6,309.5 L568.9,309.8 L569.3,309.6 L573.3,309.5 L573.9,309.0 L574.9,309.1 L575.8,308.8 L576.9,308.9 L578.0,308.4 L578.9,308.9 L579.2,309.6 L579.9,309.8 L580.3,310.3 L581.5,310.1 L583.1,310.5 L583.7,310.1 L584.9,309.8 L586.7,310.7 L587.7,311.3 L588.7,311.4 L589.0,311.8 L589.3,312.3 L589.3,313.0 L590.1,312.9 L592.7,314.4 L592.9,315.5 L593.0,316.1 L592.7,316.4 L593.4,317.3 L594.5,317.9 L596.1,316.3 L596.1,315.6 L596.7,314.6 L597.7,314.1 L599.2,313.4 L599.7,314.1 L600.2,314.4 L600.7,314.5 L601.3,313.9 L602.3,314.2 L603.5,313.7 L604.1,313.3 L604.1,312.6 L604.2,311.3 L604.7,310.9 L603.7,310.3 L603.3,309.1 L602.9,308.8 L602.9,308.1 L603.3,307.9 L603.8,308.2 L604.6,307.4 L605.3,307.3 L606.0,306.8 L606.8,307.1 L608.2,305.8 L609.3,305.9 L609.8,305.3 L610.2,304.8 L610.5,304.2 L611.2,304.1 L611.4,304.9 L612.2,305.4 L612.7,304.4 L613.1,305.0 L614.8,305.8 L615.1,305.5 L615.9,305.1 L616.7,305.0 L617.5,305.4 L619.1,305.4 L620.1,305.7 L620.4,305.1 L621.0,304.8 L621.1,304.1 L622.0,304.3 L622.7,303.8 L623.8,304.1 L625.6,302.7 L626.5,303.0 L625.8,303.0 L625.9,303.7 L626.3,303.3 L626.9,303.5 L626.3,304.0 L625.8,304.5 L626.3,304.1 L626.8,303.9 L626.8,303.0 L627.1,303.4 L627.0,304.0 L627.1,305.1 L627.2,305.8 L626.8,307.1 L626.8,308.3 L627.3,309.8 L628.0,309.9 L627.4,312.0 L627.6,313.0 L627.3,313.4 L627.2,313.0 L626.9,313.6 L625.5,315.6 L625.0,317.1 L625.3,317.5 L624.7,318.0 L623.6,319.7 L623.7,320.6 L624.1,320.8 L623.9,321.6 L623.8,320.9 L622.6,320.7 L622.7,321.7 L622.8,321.1 L623.4,321.3 L622.8,321.7 L624.0,321.7 L624.0,322.5 L623.5,323.7 L623.6,324.4 L623.3,325.0 L623.5,325.5 L622.9,326.4 L622.9,327.6 L622.5,328.6 L622.3,328.0 L622.6,329.0 L622.1,329.9 L621.5,330.8 L621.6,332.6 L620.6,334.1 L620.8,335.0 L620.2,335.3 L620.1,335.9 L619.7,336.7 L619.0,337.7 L618.8,339.1 L618.8,339.9 L618.3,340.4 L618.7,340.0 L618.4,340.7 L618.4,341.3 L618.4,342.4 L618.6,343.2 L618.9,343.5 L619.6,343.3 L619.9,344.0 L619.1,345.2 L619.4,346.0 L618.5,347.4 L618.0,348.4 L618.2,350.0 L617.2,351.5 L617.6,352.3 L616.2,353.9 L616.1,354.7 L615.6,355.5 L614.5,357.3 L614.8,357.8 L613.0,358.9 L611.7,360.6 L611.7,361.2 L611.3,361.7 L611.1,362.4 L612.1,363.3 L611.4,364.5 L611.8,365.1 L611.3,366.2 L611.6,366.7 L608.6,367.9 L607.8,369.0 L606.5,369.8 L606.3,370.3 L605.7,370.2 L605.4,369.9 L604.6,370.4 L604.5,369.8 L604.2,370.2 L603.5,370.1 L602.7,370.2 L603.2,370.3 L602.7,370.8 L603.4,370.8 L604.3,371.0 L604.5,370.5 L604.9,371.0 L606.4,370.7 L606.1,371.2 L605.4,371.6 L604.1,371.8 L601.8,372.6 L600.6,373.3 L600.4,373.8 L600.5,373.3 L599.7,373.2 L600.1,373.4 L600.3,373.9 L599.6,374.5 L599.5,375.1 L598.6,375.8 L598.2,376.3 L598.4,375.5 L598.0,375.2 L598.2,374.6 L597.7,374.5 L597.8,375.1 L597.4,374.8 L597.9,375.7 L597.5,375.4 L597.3,376.0 L597.8,376.2 L596.8,375.9 L596.2,376.5 L596.8,376.3 L597.1,376.7 L596.2,377.1 L596.5,377.4 L597.1,377.6 L596.9,377.2 L597.3,376.8 L597.5,377.4 L598.1,376.0 L598.6,376.3 L598.0,377.3 L597.1,378.7 L597.2,379.3 L596.5,379.7 L596.1,380.2 L596.8,379.1 L596.4,378.9 L596.9,378.8 L596.2,378.3 L596.4,378.9 L595.6,379.5 L595.2,379.9 L595.7,380.5 L596.0,380.0 L595.3,381.5 L595.1,382.0 L594.8,382.8 L593.8,383.2 L594.0,382.8 L593.3,382.9 L592.7,383.2 L592.2,382.6 L592.6,382.2 L592.1,382.6 L591.6,382.4 L592.2,382.1 L591.5,382.3 L591.6,383.0 L591.3,382.5 L590.9,382.3 L591.2,381.5 L590.7,382.0 L590.1,382.2 L589.8,381.7 L590.1,382.2 L590.9,382.0 L590.6,382.3 L590.9,382.8 L590.3,382.6 L590.8,382.9 L590.4,383.2 L590.9,383.4 L590.4,383.8 L591.0,383.6 L590.8,383.1 L591.2,382.7 L591.6,383.2 L592.1,383.1 L591.8,383.6 L592.3,383.7 L591.5,383.8 L591.1,384.4 L590.8,384.8 L591.2,384.4 L591.9,384.1 L592.4,384.0 L592.9,383.6 L593.2,384.0 L592.7,384.4 L593.1,384.9 L593.3,384.2 L593.4,383.7 L593.7,384.3 L593.2,385.5 L592.6,385.7 L593.1,385.5 L593.4,386.1 L592.9,386.8 L593.1,387.3 L592.8,386.9 L592.1,387.0 L591.7,386.5 L592.1,386.8 L591.9,387.2 L592.3,387.0 L592.6,387.4 L592.3,387.7 L591.8,387.6 L591.3,387.4 L590.8,387.0 L591.3,387.5 L590.6,387.6 L590.0,387.2 L589.4,387.3 L589.8,387.6 L590.4,387.6 L591.1,387.8 L591.4,388.1 L591.7,387.7 L592.1,388.1 L592.8,387.4 L592.9,388.3 L592.5,388.8 L592.6,389.5 L592.3,390.0 L592.0,389.6 L591.5,389.3 L590.7,390.0 L590.3,390.3 L590.7,390.5 L591.0,389.9 L591.9,390.0 L591.8,390.6 L591.1,390.5 L590.9,391.0 L590.3,391.0 L590.1,390.6 L589.5,390.9 L590.1,390.9 L589.9,391.2 L590.6,391.1 L591.2,391.2 L590.5,392.0 L588.5,393.4 L587.5,394.8 L587.6,395.5 L587.2,396.0 L587.2,396.8 L587.4,397.4 L586.9,397.6 L586.7,398.1 L586.9,397.3 L586.2,397.2 L585.8,397.5 L585.7,398.3 L586.6,398.0 L586.8,398.9 L586.5,399.1 L586.6,400.0 L586.4,400.7 L586.0,401.6 L585.0,402.4 L585.0,403.4 L584.4,403.3 L584.8,402.8 L584.4,403.0 L583.7,402.7 L582.7,402.9 L583.5,402.8 L584.4,403.1 L584.7,403.7 L584.2,404.0 L584.7,403.8 L585.2,403.4 L585.5,403.9 L585.5,404.8 L585.9,405.1 L586.4,405.0 L586.2,405.8 L585.8,406.2 L585.3,406.0 L585.4,405.4 L585.2,404.9 L584.6,404.9 L583.8,405.5 L584.3,406.7 L583.6,406.6 L583.2,407.1 L582.6,407.0 L582.6,407.7 L581.8,408.1 L581.4,408.9 L581.0,408.6 L580.4,408.3 L580.3,408.8 L581.2,408.9 L580.7,409.4 L580.8,410.2 L580.4,410.7 L580.3,410.2 L579.9,410.7 L580.4,410.9 L579.7,411.6 L579.3,412.0 L579.7,412.4 L579.5,413.2 L578.6,414.0 L578.3,414.4 L577.9,415.6 L576.6,415.4 L575.8,415.4 L575.6,415.0 L575.8,414.2 L576.2,413.8 L576.5,413.2 L576.0,413.6 L575.8,414.1 L575.9,414.8 L575.5,415.2 L575.8,416.0 L576.1,415.3 L576.8,415.8 L577.2,416.6 L577.2,417.4 L576.5,417.3 L576.0,416.8 L576.5,417.3 L575.9,418.4 L574.6,418.3 L575.2,418.6 L576.1,418.5 L575.9,420.7 L575.3,420.3 L574.6,420.6 L574.9,421.1 L575.7,420.9 L575.6,421.8 L575.7,422.9 L574.7,423.0 L575.4,423.2 L575.9,423.8 L575.8,424.3 L575.4,424.8 L574.9,425.2 L574.5,424.9 L574.3,425.7 L574.8,425.2 L574.7,426.1 L574.6,426.9 L574.6,427.6 L574.7,428.1 L574.1,429.1 L574.0,428.6 L574.0,429.4 L573.7,430.0 L573.0,430.3 L573.6,430.7 L572.8,432.1 L573.0,432.6 L572.8,433.3 L571.9,433.0 L572.0,433.5 L572.4,433.2 L572.4,433.9 L572.0,434.4 L572.8,434.0 L572.6,434.7 L572.9,435.5 L572.5,435.9 L571.8,435.9 L572.2,436.2 L571.9,436.6 L573.1,436.3 L573.8,436.9 L574.0,437.9 L574.4,438.5 L573.5,438.3 L572.9,438.9 L573.3,439.6 L573.0,440.2 L573.4,441.4 L573.4,442.2 L546.7,431.7 L545.5,431.8 L545.8,430.8 L546.4,430.4 L546.8,429.8 L547.1,429.1 L546.7,428.4 L546.1,428.1 L545.7,426.7 L545.1,426.5 L544.4,425.6 L544.7,424.6 L544.2,423.1 L544.2,422.4 L544.4,421.9 L543.7,421.6 L543.5,421.1 L543.8,420.5 L542.7,420.4 L542.5,419.7 L541.0,419.3 L539.5,418.7 L538.5,419.0 L537.9,419.5 L537.1,419.3 L537.6,419.6 L537.1,419.9 L536.3,418.9 L535.6,419.1 L534.9,419.0 L534.2,419.6 L533.7,420.7 L533.1,420.4 L532.0,420.5 L531.1,420.3 L530.7,419.8 L529.4,421.5 L529.0,421.0 L528.5,421.1 Z"},"caps":{"NSW":{"name":"Sydney","x":591.8,"y":388.0},"VIC":{"name":"Melbourne","x":498.5,"y":446.8},"QLD":{"name":"Brisbane","x":618.9,"y":292.4},"WA":{"name":"Perth","x":64.0,"y":359.3},"SA":{"name":"Adelaide","x":403.5,"y":403.8},"TAS":{"name":"Hobart","x":533.8,"y":522.5},"ACT":{"name":"Canberra","x":560.7,"y":409.0},"NT":{"name":"Darwin","x":287.7,"y":68.3}},"cent":{"NT":[328.9,80.3],"ACT":[600,418],"TAS":[520,495],"SA":[371.4,391.0],"VIC":[500,430],"WA":[144.7,196.8],"QLD":[543.6,189.4],"NSW":[540,360]},"W":820,"H":720};
+/* ===== Reusable Union-Jack canton (for ensign-based flags) ===== */
+function unionCanton(x,y,w,h){
+  const id='clip'+Math.random().toString(36).slice(2,7);
+  return `<g transform="translate(${x},${y})">
+    <clipPath id="${id}"><rect width="${w}" height="${h}"/></clipPath>
+    <g clip-path="url(#${id})">
+      <rect width="${w}" height="${h}" fill="#00247d"/>
+      <path d="M0,0 L${w},${h} M${w},0 L0,${h}" stroke="#fff" stroke-width="${h*0.18}"/>
+      <path d="M0,0 L${w},${h} M${w},0 L0,${h}" stroke="#cf142b" stroke-width="${h*0.07}"/>
+      <path d="M${w/2},0 V${h} M0,${h/2} H${w}" stroke="#fff" stroke-width="${h*0.3}"/>
+      <path d="M${w/2},0 V${h} M0,${h/2} H${w}" stroke="#cf142b" stroke-width="${h*0.16}"/>
+    </g></g>`;
+}
+function star7(cx,cy,r,fill){ // Commonwealth / federation star, 7 points
+  let p='';for(let i=0;i<7;i++){const a=-Math.PI/2+i*2*Math.PI/7;const a2=a+Math.PI/7;
+    p+=(i?'L':'M')+(cx+r*Math.cos(a)).toFixed(1)+','+(cy+r*Math.sin(a)).toFixed(1)+
+       ' L'+(cx+r*0.45*Math.cos(a2)).toFixed(1)+','+(cy+r*0.45*Math.sin(a2)).toFixed(1)+' ';}
+  return `<path d="${p}Z" fill="${fill}"/>`;
+}
+function star(cx,cy,r,fill,pts=5){
+  let p='';for(let i=0;i<pts;i++){const a=-Math.PI/2+i*2*Math.PI/pts;const a2=a+Math.PI/pts;
+    p+=(i?'L':'M')+(cx+r*Math.cos(a)).toFixed(1)+','+(cy+r*Math.sin(a)).toFixed(1)+
+       ' L'+(cx+r*0.4*Math.cos(a2)).toFixed(1)+','+(cy+r*0.4*Math.sin(a2)).toFixed(1)+' ';}
+  return `<path d="${p}Z" fill="${fill}"/>`;
+}
+/* Southern Cross cluster, scaled into a box at (ox,oy) size sz */
+function southernCross(ox,oy,sz,fill){
+  const s=sz/100;const st=r=>r*s;
+  return `<g fill="${fill}">
+    ${star(ox+50*s,oy+12*s,st(11),fill,7)}
+    ${star(ox+82*s,oy+40*s,st(11),fill,7)}
+    ${star(ox+50*s,oy+72*s,st(11),fill,7)}
+    ${star(ox+20*s,oy+44*s,st(11),fill,7)}
+    ${star(ox+58*s,oy+44*s,st(6),fill,5)}
+  </g>`;
+}
+
+/* ===== STATE & TERRITORY FLAGS (220x110 viewBox) ===== */
+const STATE_FLAGS={
+NSW:{title:"New South Wales",
+  significance:"State Blue Ensign with the NSW state badge: a white disc bearing the red Cross of St George. On the cross sits a golden lion (the lion passant guardant of England) at the centre with a gold eight-pointed star on each arm — representing the link to Britain.",
+  svg:()=>`<svg viewBox="0 0 220 110">
+    <rect width="220" height="110" fill="#00247d"/>
+    ${unionCanton(0,0,110,55)}
+    <circle cx="165" cy="62" r="34" fill="#fff"/>
+    <path d="M165,30 V94 M133,62 H197" stroke="#cf142b" stroke-width="9"/>
+    ${star(165,40,5,'#f5c400',8)}${star(165,84,5,'#f5c400',8)}${star(145,62,5,'#f5c400',8)}${star(185,62,5,'#f5c400',8)}
+    <g fill="#d4a017" transform="translate(157,55)"><path d="M0,8 q2,-7 9,-7 q4,0 6,3 q-3,-1 -5,1 q4,1 5,4 q-4,-2 -7,-1 q3,2 2,5 l-3,-2 -2,3 -2,-3 -3,2 q-1,-4 1,-6 q-4,-1 -6,1z"/></g>
+  </svg>`},
+VIC:{title:"Victoria",
+  significance:"State Blue Ensign with the Southern Cross (five white stars) beneath a gold St Edward's Crown — symbolising Victoria's place under the Crown and in the southern sky.",
+  svg:()=>`<svg viewBox="0 0 220 110">
+    <rect width="220" height="110" fill="#00247d"/>
+    ${unionCanton(0,0,110,55)}
+    <g transform="translate(150,8)"><rect x="6" y="14" width="44" height="6" fill="#f5c400"/><path d="M6,14 Q10,2 16,8 Q22,-2 28,8 Q34,-2 40,8 Q46,2 50,14 Z" fill="#c8102e" stroke="#f5c400" stroke-width="1.5"/><circle cx="16" cy="6" r="2.5" fill="#fff"/><circle cx="28" cy="3" r="2.5" fill="#fff"/><circle cx="40" cy="6" r="2.5" fill="#fff"/></g>
+    ${southernCross(135,42,62,'#fff')}
+  </svg>`},
+QLD:{title:"Queensland",
+  significance:"State Blue Ensign with the state badge: a white disc bearing a light-blue Maltese Cross with the Imperial (St Edward's) Crown at its centre.",
+  svg:()=>`<svg viewBox="0 0 220 110">
+    <rect width="220" height="110" fill="#00247d"/>
+    ${unionCanton(0,0,110,55)}
+    <circle cx="165" cy="55" r="34" fill="#fff"/>
+    <g fill="#3a7bd5"><path d="M165,30 L173,47 L165,55 L157,47 Z"/><path d="M165,80 L173,63 L165,55 L157,63 Z"/><path d="M140,55 L157,47 L165,55 L157,63 Z"/><path d="M190,55 L173,47 L165,55 L173,63 Z"/></g>
+    <circle cx="165" cy="55" r="11" fill="#c8102e" stroke="#f5c400" stroke-width="1.5"/><path d="M159,55 Q165,46 171,55Z" fill="#f5c400"/>
+  </svg>`},
+WA:{title:"Western Australia",
+  significance:"State Blue Ensign with the state badge: a yellow disc bearing a native black swan, swimming to the left toward the flagstaff — the emblem of Western Australia.",
+  svg:()=>`<svg viewBox="0 0 220 110">
+    <rect width="220" height="110" fill="#00247d"/>
+    ${unionCanton(0,0,110,55)}
+    <circle cx="165" cy="55" r="34" fill="#f5c400"/>
+    <g fill="#111"><path d="M150,60 q4,-12 20,-12 q10,0 14,5 q-6,-1 -10,2 q8,1 11,6 q-10,-3 -16,0 q6,3 6,8 q-12,-6 -26,-2 q-3,-4 1,-7 z"/><path d="M140,58 q3,3 10,3" stroke="#111" stroke-width="2" fill="none"/></g>
+    <path d="M186,52 l5,1 -4,2 z" fill="#c8102e"/>
+  </svg>`},
+SA:{title:"South Australia",
+  significance:"State Blue Ensign with the state badge: a gold disc bearing an Australian piping shrike (white-backed magpie) with wings outstretched, perched on a gum-tree branch.",
+  svg:()=>`<svg viewBox="0 0 220 110">
+    <rect width="220" height="110" fill="#00247d"/>
+    ${unionCanton(0,0,110,55)}
+    <circle cx="165" cy="55" r="34" fill="#f5c400"/>
+    <g><path d="M138,58 q14,-3 27,0 q13,-3 27,0 q-12,4 -27,3 q-15,1 -27,-3z" fill="#fff" stroke="#111" stroke-width="1.2"/><ellipse cx="165" cy="56" rx="6" ry="9" fill="#111"/><circle cx="165" cy="49" r="4" fill="#111"/><path d="M150,66 h30" stroke="#5a3a1a" stroke-width="2.5"/></g>
+  </svg>`},
+TAS:{title:"Tasmania",
+  significance:"State Blue Ensign with the state badge: a white disc bearing a red lion passant (walking lion) — a symbol of Tasmania's ties to Britain.",
+  svg:()=>`<svg viewBox="0 0 220 110">
+    <rect width="220" height="110" fill="#00247d"/>
+    ${unionCanton(0,0,110,55)}
+    <circle cx="165" cy="55" r="34" fill="#fff"/>
+    <g fill="#c8102e"><path d="M143,62 q6,-14 24,-14 q12,0 16,6 q-4,-1 -7,1 q6,2 7,7 q-6,-4 -12,-2 q5,3 4,9 l-5,-4 -4,5 -4,-5 -5,4 q-2,-6 2,-9 q-9,-2 -16,2z"/><circle cx="150" cy="56" r="1.5" fill="#fff"/></g>
+  </svg>`},
+ACT:{title:"Australian Capital Territory",
+  significance:"A vertical blue-and-gold flag: the blue panel carries the white Southern Cross; the gold panel carries the city coat of arms of Canberra (a white castle/crown crest with a portcullis and swans).",
+  svg:()=>`<svg viewBox="0 0 220 110">
+    <rect width="80" height="110" fill="#003a8c"/>
+    <rect x="80" width="140" height="110" fill="#f5c400"/>
+    ${southernCross(8,20,64,'#fff')}
+    <g transform="translate(120,28)"><rect x="0" y="20" width="60" height="36" rx="3" fill="#fff" stroke="#003a8c" stroke-width="2"/><rect x="22" y="34" width="16" height="22" fill="#003a8c"/><path d="M0,20 h60 v-6 h-8 v-6 h-8 v6 h-12 v-6 h-8 v6 h-8 v6z" fill="#fff" stroke="#003a8c" stroke-width="2"/><path d="M0,56 q30,12 60,0" fill="none" stroke="#c8102e" stroke-width="3"/></g>
+  </svg>`},
+NT:{title:"Northern Territory",
+  significance:"Territory flag in ochre, black and white. The black panel by the flagstaff carries the white Southern Cross; the larger ochre panel bears a stylised Sturt's Desert Rose — the Territory's floral emblem — with seven white petals around a black centre (the seven petals echo the six states and the Territory).",
+  svg:()=>`<svg viewBox="0 0 220 110">
+    <rect width="74" height="110" fill="#101010"/>
+    <rect x="74" width="146" height="110" fill="#b8500f"/>
+    ${southernCross(6,18,62,'#fff')}
+    <g transform="translate(150,55)">
+      ${[0,1,2,3,4,5,6].map(i=>{const a=i/7*2*Math.PI-Math.PI/2;const x=Math.cos(a)*22,y=Math.sin(a)*22;return `<ellipse cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" rx="9" ry="16" fill="#fff" transform="rotate(${(a*180/Math.PI+90).toFixed(1)} ${x.toFixed(1)} ${y.toFixed(1)})"/>`}).join('')}
+      <circle cx="0" cy="0" r="11" fill="#101010"/>
+    </g>
+  </svg>`}
+};
+
+/* ===== NATIONAL SYMBOL ILLUSTRATIONS (detailed inline SVG) ===== */
+/* Reusable star helpers */
+function _s7(cx,cy,r,fill){let p='';for(let i=0;i<7;i++){const a=-Math.PI/2+i*2*Math.PI/7;const a2=a+Math.PI/7;p+=(i?'L':'M')+(cx+r*Math.cos(a)).toFixed(1)+','+(cy+r*Math.sin(a)).toFixed(1)+' L'+(cx+r*0.46*Math.cos(a2)).toFixed(1)+','+(cy+r*0.46*Math.sin(a2)).toFixed(1)+' ';}return `<path d="${p}Z" fill="${fill}"/>`;}
+function _s5(cx,cy,r,fill){let p='';for(let i=0;i<5;i++){const a=-Math.PI/2+i*2*Math.PI/5;const a2=a+Math.PI/5;p+=(i?'L':'M')+(cx+r*Math.cos(a)).toFixed(1)+','+(cy+r*Math.sin(a)).toFixed(1)+' L'+(cx+r*0.4*Math.cos(a2)).toFixed(1)+','+(cy+r*0.4*Math.sin(a2)).toFixed(1)+' ';}return `<path d="${p}Z" fill="${fill}"/>`;}
+
+/* ===== GOLDEN WATTLE — sprig with pom-pom flowers + feathery bipinnate foliage ===== */
+function svgWattle(){
+  function ball(cx,cy,r){
+    let s=`<circle cx="${cx}" cy="${cy}" r="${(r*1.04).toFixed(1)}" fill="#e0ad12"/>`;
+    // fuzzy outer stamens
+    for(let i=0;i<16;i++){const a=i/16*2*Math.PI, rr=r*(0.86+(i%4)*0.07);
+      s+=`<circle cx="${(cx+Math.cos(a)*rr).toFixed(1)}" cy="${(cy+Math.sin(a)*rr).toFixed(1)}" r="${(r*0.3).toFixed(1)}" fill="#edb71b"/>`;}
+    s+=`<circle cx="${cx}" cy="${cy}" r="${(r*0.9).toFixed(1)}" fill="#f6c81f"/>`;
+    s+=`<circle cx="${cx}" cy="${cy}" r="${(r*0.55).toFixed(1)}" fill="#fbd84f"/>`;
+    s+=`<circle cx="${(cx-r*.3).toFixed(1)}" cy="${(cy-r*.3).toFixed(1)}" r="${(r*0.24).toFixed(1)}" fill="#fdebab"/>`;
+    return s;
+  }
+  // feathery bipinnate leaf: a rachis with many tiny leaflets
+  function leaf(x,y,ang,len,scale){
+    let s=`<g transform="translate(${x},${y}) rotate(${ang})">`;
+    s+=`<line x1="0" y1="0" x2="${len}" y2="0" stroke="#4f7d3e" stroke-width="${1.6*scale}"/>`;
+    const n=Math.floor(len/6);
+    for(let i=1;i<=n;i++){const px=i*6;
+      s+=`<line x1="${px}" y1="0" x2="${px-2}" y2="${-7*scale}" stroke="#5f9149" stroke-width="${1.2*scale}"/>`;
+      s+=`<line x1="${px}" y1="0" x2="${px-2}" y2="${7*scale}" stroke="#5f9149" stroke-width="${1.2*scale}"/>`;
+    }
+    s+='</g>';return s;
+  }
+  let s='<svg viewBox="0 0 200 200">';
+  // background feathery leaves (behind)
+  s+=leaf(36,150,-52,80,1.0);
+  s+=leaf(150,150,-128,78,1.0);
+  s+=leaf(60,176,-66,66,0.9);
+  // main stem
+  s+='<path d="M54,182 C86,150 112,112 128,58" fill="none" stroke="#6d5a2f" stroke-width="3"/>';
+  // pedicels to flowers
+  s+='<g stroke="#7d6a38" stroke-width="2" fill="none">';
+  s+='<path d="M128,58 l12,-8 M120,82 l14,-4 M110,106 l14,-2 M100,128 l-13,-7 M90,150 l13,-3"/>';
+  s+='</g>';
+  // pom-pom flowers along the stem
+  const balls=[[140,48,12],[126,58,11],[136,72,10],[120,82,11],[108,104,12],[124,98,9],[100,126,11],[114,124,8],[90,148,11],[103,146,8],[150,66,9],[78,166,9]];
+  s+='<g>'+balls.map(b=>ball(b[0],b[1],b[2])).join('')+'</g>';
+  s+='</svg>';
+  return s;
+}
+
+/* ===== OPAL — polished oval cabochon with blue/green/multicolour play ===== */
+function svgOpal(){
+  let s='<svg viewBox="0 0 200 200">';
+  s+='<defs>';
+  s+='<radialGradient id="ohost" cx="42%" cy="32%"><stop offset="0" stop-color="#bfe8ea"/><stop offset="55%" stop-color="#6fb6c4"/><stop offset="100%" stop-color="#2b6e83"/></radialGradient>';
+  s+='<radialGradient id="oshine" cx="36%" cy="26%"><stop offset="0" stop-color="#fff" stop-opacity=".8"/><stop offset="35%" stop-color="#fff" stop-opacity=".12"/><stop offset="100%" stop-color="#fff" stop-opacity="0"/></radialGradient>';
+  s+='<clipPath id="oclip"><ellipse cx="100" cy="100" rx="84" ry="66"/></clipPath>';
+  s+='</defs>';
+  // base teal-blue body (like the reference)
+  s+='<ellipse cx="100" cy="100" rx="84" ry="66" fill="url(#ohost)"/>';
+  s+='<g clip-path="url(#oclip)">';
+  // broad colour fields — greens, blues, with warm flecks
+  const fields=[
+    ['#2fae74','M22,96 q34,-30 70,-16 q16,22 -12,38 q-40,12 -58,-22z'],
+    ['#1f8fd0','M86,58 q44,-12 64,18 q-8,26 -44,22 q-30,-4 -20,-40z'],
+    ['#37c0a6','M40,120 q40,18 92,8 q-12,30 -56,30 q-34,-6 -36,-38z'],
+    ['#7fd14a','M104,104 q30,-6 44,16 q-16,18 -44,10 q-14,-14 0,-26z'],
+    ['#bfe98a','M58,80 q20,-6 30,8 q-10,14 -32,8 q-6,-10 2,-16z'],
+  ];
+  s+=fields.map(f=>`<path d="${f[1]}" fill="${f[0]}" opacity=".9"/>`).join('');
+  // warm orange/red flecks
+  s+='<path d="M120,128 q16,0 22,12 q-12,8 -26,0 q-4,-8 4,-12z" fill="#f0922a" opacity=".85"/>';
+  s+='<path d="M70,128 q12,2 14,12 q-12,4 -20,-4 q-2,-6 6,-8z" fill="#e0532a" opacity=".8"/>';
+  // angular sparkle facets
+  for(let i=0;i<46;i++){const x=24+Math.random()*152,y=42+Math.random()*116;const c=['#19c5d6','#2fae6a','#ffd24a','#d8f08a','#2f7fe0','#7fd14a'][i%6];
+    s+=`<rect x="${x.toFixed(0)}" y="${y.toFixed(0)}" width="${(3+Math.random()*5).toFixed(0)}" height="${(3+Math.random()*5).toFixed(0)}" fill="${c}" opacity=".55" transform="rotate(${(Math.random()*70).toFixed(0)} ${x.toFixed(0)} ${y.toFixed(0)})"/>`;}
+  s+='</g>';
+  s+='<ellipse cx="100" cy="100" rx="84" ry="66" fill="url(#oshine)"/>';
+  s+='<ellipse cx="100" cy="100" rx="84" ry="66" fill="none" stroke="#1c4756" stroke-width="3"/>';
+  s+='</svg>';
+  return s;
+}
+
+/* ===== COMMONWEALTH COAT OF ARMS ===== */
+function svgCoat(){
+  let s='<svg viewBox="0 0 220 230">';
+  s+='<defs><linearGradient id="cgold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3d35a"/><stop offset="1" stop-color="#c89a2c"/></linearGradient></defs>';
+  // wattle backing
+  s+='<g opacity=".95"><g stroke="#5f8a4a" stroke-width="2" fill="none" opacity=".85"><path d="M108,86 C70,96 44,120 30,170"/><path d="M112,86 C150,96 176,120 190,170"/><path d="M104,150 C84,158 64,168 52,186"/><path d="M116,150 C136,158 156,168 168,186"/></g>';
+  const wb=[];for(let side of[-1,1]){const bx=110+side*4;for(let i=0;i<22;i++){const t=i/22;wb.push([bx+side*(20+t*78)+Math.sin(i*1.7)*10,70+t*120-Math.cos(i*0.9)*8]);}}
+  for(const[x,y]of wb)s+=`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="3.4" fill="#eec734"/><circle cx="${(x-.8).toFixed(1)}" cy="${(y-.8).toFixed(1)}" r="1.4" fill="#fbe79a"/>`;
+  s+='</g>';
+  // star on wreath
+  s+='<ellipse cx="110" cy="40" rx="26" ry="9" fill="#1f4fa0"/><ellipse cx="110" cy="40" rx="26" ry="9" fill="none" stroke="#c89a2c" stroke-width="2"/>';
+  s+=_s7(110,30,18,'url(#cgold)');
+  // shield
+  s+='<g transform="translate(60,52)">';
+  s+='<path d="M5,8 h90 a4,4 0 0 1 4,4 v54 q0,40 -49,62 q-49,-22 -49,-62 v-54 a4,4 0 0 1 4,-4 z" fill="#fff" stroke="#1f3a6b" stroke-width="3"/>';
+  s+='<g stroke="#1f3a6b" stroke-width="1.6"><path d="M50,8 V92"/><path d="M5,36 H95"/><path d="M5,64 H95"/></g>';
+  // NSW
+  s+='<g transform="translate(27,22)"><path d="M-15,0 H15 M0,-13 V13" stroke="#c8102e" stroke-width="5"/>'+_s5(0,-9,2.4,'#f4c724')+_s5(0,9,2.4,'#f4c724')+_s5(-11,0,2.4,'#f4c724')+_s5(11,0,2.4,'#f4c724')+'<circle cx="0" cy="0" r="3" fill="#c89a2c"/></g>';
+  // VIC
+  s+='<g transform="translate(73,22)">'+_s5(0,-9,3,'#1f4fa0')+_s5(9,0,3,'#1f4fa0')+_s5(0,9,3,'#1f4fa0')+_s5(-9,0,3,'#1f4fa0')+_s5(0,0,1.8,'#1f4fa0')+'</g>';
+  // QLD
+  s+='<g transform="translate(27,50)" fill="#3a7bd5"><path d="M0,-12 L4,-4 L0,0 L-4,-4Z"/><path d="M0,12 L4,4 L0,0 L-4,4Z"/><path d="M-12,0 L-4,4 L0,0 L-4,-4Z"/><path d="M12,0 L4,4 L0,0 L4,-4Z"/></g>';
+  // SA shrike
+  s+='<g transform="translate(73,50)"><path d="M-13,2 q13,-4 13,-4 q0,0 13,4 q-13,5 -13,5 q0,0 -13,-5z" fill="#fff" stroke="#1f3a6b" stroke-width="1"/><ellipse cx="0" cy="1" rx="3" ry="6" fill="#222"/><circle cx="0" cy="-5" r="2.4" fill="#222"/></g>';
+  // WA swan
+  s+='<g transform="translate(50,78)"><ellipse cx="0" cy="0" rx="20" ry="13" fill="#f4c724"/><path d="M-10,2 q3,-8 12,-8 q6,0 9,3 q-4,-1 -6,1 q5,1 6,4 q-6,-2 -10,-1 q4,2 4,6 q-9,-5 -17,-1 q-2,-3 2,-3z" fill="#1a1a1a"/></g>';
+  s+='</g>';
+  // kangaroo
+  s+='<g transform="translate(8,70)" fill="#b06a2e"><path d="M58,96 C40,96 30,84 30,66 C30,52 36,40 30,26 C27,19 30,12 26,6 C31,9 33,15 33,20 C36,12 34,4 38,-2 C40,10 38,22 40,34 C44,28 46,20 45,12 C50,22 47,36 42,48 C50,58 54,72 54,86 C58,90 60,96 60,102 L52,102 C51,95 47,90 42,88 C38,94 36,98 36,104 L28,104 C30,96 36,90 44,88 C48,86 54,90 58,96 Z"/><circle cx="29" cy="6" r="2" fill="#7a4a1e"/></g>';
+  // emu
+  s+='<g transform="translate(132,66)" fill="#6e6256"><path d="M30,100 C28,82 22,66 30,48 C34,38 30,28 36,18 C38,10 34,2 40,-4 C42,6 40,16 42,26 C46,16 48,8 47,0 C52,12 48,28 42,42 C50,52 52,70 50,88 C54,92 56,98 56,104 L48,104 C47,96 43,92 38,90 C34,96 32,100 32,106 L24,106 C26,96 34,90 42,90 C40,84 34,80 30,82 Z"/><circle cx="41" cy="-4" r="2" fill="#4a4238"/></g>';
+  // scroll
+  s+='<path d="M40,196 q70,16 140,0" fill="none" stroke="#5f8a4a" stroke-width="3"/>';
+  s+='<g><path d="M52,202 q58,12 116,0 l-6,16 q-52,10 -104,0 z" fill="url(#cgold)" stroke="#9a7820" stroke-width="1.5"/><text x="110" y="216" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="14" font-weight="600" fill="#5a4500" letter-spacing="3">AUSTRALIA</text></g>';
+  s+='</svg>';
+  return s;
+}
+
+/* ===== NATIONAL COLOURS — green & gold sporting band ===== */
+function svgColours(){
+  let s='<svg viewBox="0 0 200 200">';
+  s+='<defs><linearGradient id="ncg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1f9d57"/><stop offset="1" stop-color="#0f7a3e"/></linearGradient>';
+  s+='<linearGradient id="ncy" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd21f"/><stop offset="1" stop-color="#e0a800"/></linearGradient></defs>';
+  s+='<rect width="200" height="200" rx="16" fill="#0f7a3e"/>';
+  // diagonal split green/gold
+  s+='<path d="M0,0 H200 V92 L0,128 Z" fill="url(#ncg)"/>';
+  s+='<path d="M0,128 L200,92 V200 H0 Z" fill="url(#ncy)"/>';
+  // chevrons echoing sports kit
+  s+='<g opacity=".25"><path d="M0,150 L100,128 L200,150 V164 L100,142 L0,164 Z" fill="#0a5c2e"/></g>';
+  s+='<g opacity=".2"><path d="M0,60 L100,38 L200,60 V74 L100,52 L0,74 Z" fill="#fff"/></g>';
+  s+='</svg>';
+  return s;
+}
+
+
+const SYMBOLS={
+coat:{title:"Commonwealth Coat of Arms",
+  text:"The official symbol of the Commonwealth of Australia — it represents national unity and identifies the authority and property of the Commonwealth. A central shield, divided into six parts for the six states and federation, is supported by a kangaroo and an emu, both native animals. A gold seven-pointed Commonwealth Star sits above the shield, set against a background of golden wattle, the national flower, on a scroll reading AUSTRALIA.",
+  svg:svgCoat},
+wattle:{title:"Golden Wattle",
+  text:"Australia's national flower (Acacia pycnantha). A small tree that grows mainly in south-eastern Australia, with bright green leaves (phyllodes) and masses of fluffy golden-yellow flower balls in spring. Each state and territory also has its own floral emblem.",
+  svg:svgWattle},
+opal:{title:"The Opal",
+  text:"Australia's national gemstone. According to an Aboriginal legend, a rainbow touched the earth and created the colours of the opal. Australia produces most of the world's precious opal, including the prized black opal with its vivid play-of-colour.",
+  svg:svgOpal},
+colours:{title:"National Colours — Green & Gold",
+  text:"Australia’s national colours are green and gold — the colours of the golden wattle. The uniforms of Australia’s national sports teams are usually green and gold.",
+  svg:svgColours},
+anthem:{title:"National Anthem — Advance Australia Fair",
+  text:"'Advance Australia Fair' is Australia's national anthem. It is sung on occasions of national importance, including at Australian citizenship ceremonies and major sporting events.",
+  svg:()=>`<svg viewBox="0 0 200 200">
+    <rect width="200" height="200" rx="18" fill="#5a948b"/>
+    <g stroke="#fff" stroke-width="2" opacity=".5"><path d="M30,70 H170 M30,90 H170 M30,110 H170 M30,130 H170 M30,150 H170"/></g>
+    <g fill="#fbe9a4"><circle cx="60" cy="150" r="9"/><circle cx="95" cy="130" r="9"/><circle cx="130" cy="110" r="9"/></g>
+    <g stroke="#fbe9a4" stroke-width="3" fill="none"><path d="M68,150 V100"/><path d="M103,130 V82"/><path d="M138,110 V64"/></g>
+    <text x="100" y="44" text-anchor="middle" font-family="Cormorant Garamond" font-size="20" font-style="italic" fill="#fff">Advance</text>
+    <text x="100" y="184" text-anchor="middle" font-family="Cormorant Garamond" font-size="18" font-style="italic" fill="#fbe9a4">Australia Fair</text>
+  </svg>`}
+};
+
+/* ============ REGION INFO ============ */
+/* ===== ALL FLAG & COAT IMAGE URLs (Wikimedia Special:FilePath redirects) ===== */
+const WK='https://commons.wikimedia.org/wiki/Special:FilePath/';
+
+/* Torres Strait Islander Flag — inline SVG (official colours per Wikipedia:
+   Green #009966, Blue #0000CC, Black #000000, White #FFFFFF)
+   Design: two green stripes top/bottom, two black dividers, blue centre panel,
+   white dhari headdress (dancer's headdress shape) + white 5-pointed star */
+const TSI_SVG_URI=(()=>{
+  // Build precise SVG at 600×300 (2:1 ratio matching standard flag proportions)
+  // Stripe heights (proportional): green 60, black 20, blue 140, black 20, green 60 = 300
+  const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300">
+  <rect width="600" height="300" fill="#009966"/>
+  <rect y="60" width="600" height="20" fill="#000"/>
+  <rect y="80" width="600" height="140" fill="#0000CC"/>
+  <rect y="220" width="600" height="20" fill="#000"/>
+  <!-- Dhari headdress: semicircular arc with two side fins -->
+  <g fill="white">
+    <!-- main arch of the dhari -->
+    <path d="M205,192 Q206,118 300,108 Q394,118 395,192 L373,192 Q370,136 300,128 Q230,136 227,192 Z"/>
+    <!-- left fin/tip -->
+    <path d="M227,165 L202,148 L220,172 Z"/>
+    <!-- right fin/tip -->
+    <path d="M373,165 L398,148 L380,172 Z"/>
+    <!-- top notch on arch -->
+    <polygon points="300,112 293,95 307,95"/>
+    <!-- connecting neck/stem to star -->
+    <rect x="286" y="192" width="28" height="16" rx="2"/>
+    <!-- 5-pointed star -->
+    <polygon points="300,218 308.5,243 335,243 314,258 322,283 300,268 278,283 286,258 265,243 291.5,243"/>
+  </g>
+</svg>`;
+  return 'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
+})();
+
+const FLAG_URLS={
+  /* National flags */
+  national:     WK+'Flag_of_Australia.svg',
+  aboriginal:   WK+'Australian_Aboriginal_Flag.svg',
+  tsi:          TSI_SVG_URI,   /* inline — TSI flag is copyright-protected, not on Commons */
+  /* State flags */
+  NSW:          WK+'Flag_of_New_South_Wales.svg',
+  VIC:          WK+'Flag_of_Victoria_(Australia).svg',
+  QLD:          WK+'Flag_of_Queensland.svg',
+  WA:           WK+'Flag_of_Western_Australia.svg',
+  SA:           WK+'Flag_of_South_Australia.svg',
+  TAS:          WK+'Flag_of_Tasmania.svg',
+  /* Territory flags */
+  ACT:          WK+'Flag_of_the_Australian_Capital_Territory.svg',
+  NT:           WK+'Flag_of_the_Northern_Territory.svg',
+  /* Coat of Arms */
+  coat:         WK+'Coat_of_arms_of_the_Commonwealth_of_Australia.svg',
+};
+function flagImg(key,cls,alt){
+  return `<img src="${FLAG_URLS[key]}" class="${cls||''}" alt="${alt||key+' flag'}" loading="lazy">`;
+}
+
+const RINFO={
+  WA:{name:"Western Australia",type:"state",cap:"Perth",desc:"The largest state. The east is mostly desert; the south-west is rich agricultural and wine country, with many large mining projects.",icons:["Ningaloo Coast","Margaret River","The Kimberley"]},
+  NT:{name:"Northern Territory",type:"territory",cap:"Darwin",desc:"Tropical in the north, dry red desert in the south. A self-governing mainland territory.",icons:["Uluru","Kata Tjuta","Kings Canyon"]},
+  SA:{name:"South Australia",type:"state",cap:"Adelaide",desc:"A rugged coastline and famous wine regions. Adelaide has fine colonial architecture.",icons:["Barossa Valley","Flinders Ranges"]},
+  QLD:{name:"Queensland",type:"state",cap:"Brisbane",desc:"The second largest state — tropical rainforests, temperate coast and dry inland. The Great Barrier Reef runs along its eastern coast.",icons:["Great Barrier Reef","Torres Strait Islands"]},
+  NSW:{name:"New South Wales",type:"state",cap:"Sydney",desc:"The first colony established by the British. Sydney is the nation's largest city.",icons:["Sydney Harbour Bridge","Sydney Opera House"]},
+  VIC:{name:"Victoria",type:"state",cap:"Melbourne",desc:"The smallest mainland state. Many fine buildings were built from 1850s gold-rush wealth.",icons:["Melbourne Cricket Ground","Twelve Apostles","Royal Exhibition Building"]},
+  ACT:{name:"Australian Capital Territory",type:"territory",cap:"Canberra",desc:"Between Sydney and Melbourne. Home to the national capital, Canberra — Parliament House and the High Court.",icons:["Parliament House","High Court of Australia"]},
+  TAS:{name:"Tasmania",type:"state",cap:"Hobart",desc:"The smallest state, separated from the mainland by the Bass Strait, with much unspoilt wilderness.",icons:["Cradle Mountain","Port Arthur","Bay of Fires"]}
+};
+
+/* ============ BUILD MAP ============ */
+const svg=document.getElementById('ausmap');
+const SVGNS='http://www.w3.org/2000/svg';
+function el(t,a){const e=document.createElementNS(SVGNS,t);for(const k in a)e.setAttribute(k,a[k]);return e;}
+// ocean backdrop
+svg.appendChild(el('rect',{x:0,y:0,width:MAPDATA.W,height:MAPDATA.H,fill:'#eaf2ee',rx:8}));
+const gStates=el('g',{}); svg.appendChild(gStates);
+const gMarks=el('g',{}); svg.appendChild(gMarks);
+const gLabels=el('g',{}); svg.appendChild(gLabels);
+
+Object.entries(MAPDATA.paths).forEach(([id,d])=>{
+  const p=el('path',{d:d,class:'state','data-id':id});
+  gStates.appendChild(p);
+});
+// capital dots (larger for ACT so it's findable)
+Object.entries(MAPDATA.caps).forEach(([id,c])=>{
+  gMarks.appendChild(el('circle',{cx:c.x,cy:c.y,r:id==='ACT'?6:5,class:'capdot'}));
+});
+// region labels + capital labels (ACT handled by a callout box instead)
+Object.entries(RINFO).forEach(([id])=>{
+  const cn=MAPDATA.cent[id]; const cap=MAPDATA.caps[id];
+  if(id!=='ACT'){
+    const tx=el('text',{x:cn[0],y:cn[1],class:'reglbl','text-anchor':'middle'}); tx.textContent=id;
+    gLabels.appendChild(tx);
+    const align = cap.x>MAPDATA.W*0.8 ? 'end' : 'start';
+    const dx = align==='end' ? -10 : 10;
+    const ct=el('text',{x:cap.x+dx,y:cap.y+5,class:'caplbl','text-anchor':align}); ct.textContent=cap.name;
+    gLabels.appendChild(ct);
+  }
+});
+
+// ---- ACT callout (it's tiny inside NSW): leader line + clickable box in the ocean ----
+const actCap=MAPDATA.caps['ACT'];
+const calloutX=actCap.x+78, calloutY=actCap.y+70;
+gMarks.appendChild(el('line',{x1:actCap.x,y1:actCap.y,x2:calloutX,y2:calloutY+2,class:'callout-line'}));
+const ccap=el('text',{x:actCap.x-10,y:actCap.y+5,class:'caplbl','text-anchor':'end'}); ccap.textContent='Canberra';
+gLabels.appendChild(ccap);
+const gco=el('g',{class:'callout','data-id':'ACT'});
+gco.appendChild(el('rect',{x:calloutX,y:calloutY,width:122,height:34,rx:8}));
+const cot=el('text',{x:calloutX+61,y:calloutY+23,'text-anchor':'middle'}); cot.textContent='ACT';
+gco.appendChild(cot);
+svg.appendChild(gco);
+
+/* ============ MAP TOOLTIP + INFO ============ */
+const tip=document.getElementById('maptip');
+const mapInfo=document.getElementById('mapinfo');
+const shell=svg.parentElement;
+let pinned=null;
+
+function tipHTML(id){
+  const r=RINFO[id], f=STATE_FLAGS[id];
+  return `<div class="ttop">
+      <div class="tflag">${flagImg(id,'','Flag of '+r.name)}</div>
+      <div><h4>${r.name}</h4><div class="tcap">${r.type==='state'?'State':'Territory'} · Capital <b>${r.cap}</b></div></div>
+    </div>
+    <div class="tsig"><em>Flag:</em> ${f.significance}</div>
+    <div class="ticons">${r.icons.map(i=>`<span>${i}</span>`).join('')}</div>`;
+}
+function infoHTML(id,lock){
+  const r=RINFO[id], f=STATE_FLAGS[id];
+  return `<span class="pill">${r.type==='state'?'State':'Territory'}</span>
+    <h3>${r.name}</h3>
+    <div class="cap-line">Capital city: <b>${r.cap}</b></div>
+    <div class="pin-flag" style="margin:12px 0">${flagImg(id,'','Flag of '+r.name)}</div>
+    <p>${r.desc}</p>
+    <div class="tsig" style="border-top:1px dashed var(--line);padding-top:10px"><em style="color:var(--teal-deep);font-weight:600">Flag significance:</em> ${f.significance}</div>
+    <div class="icons"><span style="background:var(--gold);color:#5a4500">Icons</span>${r.icons.map(i=>`<span>${i}</span>`).join('')}</div>
+    <p class="map-hint">${lock?'Pinned — hover another region, or tap again to keep exploring.':'Tap to pin this detail.'}</p>`;
+}
+function positionTip(evt){
+  const b=shell.getBoundingClientRect();
+  let x=evt.clientX-b.left+14, y=evt.clientY-b.top+14;
+  const tw=tip.offsetWidth||300, th=tip.offsetHeight||200;
+  if(x+tw>b.width) x=evt.clientX-b.left-tw-14;
+  if(y+th>b.height) y=Math.max(8,b.height-th-8);
+  tip.style.left=x+'px'; tip.style.top=y+'px';
+}
+function clearSel(){gStates.querySelectorAll('.state').forEach(x=>x.classList.remove('sel'));const co=svg.querySelector('.callout');if(co)co.classList.remove('sel');}
+function pinRegion(id,node){clearSel();if(node)node.classList.add('sel');pinned=id;mapInfo.innerHTML=infoHTML(id,true);}
+
+gStates.querySelectorAll('.state').forEach(s=>{
+  const id=s.dataset.id;
+  s.addEventListener('mousemove',e=>{
+    if(!tip.classList.contains('show')){tip.innerHTML=tipHTML(id);tip.classList.add('show');}
+    positionTip(e);
+    if(!pinned) mapInfo.innerHTML=infoHTML(id,false);
+  });
+  s.addEventListener('mouseenter',e=>{tip.innerHTML=tipHTML(id);tip.classList.add('show');positionTip(e);});
+  s.addEventListener('mouseleave',()=>{tip.classList.remove('show');});
+  s.addEventListener('click',()=>pinRegion(id,s));
+});
+const actCallout=svg.querySelector('.callout[data-id="ACT"]');
+if(actCallout){
+  actCallout.addEventListener('mousemove',e=>{if(!tip.classList.contains('show')){tip.innerHTML=tipHTML('ACT');tip.classList.add('show');}positionTip(e);if(!pinned)mapInfo.innerHTML=infoHTML('ACT',false);});
+  actCallout.addEventListener('mouseenter',e=>{tip.innerHTML=tipHTML('ACT');tip.classList.add('show');positionTip(e);});
+  actCallout.addEventListener('mouseleave',()=>tip.classList.remove('show'));
+  actCallout.addEventListener('click',()=>pinRegion('ACT',actCallout));
+}
+
+/* ============ SYMBOLS ============ */
+/* symgrid is now static HTML */
+
+/* ============ NATIONAL FLAGS (hover-to-learn) ============ */
+const stage=document.getElementById('flagstage');
+function star7s(cx,cy,r,fill){let p='';for(let i=0;i<7;i++){const a=-Math.PI/2+i*2*Math.PI/7;const a2=a+Math.PI/7;p+=(i?'L':'M')+(cx+r*Math.cos(a)).toFixed(1)+','+(cy+r*Math.sin(a)).toFixed(1)+' L'+(cx+r*0.45*Math.cos(a2)).toFixed(1)+','+(cy+r*0.45*Math.sin(a2)).toFixed(1)+' ';}return `<path d="${p}Z" fill="${fill}"/>`;}
+function s5(cx,cy,r,fill){let p='';for(let i=0;i<5;i++){const a=-Math.PI/2+i*2*Math.PI/5;const a2=a+Math.PI/5;p+=(i?'L':'M')+(cx+r*Math.cos(a)).toFixed(1)+','+(cy+r*Math.sin(a)).toFixed(1)+' L'+(cx+r*0.4*Math.cos(a2)).toFixed(1)+','+(cy+r*0.4*Math.sin(a2)).toFixed(1)+' ';}return `<path d="${p}Z" fill="${fill}"/>`;}
+
+const NATFLAGS={
+national:{title:"Australian National Flag",colours:["#00247d","#ffffff","#cf142b"],
+  feats:[
+    {k:"unionjack",b:"The Union Jack",s:"Top-left — the flag of the United Kingdom, representing our history of British settlement and the laws and institutions we inherited."},
+    {k:"comstar",b:"The Commonwealth Star",s:"Beneath the Union Jack — seven points: one for each of the six states, and one for the territories."},
+    {k:"southern",b:"The Southern Cross",s:"On the right — a group of stars seen in the southern sky."}
+  ],
+  svg:()=>`<svg viewBox="0 0 200 100">
+    <rect width="200" height="100" fill="#00247d"/>
+    <g class="flag-hot" data-k="unionjack">
+      <rect width="100" height="50" fill="#00247d"/>
+      <path d="M0,0 L100,50 M100,0 L0,50" stroke="#fff" stroke-width="10"/>
+      <path d="M0,0 L100,50 M100,0 L0,50" stroke="#cf142b" stroke-width="4"/>
+      <path d="M50,0 V50 M0,25 H100" stroke="#fff" stroke-width="16"/>
+      <path d="M50,0 V50 M0,25 H100" stroke="#cf142b" stroke-width="9"/>
+    </g>
+    <g class="flag-hot" data-k="comstar">${star7s(50,75,13,'#fff')}</g>
+    <g class="flag-hot" data-k="southern">
+      ${s5(150,22,7,'#fff')}${s5(178,44,7,'#fff')}${s5(150,70,7,'#fff')}${s5(126,48,7,'#fff')}${s5(158,44,4,'#fff')}
+    </g></svg>`},
+aboriginal:{title:"Australian Aboriginal Flag",colours:["#1c1c1c","#c8102e","#f3c300"],
+  feats:[
+    {k:"black",b:"Black (top half)",s:"Represents the Aboriginal peoples of Australia."},
+    {k:"red",b:"Red (bottom half)",s:"Represents the earth, which has ceremonial significance."},
+    {k:"sun",b:"Yellow circle",s:"Represents the sun."}
+  ],
+  svg:()=>`<svg viewBox="0 0 200 100">
+    <rect class="flag-hot" data-k="black" width="200" height="50" fill="#1c1c1c"/>
+    <rect class="flag-hot" data-k="red" y="50" width="200" height="50" fill="#c8102e"/>
+    <circle class="flag-hot" data-k="sun" cx="100" cy="50" r="22" fill="#f3c300"/></svg>`},
+tsi:{title:"Torres Strait Islander Flag",colours:["#1f7a3d","#1f4fa0","#1c1c1c","#ffffff"],
+  feats:[
+    {k:"green",b:"Green stripes",s:"Represent the land."},
+    {k:"blue",b:"Blue panel (centre)",s:"Represents the sea."},
+    {k:"black",b:"Black lines",s:"Represent the Torres Strait Islander people."},
+    {k:"head",b:"White dancer's headdress &amp; star",s:"The dhari headdress is a symbol for all Torres Strait Islanders; the white star's points represent the island groups, and white symbolises peace."}
+  ],
+  svg:()=>`<svg viewBox="0 0 200 100">
+    <rect class="flag-hot" data-k="green" width="200" height="100" fill="#1f7a3d"/>
+    <rect class="flag-hot" data-k="black" y="14" width="200" height="6" fill="#1c1c1c"/>
+    <rect class="flag-hot" data-k="black" y="80" width="200" height="6" fill="#1c1c1c"/>
+    <rect class="flag-hot" data-k="blue" y="20" width="200" height="60" fill="#1f4fa0"/>
+    <g class="flag-hot" data-k="head" fill="#fff">
+      <path d="M100,33 c-13,0 -22,9 -22,22 l6,0 c0,-9 7,-16 16,-16 9,0 16,7 16,16 l6,0 c0,-13 -9,-22 -22,-22 z"/>
+      <path d="M86,57 h28 l-14,6 z"/>
+      ${s5(100,49,8,'#fff')}
+    </g></svg>`}
+};
+
+function renderFlag(key){
+  if(key==='states'){
+    stage.innerHTML=`<div class="state-flag-grid">${Object.keys(STATE_FLAGS).map(id=>`
+      <div class="sf">
+        ${flagImg(id,'','Flag of '+STATE_FLAGS[id].title)}
+        <b>${STATE_FLAGS[id].title}</b>
+        <span>${RINFO[id]? 'Capital: '+RINFO[id].cap : ''}</span>
+      </div>`).join('')}</div>
+      <p class="tip" style="margin-top:16px">Each state &amp; territory flag is the official SVG from Wikimedia Commons. Hover a region on the map to see each flag's symbolism explained.</p>`;
+    return;
+  }
+  const f=NATFLAGS[key];
+  const imgUrl=FLAG_URLS[key];
+  stage.innerHTML=`
+    <div class="flag-stage">
+      <div class="flag-canvas">
+        <img src="${imgUrl}" alt="${f.title}" style="width:100%;height:auto;border-radius:10px;box-shadow:var(--shadow-lg);display:block">
+      </div>
+      <div class="flag-meta">
+        <h3>${f.title}</h3>
+        <div class="colours">${f.colours.map(c=>`<i style="background:${c}"></i>`).join('')}</div>
+        ${f.feats.map(ft=>`<div class="flag-feat"><b>${ft.b}</b><span>${ft.s}</span></div>`).join('')}
+      </div>
+    </div>`;
+}
+document.querySelectorAll('#flagtabs button').forEach(b=>{
+  b.addEventListener('click',()=>{document.querySelectorAll('#flagtabs button').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderFlag(b.dataset.f);});
+});
+renderFlag('national');
+
+/* ============ GOV DIAGRAM ============ */
+const GROLES={
+  king:{t:"The King of Australia",d:"His Majesty King Charles III is Australia's Head of State. Australia is a constitutional monarchy — the King must act in accordance with the Constitution and has no day-to-day role in government. He appoints the Governor-General on the advice of the Australian Prime Minister."},
+  gg:{t:"The Governor-General",d:"The King's representative at national level — neutral and independent of all parties. Roles include: giving Royal Assent to all Bills (making them law), performing ceremonial duties, approving the appointment of the PM and ministers, starting the process for a federal election, and acting as Commander-in-Chief of the Defence Force. Also holds special 'reserve powers' for specific circumstances."},
+  governor:{t:"State Governors",d:"In each of the six states a Governor represents the King in a role similar to the Governor-General. The Governor approves state laws and performs ceremonial and constitutional duties for their state."},
+  ntadmin:{t:"NT Administrator",d:"In the Northern Territory an Administrator (appointed by the Governor-General) plays a role similar to a state Governor. The ACT does not have a Governor or Administrator."},
+  parliament:{t:"Parliament of Australia",d:"Holds legislative power — the power to make and change laws. It consists of the King (represented by the Governor-General) and two Houses: the House of Representatives and the Senate. Members debate and vote on proposals for new laws (Bills) and discuss matters of national importance."},
+  hor:{t:"House of Representatives",d:"The Lower House — also called the People's House. Over 150 MPs, each representing a federal electorate; the number per state/territory is based on population. Government is formed by the party or coalition with a majority here, and its leader becomes Prime Minister."},
+  senate:{t:"The Senate",d:"The Upper House — also called the House of Review or States' House. 76 senators total: 12 from each state and 2 each from the ACT and NT. All states are equally represented regardless of size or population. Senators also consider, debate and vote on laws and matters of national importance."},
+  mp:{t:"Member of Parliament (MP)",d:"An elected representative of the people in the Australian Parliament or a state/territory parliament. MPs represent the people in their electorate and must answer to those people through elections."},
+  senator:{t:"Senator",d:"An elected representative of a state or territory in the Australian Parliament. Senators represent their whole state/territory rather than individual electorates."},
+  opposition:{t:"The Opposition",d:"After a federal election, the party or coalition with the second largest number of members in the House of Representatives forms the Opposition. Its leader is called the Leader of the Opposition. The Opposition's role is to scrutinise and hold the government accountable."},
+  parties:{t:"Political Parties & Independents",d:"Main parties: Liberal Party, Australian Labor Party, the Nationals, Australian Greens. Members with no party are called independents. Australians are free to join any political party or none."},
+  pm:{t:"The Prime Minister",d:"The leader of the Australian Government — the leader of the party or coalition with a majority in the House of Representatives. The Prime Minister recommends members of the House of Representatives or Senators to become ministers. The Governor-General approves the appointment of the PM and ministers."},
+  cabinet:{t:"The Cabinet",d:"The most senior government ministers, who hold the most important portfolios. The Cabinet is the key decision-making body of government. Ministers are responsible for a portfolio (area of government) such as employment, Indigenous Affairs or Treasury."},
+  ministers:{t:"Government Ministers",d:"Chosen by the Prime Minister and approved by the Governor-General, each minister is responsible for an area of government (a 'portfolio') such as Defence, Health or Education. They are members of Parliament who run government departments."},
+  ps:{t:"Australian Public Service",d:"Government departments and the people employed by them (e.g. Services Australia, the ATO) that deliver government services to the community. A privilege of citizenship is the right to apply for a job in the Australian Public Service."},
+  ato:{t:"Services Australia / ATO",d:"Services Australia delivers welfare payments through Centrelink, Medicare and Child Support. The Australian Taxation Office (ATO) manages the tax and superannuation systems. Tax is paid on earnings and goods/services — it funds government services."},
+  adf:{t:"Australian Defence Force",d:"Made up of the Army, Navy and Air Force. While service is voluntary, Australian citizens have a responsibility to defend Australia should the need arise. Citizens have the privilege of applying for a job in the ADF."},
+  aec:{t:"Australian Electoral Commission (AEC)",d:"A Commonwealth agency responsible for conducting federal elections and referendums, and maintaining the Commonwealth electoral roll. The AEC is independent of the government — political parties cannot influence its decisions. If you don't vote without a good reason, you may be fined."},
+  highcourt:{t:"High Court of Australia",d:"Established by the Australian Constitution, it has the ultimate power to apply and interpret the laws of Australia — including the Constitution itself. Independent of parliament and government. Located in Canberra."},
+  fedcourts:{t:"Federal Courts",d:"Courts are independent — they decide cases based only on the evidence before them. Courts decide if someone has broken the law and determine penalties. The government cannot remove judges if it disagrees with their decisions."},
+  judges:{t:"Judges & Magistrates",d:"The highest authority in a court. They are independent — no one can tell them what to decide. Appointed by the government, but the government cannot remove them for their decisions. A magistrate is a judge of a lower court."},
+  juries:{t:"Juries",d:"A jury is a group of ordinary Australian citizens randomly chosen from the general population. In a criminal trial, the jury decides if a person is innocent or guilty; the judge then decides the penalty if guilty. People are considered innocent until proven guilty in court."},
+  afp:{t:"Australian Federal Police (AFP)",d:"Australia's national police force. Investigates crimes against federal laws (e.g. drug trafficking, crimes against national security and the environment). Also responsible for general policing in the ACT. States and territories have their own separate police forces."},
+  stparliament:{t:"State / Territory Parliament",d:"Each state has its own parliament with its own constitution. Territory parliaments are self-governing but territory laws can be altered or revoked by the Australian (federal) Government at any time — unlike states, territories do not have rights recognised in the Constitution."},
+  stmp:{t:"State/Territory Members of Parliament",d:"In state/territory elections, Australian citizens vote to elect a representative for their area. These representatives become members of the relevant state or territory parliament."},
+  premier:{t:"The Premier",d:"The leader of a state government — equivalent to the Prime Minister at the state level. There is one Premier per state (New South Wales, Victoria, Queensland, Western Australia, South Australia, Tasmania)."},
+  chiefmin:{t:"The Chief Minister",d:"The leader of a territory government — equivalent to a Premier. The Australian Capital Territory and Northern Territory are each led by a Chief Minister."},
+  stmins:{t:"State/Territory Ministers",d:"Ministers responsible for portfolios at the state or territory level — for example Health, Education, Transport. They are appointed by the Premier or Chief Minister."},
+  stcourts:{t:"State & Territory Courts",d:"Each state has its own court system. State and territory courts deal with crimes under state and territory laws. Judges and magistrates are independent."},
+  stpolice:{t:"State & Territory Police Forces",d:"Each state and the Northern Territory has its own police force that deals with crimes under state and territory laws. Police maintain peace and order, protect life and property, and are independent of the government."},
+  mayor:{t:"Mayor / Shire President",d:"The leader of a local government council — equivalent to the Premier or Chief Minister at the local level. Elected by councillors or directly by residents depending on the state."},
+  councillor:{t:"Councillors",d:"Elected members of a local council. Citizens in each local government area vote to elect their local councillors. Councillors represent the local community and make decisions about local services and planning."},
+  council:{t:"Local Council",d:"Responsible for planning and delivering services to their local community: local roads, footpaths and bridges, rubbish collection, parks and playgrounds, building permits, libraries, animal control, and local environmental issues. Local government areas may be called cities, shires, towns or municipalities."}
+};
+const gd=document.getElementById('gdetail');
+document.querySelectorAll('.gn[data-role]').forEach(n=>{
+  n.addEventListener('click',()=>{
+    document.querySelectorAll('.gn').forEach(x=>x.classList.remove('active'));
+    n.classList.add('active');
+    const r=GROLES[n.dataset.role];
+    if(!r) return;
+    gd.innerHTML=`<h4>${r.t}</h4><p>${r.d}</p>`;
+    gd.style.borderLeftColor='var(--gold-deep)';
+    gd.scrollIntoView({behavior:'smooth',block:'nearest'});
+    setTimeout(()=>gd.style.borderLeftColor='var(--teal)',500);
+  });
+});
+
+/* ============ TIMELINE ============ */
+document.querySelectorAll('#timeline-list .tl-card').forEach(card=>{
+  const item=card.closest('.tl-item');
+  const info=card.querySelector('.info');
+  if(info) info.addEventListener('click',e=>{e.stopPropagation();item.classList.toggle('open');});
+  card.addEventListener('click',()=>item.classList.toggle('open'));
+});
+
+/* ============ NAV + BACK TO TOP ============ */
+const up=document.getElementById('up');
+const links=[...document.querySelectorAll('#navlinks a')];
+const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+window.addEventListener('scroll',()=>{
+  up.classList.toggle('show',scrollY>500);
+  let cur=0;
+  for(let i=0;i<secs.length;i++){if(secs[i]&&secs[i].getBoundingClientRect().top<160)cur=i;}
+  links.forEach((l,i)=>l.classList.toggle('active',i===cur));
+});
+up.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+
+</script>
+
+</body>
+</html>
