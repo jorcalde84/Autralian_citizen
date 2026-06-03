@@ -99,7 +99,8 @@ header.hero{
 }
 
 /* ---------- SECTION SHELL ---------- */
-section{padding:70px 0 30px;position:relative;z-index:1}
+section{padding:70px 0 30px;position:relative;z-index:1;scroll-margin-top:80px}
+:target{scroll-margin-top:90px}
 .sec-head{margin-bottom:34px;max-width:760px}
 .sec-tag{font-size:.82rem;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:var(--gold-deep)}
 .sec-head h2{font-family:var(--serif);font-size:clamp(2.2rem,4.2vw,3.2rem);font-weight:600;color:var(--teal-deep);line-height:1.05;margin:8px 0 10px}
@@ -169,6 +170,7 @@ section{padding:70px 0 30px;position:relative;z-index:1}
 .map-hint{font-size:.85rem;color:var(--ink-soft);font-style:italic;margin-top:14px}
 .legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:14px;font-size:.8rem;color:var(--ink-soft)}
 .legend i{display:inline-block;width:13px;height:13px;border-radius:3px;margin-right:6px;vertical-align:-2px}
+.region-chips{display:none}  /* shown only on phones (see mobile layer) */
 
 /* ---------- FLAGS ---------- */
 .flag-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
@@ -379,6 +381,153 @@ footer a{color:var(--teal-deep)}
 
 /* dated timeline tweaks */
 .tl-date{font-size:.8rem;font-weight:700;letter-spacing:.04em;color:var(--gold-deep);text-transform:uppercase}
+
+/* =====================================================================
+   MOBILE RESPONSIVE LAYER  (senior UX pass — touch-first, ≤600px)
+   ===================================================================== */
+
+/* Tablet / large-phone landscape tidy-ups */
+@media(max-width:760px){
+  .nav-inner{gap:10px 14px;padding:10px 16px}
+  .wrap{padding:0 18px}
+  section{padding:52px 0 24px}
+  .hero-inner{padding:60px 18px 64px}
+}
+
+/* ---- Phones (≤600px): the main mobile experience ---- */
+@media(max-width:600px){
+  html{font-size:16px}
+  .wrap{padding:0 15px}
+  section{padding:42px 0 20px}
+
+  /* NAV — brand row + horizontal scroll-snap link rail */
+  nav{width:100%;overflow:hidden}
+  .nav-inner{flex-direction:column;align-items:stretch;gap:8px;padding:9px 0 7px;width:100%;max-width:100%}
+  .brand{margin:0 15px;width:auto;max-width:calc(100% - 30px)}
+  .brand .crest{width:30px;height:30px}
+  .brand b{font-size:1.2rem}
+  .brand span{font-size:.66rem;letter-spacing:.14em}
+  .nav-links{
+    flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;gap:7px;padding:2px 15px 4px;width:100%;max-width:100%;
+    scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;
+    scrollbar-width:none;-ms-overflow-style:none;
+    -webkit-mask-image:linear-gradient(to right,transparent,#000 14px,#000 calc(100% - 22px),transparent);
+            mask-image:linear-gradient(to right,transparent,#000 14px,#000 calc(100% - 22px),transparent);
+  }
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-links a{flex:0 0 auto;scroll-snap-align:start;white-space:nowrap;padding:9px 14px;font-size:.86rem}
+
+  /* HERO */
+  .hero-inner{padding:46px 15px 50px}
+  .eyebrow{font-size:.72rem;letter-spacing:.18em;padding:7px 13px}
+  .hero h1{margin:16px 0 4px}
+  .hero p.lede{font-size:1.02rem;margin-top:16px}
+  .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:18px 16px;margin-top:28px}
+  .hero-stats div b{font-size:2rem}
+  .hero-stats div span{font-size:.72rem;letter-spacing:.1em}
+  .wattle-band{height:40px;background-size:auto}
+
+  /* SECTION HEADS */
+  .sec-head{margin-bottom:24px}
+  .sec-head p{font-size:1rem}
+
+  /* PART CARDS — single column, tighter */
+  .parts-grid{grid-template-columns:1fr;gap:14px}
+  .part-card{padding:22px 20px}
+  .part-card h3{font-size:1.4rem}
+
+  /* ACCORDIONS — reduce left indent so body text isn't squeezed */
+  .concept-block{margin-bottom:34px}
+  .concept-block > h3{font-size:1.45rem;flex-wrap:wrap}
+  .acc summary{padding:14px 15px;gap:11px;font-size:.98rem}
+  .acc .body{padding:4px 15px 17px 16px}
+  .acc summary .chev{font-size:1rem}
+
+  /* MAP — stack, panel sits right under map; suppress floating tooltip on touch */
+  .map-shell{padding:12px}
+  .map-info{padding:18px;min-height:0}
+  body.touch .maptip{display:none !important}
+  #ausmap .reglbl{font-size:26px;stroke-width:5px}      /* bigger labels for small screens */
+  #ausmap .caplbl{font-size:19px;stroke-width:4px}
+  #ausmap .capdot{r:7}
+  #ausmap .callout text{font-size:22px}
+  .legend{font-size:.78rem;gap:14px}
+
+  /* a "tap a state" helper chip-list under the map on phones (filled by JS) */
+  .region-chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+  .region-chips button{
+    flex:0 0 auto;font-family:var(--sans);font-weight:700;font-size:.82rem;
+    border:1px solid var(--line);background:var(--cream-card);color:var(--teal-deep);
+    padding:8px 13px;border-radius:999px;cursor:pointer;min-height:40px;
+  }
+  .region-chips button.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+
+  /* FLAGS — tab rail scrolls horizontally; stage stacks */
+  .flag-tabs{flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;gap:7px;padding-bottom:4px;max-width:100%;min-width:0;
+    scrollbar-width:none;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
+  .flag-tabs::-webkit-scrollbar{display:none}
+  .flag-tabs button{flex:0 0 auto;white-space:nowrap;scroll-snap-align:start;min-height:42px;padding:10px 15px}
+  .flag-stage{padding:20px;gap:20px}
+  .flag-meta h3{font-size:1.55rem}
+  .state-flag-grid{grid-template-columns:1fr 1fr;gap:11px}
+
+  /* SYMBOLS — horizontal: icon left, text (title over description) stacked right */
+  .sym-grid{grid-template-columns:1fr;gap:14px}
+  .sym{padding:18px;display:grid;grid-template-columns:72px 1fr;gap:8px 16px;align-items:center;text-align:left}
+  .sym .ico{width:72px;height:72px;margin:0;flex:none;grid-row:1 / span 2}
+  .sym b{margin-bottom:0;font-size:1.1rem;line-height:1.2;grid-column:2;align-self:end}
+  .sym span{font-size:.88rem;line-height:1.5;grid-column:2;align-self:start}
+
+  /* ANTHEM */
+  .anthem-left{padding:26px 20px}
+  .anthem-lyrics{max-height:230px}
+  .anthem-right,.anthem-video-wrap{min-height:220px}
+  @media(max-width:600px){.anthem-video-wrap{height:220px}}
+
+  /* GOVERNMENT DIAGRAM — let it breathe, no sideways scroll */
+  .gov3{padding:20px 14px;overflow-x:hidden}
+  .gn{min-width:0;max-width:none;width:100%}
+  .grow2{flex-direction:column;gap:9px}
+  .gconn2{font-size:1rem;margin:6px 0}
+  .gtier-lbl{font-size:.7rem}
+  .pcol2{padding:13px 11px}
+  .two-col{grid-template-columns:1fr !important;gap:12px}
+  .lvlbox{padding:14px}
+  .gdetail2{padding:14px 16px}
+  .lawmaking{grid-template-columns:1fr;gap:6px}
+  .law-step{padding:14px 12px 26px}
+
+  /* TIMELINE — tighter rail */
+  .tl{padding-left:2px}
+  .tl::before{left:15px}
+  .tl-item{padding:0 0 24px 46px}
+  .tl-node{left:6px;width:20px;height:20px}
+  .tl-year{font-size:1.3rem}
+  .tl-card{padding:13px 15px}
+  .tl-card h4{font-size:1.1rem}
+  .tl-item:hover .tl-card{transform:none}  /* no hover-shift on touch */
+
+  /* PLEDGE */
+  .pledge{padding:32px 22px}
+  .pledge p{font-size:1.25rem}
+
+  /* FAB */
+  .up{right:14px;bottom:14px;width:48px;height:48px}
+
+  footer{padding:38px 0 80px}
+}
+
+/* Extra-small (≤380px) micro-tuning */
+@media(max-width:380px){
+  .hero-stats{gap:14px 12px}
+  .hero-stats div b{font-size:1.8rem}
+  .state-flag-grid{grid-template-columns:1fr}
+}
+
+/* Respect reduced-motion preferences */
+@media(prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto !important;transition-duration:.01ms !important;animation-duration:.01ms !important}
+}
 </style>
 </head>
 <body>
@@ -1500,7 +1649,7 @@ function infoHTML(id,lock){
     <p>${r.desc}</p>
     <div class="tsig" style="border-top:1px dashed var(--line);padding-top:10px"><em style="color:var(--teal-deep);font-weight:600">Flag significance:</em> ${f.significance}</div>
     <div class="icons"><span style="background:var(--gold);color:#5a4500">Icons</span>${r.icons.map(i=>`<span>${i}</span>`).join('')}</div>
-    <p class="map-hint">${lock?'Pinned — hover another region, or tap again to keep exploring.':'Tap to pin this detail.'}</p>`;
+    <p class="map-hint">${lock?(IS_TOUCH?'Showing this region — tap another state or chip to switch.':'Pinned — hover another region, or tap again to keep exploring.'):'Tap to pin this detail.'}</p>`;
 }
 function positionTip(evt){
   const b=shell.getBoundingClientRect();
@@ -1531,6 +1680,46 @@ if(actCallout){
   actCallout.addEventListener('mouseleave',()=>tip.classList.remove('show'));
   actCallout.addEventListener('click',()=>pinRegion('ACT',actCallout));
 }
+
+/* ============ TOUCH / MOBILE MAP ENHANCEMENTS ============ */
+const IS_TOUCH = ('ontouchstart' in window) || (navigator.maxTouchPoints>0);
+if(IS_TOUCH) document.body.classList.add('touch');
+
+// On touch: a tap pins the region and reveals the info panel beneath the map.
+function revealInfoPanel(){
+  // only auto-scroll on small screens where the panel sits below the map
+  if(window.matchMedia('(max-width:600px)').matches){
+    mapInfo.scrollIntoView({behavior:'smooth',block:'nearest'});
+  }
+}
+gStates.querySelectorAll('.state').forEach(s=>{
+  s.addEventListener('click',()=>{ if(IS_TOUCH) revealInfoPanel(); });
+});
+if(actCallout) actCallout.addEventListener('click',()=>{ if(IS_TOUCH) revealInfoPanel(); });
+
+// Build a quick "tap a region" chip list (visible on phones via CSS) so every
+// state/territory — including tiny ACT — is reachable without precise tapping.
+(function buildRegionChips(){
+  const order=['NSW','VIC','QLD','WA','SA','TAS','ACT','NT'];
+  const wrap=document.createElement('div');
+  wrap.className='region-chips';
+  wrap.setAttribute('aria-label','Select a state or territory');
+  order.forEach(id=>{
+    const b=document.createElement('button');
+    b.type='button'; b.textContent=id; b.dataset.id=id;
+    b.addEventListener('click',()=>{
+      wrap.querySelectorAll('button').forEach(x=>x.classList.remove('active'));
+      b.classList.add('active');
+      const node=gStates.querySelector(`.state[data-id="${id}"]`)||actCallout;
+      pinRegion(id,node);
+      revealInfoPanel();
+    });
+    wrap.appendChild(b);
+  });
+  // place chips right after the map SVG's shell, before the legend
+  const legend=shell.querySelector('.legend');
+  shell.insertBefore(wrap, legend);
+})();
 
 /* ============ SYMBOLS ============ */
 /* symgrid is now static HTML */
